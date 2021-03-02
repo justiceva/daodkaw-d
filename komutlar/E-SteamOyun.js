@@ -26,9 +26,9 @@ exports.run = (client, message, args) => {
         .setAuthor("Steam Store", steampng)
         .setColor("BLACK")
         .setTitle(result[0].name)
-        .addField(`Oyunun ID'sı`, result[0].id)
+        .addField(`<a:black_tik:815280959397691422> Oyunun ID 'sı`, result[0].id)
         .setThumbnail(results.otherData.imageUrl)
-        .addField("Türleri", results.genres)
+        .addField("<a:bit:815283242479124511> Türleri", results.genres)
         .addField(
           "<a:kredi:816345145501810698> Fiyati",
           `Normal Fiyat **${results.priceData.initialPrice}** TL
@@ -40,10 +40,10 @@ exports.run = (client, message, args) => {
           results.otherData.platforms,
           true
         )
-        .addField("Metacritic Puanı", results.otherData.metacriticScore, true)
-        .addField("Etiketleri", results.otherData.features, true)
-        .addField("Geliştiricileri", results.otherData.developer, true)
-        .addField("Yayımcıları", results.otherData.publisher)
+        .addField("<a:like:815282443086725151> Metacritic Puanı", results.otherData.metacriticScore, true)
+        .addField("<a:kirmiziyildiz:815283970820145213> Etiketleri", results.otherData.features, true)
+        .addField("<a:music:815560660699447316> Geliştiricileri", results.otherData.developer, true)
+        .addField("<a:kilit:816353400941707326> Yayımcıları", results.otherData.publisher)
         .setColor("BLACK")
         .setFooter(
           `${message.author.username} tarafından istendi.`,
