@@ -23,6 +23,11 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}mcödül \` Yazdıgınız Cümleyi Minecraft Ödüle Aktarır.`,
       true
     )
+  .addField(
+      `__TKM__`,
+      `<a:black_tik:815280959397691422> \`${prefix}tkm [Seçtigin] \` Botla Taş , Kağıt Ve Makas Oynarsın.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:like:815282443086725151>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:like:815282443086725151> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:like:815282443086725151> \`${prefix}siteler\` | ShadowRise Network Sitelerini Görürsün`
