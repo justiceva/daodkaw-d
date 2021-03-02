@@ -38,7 +38,8 @@
     "join": "^3.0.0",
     "request": "^2.88.2",
     "crypto": "^1.0.1",
-    "steam-provider": "^0.2.0"
+    "steam-provider": "^0.2.0",
+    "superagent": "^6.1.0"
   },
   "engines": {
     "node": "12.x"
