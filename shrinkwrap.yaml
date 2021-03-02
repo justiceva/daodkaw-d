@@ -3,7 +3,7 @@ dependencies:
   canvas: 2.6.1
   chalk: 4.1.0
   common-tags: 1.8.0
-  discord-giveaways: 4.4.3
+  crypto: 1.0.1
   discord.js: 12.5.1
   discord.js-commando: 0.12.2
   discord.js-pagination: 1.0.3
@@ -12,18 +12,20 @@ dependencies:
   hurriyet: 0.3.1
   isgd: 1.1.3
   jimp: 0.16.1
+  join: 3.0.0
   math-expression-evaluator: 1.3.7
   moment: 2.29.1
   moment-duration-format: 2.3.2
   node-superfetch: 0.1.11
   quick.db: 7.1.3
+  request: 2.88.2
   rollup-plugin-cjs-es: 1.0.1
   simple-youtube-api: 5.2.1
   snekfetch: 4.0.4
   tcmb-doviz: 1.0.6
   weather-js: 2.0.0
   yt-search: 2.7.3
-  ytdl-core: 4.4.5
+  ytdl-core: 4.5.0
   ytdl-core-discord: 1.2.5
 packages:
   /@babel/runtime/7.12.5:
@@ -903,6 +905,11 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /crypto/1.0.1:
+    deprecated: 'This package is no longer supported. It''s now a built-in Node module. If you''ve depended on crypto, you should switch to the one that''s built-in.'
+    dev: false
+    resolution:
+      integrity: sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig==
   /css-select/1.2.0:
     dependencies:
       boolbase: 1.0.0
@@ -979,12 +986,6 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
-  /deepmerge/4.2.2:
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
   /delayed-stream/1.0.0:
     dev: false
     engines:
@@ -1018,12 +1019,6 @@ packages:
       node: '>=0.3.1'
     resolution:
       integrity: sha1-yc45Okt8vQsFinJck98pkCeGj/k=
-  /discord-giveaways/4.4.3:
-    dependencies:
-      deepmerge: 4.2.2
-    dev: false
-    resolution:
-      integrity: sha512-/IgXWLA6p0bk348/xIrXsHeNQGZW5688fC6DTz5whC5hEAebjoY0usOSq/74iCQ99oQfIHsl6gx4j06UZcIc1w==
   /discord.js-commando/0.12.2:
     dependencies:
       common-tags: 1.8.0
@@ -1335,7 +1330,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.28
+      mime-types: 2.1.29
     dev: false
     engines:
       node: '>= 0.12'
@@ -1662,6 +1657,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-+EKVxbR36Td7Hfd23wKGIeEyHbxShZDX6L8uJkgVW3ESA9GiTEPK08tG1XI2r/0w5Ch0HyJF5kPqF9K7EmGjaw==
+  /join/3.0.0:
+    dev: false
+    engines:
+      ender: '>= 0.5.0'
+    resolution:
+      integrity: sha1-z7hB23sKHf8TKgelgtvAbCFklxM=
   /jpeg-js/0.4.2:
     dev: false
     resolution:
@@ -1886,6 +1887,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-CkqLUxUk15hofLoLyljJSrukZi8mAtgd+yE5uO4tqRZsdsAJKv0O+rFMhVDRJgozy+yG6md5KwuXhD4ocIoP+w==
+  /mime-db/1.46.0:
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-svXaP8UQRZ5K7or+ZmfNhg2xX3yKDMUzqadsSqi4NCH/KomcH75MAMYAGVlvXn4+b/xOPhS3I2uHKRUzvjY7BQ==
   /mime-types/2.1.25:
     dependencies:
       mime-db: 1.42.0
@@ -1902,6 +1909,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-0TO2yJ5YHYr7M2zzT7gDU1tbwHxEUWBCLt0lscSNpcdAfFyJOVEpRYNS7EXVcTLNj/25QO8gulHC5JtTzSE2UQ==
+  /mime-types/2.1.29:
+    dependencies:
+      mime-db: 1.46.0
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-Y/jMt/S5sR9OaqteJtslsFZKWOIIqMACsJSiHghlCAyhf7jfVYjKBmLiX8OgpWeW+fjJ2b+Az69aPFPkUOY6xQ==
   /mime/1.6.0:
     dev: false
     engines:
@@ -2454,7 +2469,7 @@ packages:
       is-typedarray: 1.0.0
       isstream: 0.1.2
       json-stringify-safe: 5.0.1
-      mime-types: 2.1.28
+      mime-types: 2.1.29
       oauth-sign: 0.9.0
       performance-now: 2.1.0
       qs: 6.5.2
@@ -2970,6 +2985,16 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-/ugilIF2PskxNfQgkYZ/esvkp+fiB/mOPdIExW/En+1QTbq5VeTVqgf2hETTen0Co2lHMM4eRxPaczDHTmkb7A==
+  /ytdl-core/4.5.0:
+    dependencies:
+      m3u8stream: 0.8.3
+      miniget: 4.2.0
+      sax: 1.2.4
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-e8r6skrakWNixsVlNPBMoRM1HrdW1swE97If9nenDUjF65uogYk4DvxIuqlmqRfBWKe+6aIZwqedNxUU9XLYJA==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -2978,7 +3003,7 @@ specifiers:
   canvas: ^2.6.1
   chalk: ^4.1.0
   common-tags: ^1.8.0
-  discord-giveaways: ^4.4.3
+  crypto: ^1.0.1
   discord.js: ^12.5.1
   discord.js-commando: ^0.12.1
   discord.js-pagination: ^1.0.1
@@ -2987,16 +3012,18 @@ specifiers:
   hurriyet: ^0.3.1
   isgd: ^1.1.3
   jimp: ^0.16.1
+  join: ^3.0.0
   math-expression-evaluator: ^1.3.7
   moment: ^2.29.1
   moment-duration-format: ^2.3.2
   node-superfetch: ^0.1.11
   quick.db: ^7.1.2
+  request: ^2.88.2
   rollup-plugin-cjs-es: ^1.0.1
   simple-youtube-api: ^5.2.1
   snekfetch: ^4.0.4
   tcmb-doviz: ^1.0.6
   weather-js: ^2.0.0
   yt-search: ^2.7.1
-  ytdl-core: ^4.4.4
+  ytdl-core: ^4.4.5
   ytdl-core-discord: ^1.2.5
