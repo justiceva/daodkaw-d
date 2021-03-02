@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         new Discord.MessageEmbed()
           .setColor("BLACK")
           .setDescription(
-            "<a:unlem:816363628282249266> **Yanlış Kullanım** \n Doğru Kullanım: \`\``"
+            `<a:unlem:816363628282249266> **Yanlış Kullanım** \n Doğru Kullanım: \`sn!trumptweet [Yazı]\``
           )
       );
       return;
@@ -15,15 +15,15 @@ module.exports.run = async (bot, message, args) => {
     let url = `https://nekobot.xyz/api/imagegen?type=trumptweet&text=${args.join(
       " "
     )}`;
-    
+    let prefix = process.env.prefix;
        let user = message.mentions.users.first() || message.author;
 
   let userinfo = {};
   userinfo.avatar = user.avatarURL();
     get(url).then(res => {
+      message.channel.send(`<@${message.author.id}>`)
       const embed = new Discord.MessageEmbed()
         .setColor("BLACK")
-        .setAuthor("Trump diyorki..")
         .setImage(res.body.message)
       .setFooter(
       `${message.author.username} tarafından istendi.`,
@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
     )
 
       setTimeout(() => {
-        return message.channel.send(embed);
+        message.channel.send(embed);
       }, 100);
     });
   } catch (err) {

@@ -23,14 +23,23 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}mcödül \` Yazdıgınız Cümleyi Minecraft Ödüle Aktarır.`,
       true
     )
-  .addField(
+    .addField(
       `__TKM__`,
       `<a:black_tik:815280959397691422> \`${prefix}tkm [Seçtigin] \` Botla Taş , Kağıt Ve Makas Oynarsın.`,
       true
     )
-  .addField(
+    .addField(
       `__Kasa Aç__`,
       `<a:black_tik:815280959397691422> \`${prefix}kasaaç \` CS:GO Kasası Açar.`,
+      true
+    )
+    .addField(
+      `__Trump Tweet__`,
+      `<a:black_tik:815280959397691422> \`${prefix}trumptweet [Yazı] \` Trump Yazı Yazdırırsın.`,
+      true
+    ) .addField(
+      `__Zar At__`,
+      `<a:black_tik:815280959397691422> \`${prefix}zarat \` 1 '.`,
       true
     )
     .addField(
