@@ -728,6 +728,7 @@ const xpfile = require("./xp.json");
 client.on("message",function(message) {
   let kanal = db.fetch(`seviyekanal_${message.guild.id}`)
   let mesaj = db.fetch(`seviyemsj_${message.guild.id}`)
+   let hm = db.fetch(`seviyeacik_${message.guild.id}`)
   if(message.author.bot) return;
   var addXP = Math.floor(Math.random() * 8) + 3
   
@@ -737,6 +738,11 @@ client.on("message",function(message) {
         level: 1,
         reqxp: 100
       }
+  
+  if (!hm) return;
+  if (message.content.startsWith(prefix)) return;
+  if (message.author.bot) return;
+  
   
        fs.writeFile("./xp.json",JSON.stringify(xpfile), function(err){
          if(err) console.log(err)
