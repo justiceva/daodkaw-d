@@ -1,6 +1,4 @@
 const Discord = require("discord.js");
-let prefix = process.env.prefix;
-
 const rps = ["makas", "taş", "kağıt"],
   rpsF = (userAns, botAns) => {
     let choice = userAns,
@@ -62,21 +60,21 @@ exports.run = async (client, msg, args) => {
 
   if (result === "won") {
     answer =
-      ":trophy: Başarılı, sen **Kazandın** :trophy: \nSenin Seçtiği: `" +
+      "<a:tac:816356436333953134> Başarılı, sen **__Kazandın__** <a:tac:816356436333953134> \nSenin Seçtiği: `" +
       choice +
       "` | Bot's Seçtiği: `" +
       botChoice +
       "`";
   } else if (result === "lost") {
     answer =
-      ":x: Bidakine **Kaybetin Dostum** :x: \nSenin Seçtiğin: `" +
+      "<a:hayir:815534736725901322> Bidakine **__Kaybetin Dostum__** <a:hayir:815534736725901322> \nSenin Seçtiğin: `" +
       choice +
       "` | Bot's Seçtiği: `" +
       botChoice +
       "`";
   } else if (result === "draw") {
     answer =
-      ":neutral_face: It's a **Berabere** :neutral_face:\nSenin Seçimin: `" +
+      "<a:sonsuz:81635682975088646> It's a **__Berabere__** <a:sonsuz:81635682975088646> \nSenin Seçimin: `" +
       choice +
       "` | Bot's Seçimi: `" +
       botChoice +
