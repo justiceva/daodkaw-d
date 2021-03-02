@@ -37,9 +37,25 @@ exports.run = async (client, message) => {
       `__Trump Tweet__`,
       `<a:black_tik:815280959397691422> \`${prefix}trumptweet [Yazı] \` Trump Yazı Yazdırırsın.`,
       true
-    ) .addField(
+    )
+    .addField(
       `__Zar At__`,
-      `<a:black_tik:815280959397691422> \`${prefix}zarat \` 1 '.`,
+      `<a:black_tik:815280959397691422> \`${prefix}zarat \` 1 'den 5 kadar Zar Atar.`,
+      true
+    )
+  .addField(
+      `__Deste Aç__`,
+      `<a:black_tik:815280959397691422> \`${prefix}desteaç \` Zula Deste Kasası Açar.`,
+      true
+    )
+   .addField(
+      `__Minecraft Skin__`,
+      `<a:black_tik:815280959397691422> \`${prefix}mcskin \` Minecraft Skini Arar.`,
+      true
+    )
+   .addField(
+      `__Ata Sözü__`,
+      `<a:black_tik:815280959397691422> \`${prefix}atasözü \` Ata Sözü Söyler.`,
       true
     )
     .addField(
