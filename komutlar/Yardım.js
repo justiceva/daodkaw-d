@@ -34,7 +34,7 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Eğlence Komutları__`,
+      `__<a:online:815519562044801036> Eğlence Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}eğlence\`  `,
       true
     )
