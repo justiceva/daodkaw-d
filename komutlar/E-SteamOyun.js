@@ -5,6 +5,9 @@ var provider = new steam.SteamProvider();
 let prefix = process.env.prefix;
 
 exports.run = (client, message, args) => {
+  let user = message.mentions.users.first() || message.author;
+  let userinfo = {};
+  userinfo.avatar = user.avatarURL();
   let game = args[0];
   let steampng =
     "https://cdn.discordapp.com/attachments/458004691402489856/470344660364034049/steam.png";
@@ -27,12 +30,16 @@ exports.run = (client, message, args) => {
         .setThumbnail(results.otherData.imageUrl)
         .addField("Türleri", results.genres)
         .addField(
-          "Fiyati",
-          `Nolmal Fiyat **${results.priceData.initialPrice}** TL
+          "<a:kredi:816345145501810698> Fiyati",
+          `Normal Fiyat **${results.priceData.initialPrice}** TL
 İndirimli Fiyat **${results.priceData.finalPrice}** TL`,
           true
         )
-        .addField("Platformlar", results.otherData.platforms, true)
+        .addField(
+          "<:windows10:816345167782871060> Platformlar",
+          results.otherData.platforms,
+          true
+        )
         .addField("Metacritic Puanı", results.otherData.metacriticScore, true)
         .addField("Etiketleri", results.otherData.features, true)
         .addField("Geliştiricileri", results.otherData.developer, true)
@@ -42,10 +49,6 @@ exports.run = (client, message, args) => {
           `${message.author.username} tarafından istendi.`,
           userinfo.avatar
         );
-      let user = message.mentions.users.first() || message.author;
-
-      let userinfo = {};
-      userinfo.avatar = user.avatarURL();
       message.channel.send(embed).catch(e => {
         console.log(e);
         message.reply("Hata Olustu Yada `" + game + "` Adlı Oyun Bulunamadı");
