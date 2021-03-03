@@ -33,14 +33,20 @@ exports.run = async (client, message, args) => {
     db.set(`${message.guild.id}_otorol`, rol.id);
     message.channel.send( new Discord.MessageEmbed()
         .setColor("BLACK")
-        .setDescription(`Otorol başarılı bir şekilde ${rol} olarak ayarlandı`)
+        .setDescription(`<a:evet:815534728493006858> | Rol Başarılı Bir Şekilde ${rol} Olarak ayarlandı`)
         );
   } else if (args[0] == "rol-sıfırla") {
     if (!db.has(`${message.guild.id}_otorol`))
-      return message.channel.send("Zaten otorol ayarlanmamış");
+      return message.channel.send(new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(`<a:kirmiziyildiz:815283970820145213> | Zaten Otorol Ayarlanmamış.`)
+                                  );
     else {
       db.delete(`${message.guild.id}_otorol`);
-      message.channel.send("Otorol başarılı bir şekilde sıfırlandı");
+      message.channel.send(new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(`<a:evet:815534728493006858> | Otorol Başarılı Bir Şekilde Sıfırlandı`)
+                           );
     }
   } else if (args[0] === "kanal-ayarla") {
     var kanal = message.mentions.channels.first();
