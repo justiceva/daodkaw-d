@@ -57,7 +57,7 @@ module.exports.run = async (bot, message, args) => {
                         : "**Yanlış Harf!**"
                     }
                          **Kelime:**    \`${display.join(" ")}\`
-                    **Yanlış Harfler:** ${yanlış.join(", ") || "Yok"}
+                         **Yanlış Harfler:** ${yanlış.join(", ") || "Yok"} **Kalan Hak:** ${point}
                     \`\`\`
                     _________
                     |    |
@@ -83,7 +83,11 @@ module.exports.run = async (bot, message, args) => {
         time: 300000
       });
       if (!guess.size) {
-        await message.channel.send("Zamanın doldu!");
+        await message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(`<@${message.author.id}> | Zamanın doldu.`)
+        );
         break;
       }
       const choice = guess.first().content.toLowerCase();
@@ -106,11 +110,21 @@ module.exports.run = async (bot, message, args) => {
     }
     oyndurum.delete(message.channel.id);
     if (cevap.length === confirmation.length || tahmin)
-      return message.channel.send(`**Tebrikler kelimeyi buldun! **${cevap}!`);
-    return message.channel.send(`Maalesef bilemedin kelime bu: **${cevap}**`);
+      return message.channel.send(
+        new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setDescription(`<@${message.author.id}> | __Tebrikler kelimeyi buldun.__ **${cevap}**`)
+      );
+    return message.channel.send( new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setDescription(`<@${message.author.id}> | __Maalesef bilemedin kelime bu.__ **${cevap}**`)
+          );
   } catch (err) {
     oyndurum.delete(message.channel.id);
-    return message.reply(`Olamaz! Bir Hata Verdi: \`${err.message}\``);
+    return message.channel.send( new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setDescription(`<@${message.author.id}> | __Olamaz Bir Hata Verdi.__ \`${err.message}\``)
+                                );
   }
 };
 exports.conf = {
