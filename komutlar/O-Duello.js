@@ -171,7 +171,7 @@ exports.run = async (client, message, args) => {
           new Discord.MessageEmbed()
             .setColor("BLACK")
             .setDescription(
-              `<@${message.author.id}>  |Ne yapmak istediğini anlamadım.`
+              `<@${message.author.id}> | Ne yapmak istediğini anlamadım.`
             )
         );
       }

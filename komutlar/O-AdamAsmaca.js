@@ -57,7 +57,7 @@ module.exports.run = async (bot, message, args) => {
                         : "**Yanlış Harf!**"
                     }
                          **Kelime:**    \`${display.join(" ")}\`
-                         **Yanlış Harfler:** ${yanlış.join(", ") || "Yok"} **Kalan Hak:** ${point}
+                         **Yanlış Harfler:** \`${yanlış.join(", ") || "Yok"}\` **Kalan Hak:** \`${point}\`
                     \`\`\`
                     _________
                     |    |
