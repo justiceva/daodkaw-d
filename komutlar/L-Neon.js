@@ -2,6 +2,12 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
   const yazi = args.slice(0).join('+'); 
+  let user = message.mentions.users.first() || message.author;
+
+  let userinfo = {};
+  userinfo.avatar = user.avatarURL();
+
+
 
   if(!yazi) return message.channel.send(new Discord.MessageEmbed()
         .setColor("BLACK")
@@ -14,10 +20,13 @@ exports.run = async (client, message, args) => {
 
   
   const narcosembed = new Discord.MessageEmbed()
-  .setTitle("Logo")
-  .setColor("RANDOM")
+  .setTitle("Neon Logo")
+  .setColor("BLACK")
   .setImage(linqo)
-  .setFooter('neonlu Logo Oluşturuldu')
+  .setFooter(
+      `${message.author.username} tarafından istendigi. Neon Logo`,
+      userinfo.avatar
+    );
   message.channel.send(narcosembed)
 }
 exports.conf = {

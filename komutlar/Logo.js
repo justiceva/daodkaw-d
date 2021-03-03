@@ -33,9 +33,14 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}elmas [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
       true
     )
-  .addField(
+    .addField(
       `__Odun Logo__`,
       `<a:black_tik:815280959397691422> \`${prefix}odun [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
+      true
+    )
+    .addField(
+      `__Neon Logo__`,
+      `<a:black_tik:815280959397691422> \`${prefix}neon [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
       true
     )
     .addField(

@@ -49,7 +49,7 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Logo Komutları__`,
+      `__<a:online:815519562044801036> Logo Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}logo\` `,
       true
     )
