@@ -8,38 +8,38 @@ exports.run = async (client, message) => {
     .setTitle(``)
     .setColor(`BLACK`)
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/814946376894513163/815870054843416576/3caed152951498ef3ff31ea94cb55f93.png"
+      "https://cdn.discordapp.com/attachments/814942471792361522/816656849310318592/3caed152951498ef3ff31ea94cb55f93.png"
     )
     .setDescription(
       `<a:kirmiziyildiz:815283970820145213> ShadowRise Network Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
-      `__<a:online:815519562044801036> Genel Komutlar__`,
+      `__Genel Komutlar__`,
       `<a:black_tik:815280959397691422> \`${prefix}genel\``,
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Moderasyon Komutları__`,
+      `__Moderasyon Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}ayarlar\` `,
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Sunucu Koruma__`,
+      `__Sunucu Koruma__`,
       `<a:black_tik:815280959397691422> \`${prefix}koruma\`  `,
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Sunucu Ayarlar__`,
+      `__Sunucu Ayarlar__`,
       `<a:black_tik:815280959397691422> \`${prefix}sunucu\` `,
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Eğlence Komutları__`,
+      `__Eğlence Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}eğlence\`  `,
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Kullanıcı Komutları__`,
+      `__Kullanıcı Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}kullanıcı\` `,
       true
     )
@@ -49,12 +49,12 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Logo Komutları__`,
+      `__Logo Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}logo\` `,
       true
     )
     .addField(
-      `__<a:online:815519562044801036> Eklenti Komutları__`,
+      `__Eklenti Komutları__`,
       `<a:black_tik:815280959397691422> \`${prefix}eklenti\``,
       true
     )

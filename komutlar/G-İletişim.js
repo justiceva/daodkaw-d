@@ -21,7 +21,7 @@ exports.run = async (client, message) => {
     )
 
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/814946376894513163/815870054843416576/3caed152951498ef3ff31ea94cb55f93.png"
+      "https://cdn.discordapp.com/attachments/814942471792361522/816656849310318592/3caed152951498ef3ff31ea94cb55f93.png"
     );
 
   return message.channel.send(fynxcode);
