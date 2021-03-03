@@ -24,9 +24,21 @@ exports.run = async (client, message, args) => {
         )
     );
   if (opponent.id === message.author.id)
-    return message.reply("Kendin ile düello atamazsın!");
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `<@${message.author.id}> | Kendin ile düello atamazsın!`
+        )
+    );
   if (this.fighting.has(message.channel.id))
-    return message.reply("Kanal başına sadece bir düello meydana gelebilir.");
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `<@${message.author.id}> | Kanal başına sadece bir düello meydana gelebilir.`
+        )
+    );
   this.fighting.add(message.channel.id);
   try {
     if (!opponent.bot) {
@@ -72,11 +84,14 @@ exports.run = async (client, message, args) => {
       let choice;
       if (!opponent.bot || (opponent.bot && userTurn)) {
         await message.channel.send(
-    .setFooter(
-          new Discord.MessageEmbed().setColor("BLACK") .setAuthor(`Shadow Network Düello`, client.user.avatarURL())
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setTimestamp()
+            .setFooter(`ShadowRise Network Farkı`)
+            .setAuthor(`Shadow Network Düello`, client.user.avatarURL())
             .setDescription(stripIndents`
 						**${user}, ne yapmak istersin?** \n \`saldır\`, \`savun\`, \`ultra güç\`, veya \`kaç\`
-            \n **${message.author.username}**: ${userHP} <a:oyunkalp:816645455542616114> | **${opponent.username}**: ${oppoHP} <a:oyunkalp:816645455542616114>
+            **${message.author.username}**: ${userHP} <a:oyunkalp:816645455542616114> | **${opponent.username}**: ${oppoHP} <a:oyunkalp:816645455542616114>
             `)
         );
         const filter = res =>
@@ -89,7 +104,13 @@ exports.run = async (client, message, args) => {
           time: 30000
         });
         if (!turn.size) {
-          await message.reply(`Üzgünüm ama, süre doldu!`);
+          await message.channel.send(
+            new Discord.MessageEmbed()
+              .setColor("BLACK")
+              .setDescription(
+                `<@${message.author.id}> | Üzgünüm ama, süre doldu!`
+              )
+          );
           reset();
           continue;
         }
@@ -100,12 +121,18 @@ exports.run = async (client, message, args) => {
       }
       if (choice === "saldır") {
         const damage = Math.floor(Math.random() * (guard ? 10 : 100)) + 1;
-        await message.channel.send(`${user}, **${damage}** hasar vurdu!`);
+        await message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(`${user}, **${damage}** hasar vurdu!`)
+        );
         dealDamage(damage);
         reset();
       } else if (choice === "savun") {
         await message.channel.send(
-          `${user}, kendisini süper kalkan ile savundu!`
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(`${user}, kendisini süper kalkan ile savundu!`)
         );
         guard = true;
         reset(false);
@@ -114,27 +141,49 @@ exports.run = async (client, message, args) => {
         if (!miss) {
           const damage = randomRange(100, guard ? 150 : 300);
           await message.channel.send(
-            `${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterki miktarda topladın ve **${damage}** hasar vurdun!!`
+            new Discord.MessageEmbed()
+              .setColor("BLACK")
+              .setDescription(
+                `${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterki miktarda topladın ve **${damage}** hasar vurdun!!`
+              )
           );
           dealDamage(damage);
         } else {
           await message.channel.send(
-            `${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterli miktarda toplayamadığın için ulta güç kullanamadın!`
+            new Discord.MessageEmbed()
+              .setColor("BLACK")
+              .setDescription(
+                `${user}, Çoook uzak galaksilerden gelen ultra sonik enerjiyi yeterli miktarda toplayamadığın için ulta güç kullanamadın!`
+              )
           );
         }
         reset();
       } else if (choice === "kaç") {
-        await message.channel.send(`${user}, kaçtı! Korkak!`);
+        await message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(`${user}, kaçtı! Korkak!`)
+        );
         forfeit();
         break;
       } else {
-        await message.reply("Ne yapmak istediğini anlamadım.");
+        await message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(
+              `<@${message.author.id}>  |Ne yapmak istediğini anlamadım.`
+            )
+        );
       }
     }
     this.fighting.delete(message.channel.id);
     const winner = userHP > oppoHP ? message.author : opponent;
     return message.channel.send(
-      `Oyun bitti! Tebrikler, **${winner}** kazandı! \n**${message.author.username}**: ${userHP} :heartpulse: \n**${opponent.username}**: ${oppoHP} :heartpulse:`
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `Oyun bitti! Tebrikler, **${winner}** kazandı! \n**${message.author.username}**: ${userHP} <a:oyunkalp:816645455542616114> \n**${opponent.username}**: ${oppoHP} <a:oyunkalp:816645455542616114>`
+        )
     );
   } catch (err) {
     this.fighting.delete(message.channel.id);
