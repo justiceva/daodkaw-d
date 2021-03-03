@@ -75,7 +75,11 @@ exports.run = async (client, message, args) => {
     else {
       db.set(`${message.guild.id}_otokanal`, kanal.id);
       message.channel.send(
-        `Otorol kanal başarılı bir şekilde ${kanal} olarak ayarlandı`
+        new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setDescription(
+        `<a:evet:815534728493006858> | OtoRol Kanal Başarılı Bir Şekilde ${kanal} Olarak Ayarlandı`
+            )
       );
     }
   } else if (args[0] === "kanal-sıfırla") {
