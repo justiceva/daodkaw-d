@@ -10,11 +10,19 @@ exports.run = async (client, message, args) => {
     return message.channel.send(
       new Discord.MessageEmbed()
         .setColor("BLACK")
-        .setDescription(`<@${message.author.id}> | Oyunu oynamak istediğiniz üyeyi etiketleyiniz.`)
+        .setDescription(
+          `<a:unlem:816363628282249266> **Yanlış Oynanış** \n <@${message.author.id}> | Oyunu oynamak istediğiniz üyeyi etiketleyiniz.`
+        )
     );
 
-  if (opponent.bot)  return message.channel.send(
-      new Discord.MessageEmbed()  .setColor("BLACK") .setDescription(`Botlar ile oynayamazsın!`))
+  if (opponent.bot)
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `<a:unlem:816363628282249266> **Yanlış Oynanış** \n Botlarla bu oyunu oynayamazsınız.`
+        )
+    );
   if (opponent.id === message.author.id)
     return message.reply("Kendin ile düello atamazsın!");
   if (this.fighting.has(message.channel.id))
@@ -23,12 +31,23 @@ exports.run = async (client, message, args) => {
   try {
     if (!opponent.bot) {
       await message.channel.send(
-        `${opponent}, düello isteği geldi. Düello'yu kabul ediyor musun? (\`evet\` veya \`hayır\` olarak cevap veriniz.)`
+        new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setTitle("Düello İsteği Gönderildi")
+          .setDescription(
+            `**Düello isteğini kabul ediyor musunuz?** \n _Düello isteğini kabul etmek için_ \`evet\`, reddetmek için \`hayır\` yazınız. \n __Düello Kabul Etmesi Gereken__ ${opponent}`
+          )
       );
+
       const verification = await verify(message.channel, opponent);
       if (!verification) {
         this.fighting.delete(message.channel.id);
-        return message.channel.send(`Düello kabul edilmedi...`);
+        return message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setTitle(`Shadow Network Düello`, client.user.avatarURL())
+            .setDescription(`Görünüşe göre oyun isteği kabul edilmedi..`)
+        );
       }
     }
     let userHP = 500;
