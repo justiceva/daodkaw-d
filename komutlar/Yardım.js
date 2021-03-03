@@ -49,8 +49,8 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Çerçeve Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}çerçeve\` `,
+      `__Logo Komutları__`,
+      `<a:black_tik:815280959397691422> \`${prefix}logo\` `,
       true
     )
     .addField(
