@@ -33,6 +33,11 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}elmas [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
       true
     )
+  .addField(
+      `__Odun Logo__`,
+      `<a:black_tik:815280959397691422> \`${prefix}odun [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:like:815282443086725151>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:like:815282443086725151> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:like:815282443086725151> \`${prefix}siteler\` | ShadowRise Network Sitelerini Görürsün`
