@@ -45,7 +45,7 @@ exports.run = async (client, message, args) => {
         return message.channel.send(
           new Discord.MessageEmbed()
             .setColor("BLACK")
-            .setTitle(`Shadow Network Düello`, client.user.avatarURL())
+            .setAuthor(`Shadow Network Düello`, client.user.avatarURL())
             .setDescription(`Görünüşe göre oyun isteği kabul edilmedi..`)
         );
       }
@@ -71,11 +71,14 @@ exports.run = async (client, message, args) => {
       const user = userTurn ? message.author : opponent;
       let choice;
       if (!opponent.bot || (opponent.bot && userTurn)) {
-        await message.channel.send(stripIndents`
-						${user}, ne yapmak istersin? \`saldır\`, \`savun\`, \`ultra güç\`, veya \`kaç\`?
-						**${message.author.username}**: ${userHP} :heartpulse:
-						**${opponent.username}**: ${oppoHP} :heartpulse:
-					`);
+        await message.channel.send(
+    .setFooter(
+          new Discord.MessageEmbed().setColor("BLACK") .setAuthor(`Shadow Network Düello`, client.user.avatarURL())
+            .setDescription(stripIndents`
+						**${user}, ne yapmak istersin?** \n \`saldır\`, \`savun\`, \`ultra güç\`, veya \`kaç\`
+            \n **${message.author.username}**: ${userHP} <a:oyunkalp:816645455542616114> | **${opponent.username}**: ${oppoHP} <a:oyunkalp:816645455542616114>
+            `)
+        );
         const filter = res =>
           res.author.id === user.id &&
           ["saldır", "savun", "ultra güç", "kaç"].includes(
