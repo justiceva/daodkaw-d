@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const { stripIndents } = require("common-tags");
-const { randomRange, verify } = require("../util/Util.js");
+const { randomRange, verify } = require("../ayarlar/Util.js");
 
 exports.run = async (client, message, args) => {
   this.fighting = new Set();
