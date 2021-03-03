@@ -796,7 +796,7 @@ client.on("ready", () => {
       Font = Canvas.Font,
       path = require("path");
   
-    var randomMsg = ["Sunucudan Ayrıldı."];
+    var randomMsg = ["Sunucudan Ayrıldı. | :outbox_tray: "];
     var randomMsg_integer =
       randomMsg[Math.floor(Math.random() * randomMsg.length)];
   
@@ -856,7 +856,7 @@ client.on("ready", () => {
       Font = Canvas.Font,
       path = require("path");
   
-    var randomMsg = [`Sunucuya Katıldı.`];
+    var randomMsg = [`Sunucuya Katıldı. | :inbox_tray:`];
     var randomMsg_integer =
       randomMsg[Math.floor(Math.random() * randomMsg.length)];
   
