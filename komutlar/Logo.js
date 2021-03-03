@@ -14,8 +14,13 @@ exports.run = async (client, message) => {
       `<a:kirmiziyildiz:815283970820145213> ShadowRise Network Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
-      `__Steam Oyun__`,
-      `<a:black_tik:815280959397691422> \`${prefix}steamoyun [Oyun]\` Yazdıgınız Oyunun Steamdaki Bilgileri Verir.`,
+      `__Altın Logo__`,
+      `<a:black_tik:815280959397691422> \`${prefix}altın [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
+      true
+    )
+  .addField(
+      `__Alev Logo__`,
+      `<a:black_tik:815280959397691422> \`${prefix}alev [Yazı]\` Yazdıgınız Yazıyı Logoya Yansıtır.`,
       true
     )
     .addField(
