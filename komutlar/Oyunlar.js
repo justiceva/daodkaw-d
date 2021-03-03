@@ -18,6 +18,11 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}düello [@Kişi]\` Etiketlediğin Kişiyle Düello Atarsın.`,
       true
     )
+     .addField(
+      `__Adam Asmaca__`,
+      `<a:black_tik:815280959397691422> \`${prefix}adamasmaca\` Botla Adam Asmaca Oynar.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:like:815282443086725151>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:like:815282443086725151> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:like:815282443086725151> \`${prefix}siteler\` | ShadowRise Network Sitelerini Görürsün`
