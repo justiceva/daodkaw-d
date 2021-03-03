@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<title>DAS - The most powerful and simple bot for Discord</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
+<style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');body,html{height:100%;margin:0;scroll-behavior:smooth}body{font-family:muli;min-height:100%;position:relative;background:#131b21}.navbar-dark .navbar-nav .nav-link{text-transform:lowercase;font-family:muli;font-weight:bold;letter-spacing:-0.5px;margin-left:20px;transition:0.2s}.nav-link{color:#839bad!important;transition:0.2s}.nav-link:hover{color:#fff!important}.pt-15px{padding-top:15px}.pt-50px{padding-top:50px}.pt-100px{padding-top:100px}.pt-250px{padding-top:250px}.home-cls .pagina{padding-top:140px}.dusty-grdtext{background:-webkit-linear-gradient(90deg, #6850ff 0%, #a750ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.buton{padding:14px;background:linear-gradient(90deg, #6850ff 0%, #a750ff 100%);border-radius:8px;text-decoration:none!important;color:#fff;font-size:17px;font-weight:700;transition:0.5s}.buton:hover{color:#fff;background:linear-gradient(90deg, #a750ff 0%, #6850ff 100%);box-shadow:0 5px 30px -9px rgba(167,80,255,0.28);transition:0.5s}.hideee{margin-left:150px}.avatarbot{height:120px;width:120px;border-radius:100%;margin-right:200px;animation:action 1s infinite alternate}.hideee i{margin-top:-150px;margin-left:200px;animation:action 1s infinite alternate}a{color:#ffff}a:hover{transition:color 0.3s ease;color:rgb(201, 195, 195);text-decoration:none}ul{list-style-type:none}@-webkit-keyframes action{0%{transform:translateY(0)}100%{transform:translateY(-15px)}}@media screen and (max-width: 760px){.hideee{display:none!important}.home-cls .pagina{padding-top:25px}}.item{background-color:rgba(0,0,0,0.15);padding:20px;border-radius:15px}.item i{font-size:23px}.item h3{font-size:17px;font-weight:bold;color:#fff;letter-spacing:0.5px;margin-top:-24px;margin-left:30px}.item p{color:#839bad;font-size:15px;letter-spacing:-0.5px}@media(max-width: 730px){.mt-mobile-3{margin-top:3%}.mt-mobile-5{margin-top:5%}.text-mobile-center{text-align:center}}
+        
+        </style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:title" content="DAS - The multi-purpose Discord bot.">
+<meta property="og:url" content="https://dasbot.org">
+<meta property="og:site_name" content="DAS - The multi-purpose Discord bot.">
+<meta property="og:locale" content="en_EN">
+<meta property="og:description" content="DAS is a multi-purpose Discord bot made with discord.js and used for listening to music, moderation and administration.">
+<meta name="description" content="DAS is a multi-purpose Discord bot made with discord.js and used for listening to music, moderation and administration.">
+<meta name="keywords" content="dasbot, bot discord, music bot discord, music discord, rythm, mee6, dyno, dragosdas, mrtunne, dasbot.org, das bot, best discord bot, moderation bot discord, discordapp.com bot, discord bots, dasbot, boti de discord, verified discord bots">
+<meta property="og:image" content="https://static.dasbot.org/assets/img/avatar.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180858008-1"></script>
+<script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-180858008-1');
+        </script>
+<script async src="https://arc.io/widget.min.js#DNdkmQjL"></script>
+</head>
+<body>
+<div class="home-cls">
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<a class="navbar-brand" href="index.html" style="font-weight: 900;">
+<i class="fa fa-robot dusty-grdtext"></i>
+DAS
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid #bcbcbc;">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://bit.ly/3e73zjP" target="_blank">
+support server
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="commands.html">
+commands
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="pt-100px"></div>
+<div class="text-center text-white">
+<h1 style="font-weight: 800; letter-spacing: -0.5px;">Ready to learn something new about DAS?</h1>
+<h5>We've prepared you this page. Well documented and easy to understand!</h5>
+</div>
+<div class="mt-5 container">
+<div class="alert" style="background: rgba(0,0,0,0.15); border-radius: 15px; color: rgb(201, 195, 195); border: 1px solid #6850ff;"><i class="fas fa-info-circle"></i> Use the prefix <kbd>!</kbd> for all our commands.</div>
+<div class="table-responsive">
+<table class="table table-borderless shadow" style="background: rgba(0,0,0,0.15); border-radius: 15px; color: rgb(201, 195, 195);">
+<thead class="text-center">
+<tr>
+<th>Command</th>
+<th>Category</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">csgo</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">View your CS:GO profile. (or someone else profile)</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/qtwnfew5.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">weather</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Display the weather from a city.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/b9oabuza.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">ask</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Ask the bot about anything.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/605bgf76.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">love</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Calculates the love affinity you have for another person.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/9tfpp34k.png" target="_blank">Preview</a> / <a href="https://am-facut-pe-fortnite.win/tul8kfk6.png" target="_blank">Preview 2</a></td>
+</tr>
+<tr>
+<td style="text-align:center">google</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Search anything using Google.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/fs3u8kmy.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">image</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Search for an image.</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:center">mcskin</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Find a Minecraft Player Skin.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/o2h7zy0o.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">steam</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Steam account details.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/rtudytwh.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">vote</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Vote the bot on top.gg.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/bqmi5hfl.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">fortnite</td>
+<td style="text-align:center">Fun</td>
+<td style="text-align:left">Display someone's stats, the current store, and challenges.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/l95f1z4c.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">ping</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Bot's ping.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/wo7g5qhq.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">serverinfo</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Information about the server.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/9cqa0p2h.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">botinfo</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Information about the bot.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/e68jiuet.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">covid</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Information about COVID-19 cases.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/n8yxskx1.png" target="_blank">Preview</a> / <a href="https://am-facut-pe-fortnite.win/z9bh3dwa.png" target="_blank">Preview 2</a> </td>
+</tr>
+<tr>
+<td style="text-align:center">uptime</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Bot's uptime.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/zehbep4t.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">urban</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Search in the urban dictionary any word.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/bcgqc3t3.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">imdb</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Searches the open movie database for movie information</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/0w8ws821.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">userinfo</td>
+<td style="text-align:center">Info</td>
+<td style="text-align:left">Information about the specified user.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/h9paa89o.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">ban</td>
+<td style="text-align:center">Moderation</td>
+<td style="text-align:left">Ban a member from your server (if you have permission).</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/w0cspsge.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">purge</td>
+<td style="text-align:center">Moderation</td>
+<td style="text-align:left">Clears the chat.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/kcgy27mq.gif" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">kick</td>
+<td style="text-align:center">Moderation</td>
+<td style="text-align:left">Kicks the member.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/4ut5au2z.png" target="_blank">Preview</a> / <a href="https://am-facut-pe-fortnite.win/h4usrjrj.png" target="_blank">Preview 2</a></td>
+</tr>
+<tr>
+<td style="text-align:center">champion</td>
+<td style="text-align:center">LoL</td>
+<td style="text-align:left">Information about a League of Legends champion.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/kddut5sy.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">rotation</td>
+<td style="text-align:center">LoL</td>
+<td style="text-align:left">The current League of Legends champion rotation.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/8x38zf45.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">matches</td>
+<td style="text-align:center">LoL</td>
+<td style="text-align:left">View statistics about the last 3 matches of a summoner.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/td210jjv.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">lastmatch</td>
+<td style="text-align:center">LoL</td>
+<td style="text-align:left">Information about a last match of a summoner.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/cspiwp7a.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">summoner</td>
+<td style="text-align:center">LoL</td>
+<td style="text-align:left">Information about a League of Legends summoner.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/hmgoyl1f.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">loop</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Loops the current queue.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/b62ns9pq.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">leave</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Makes the bot leave the voice channel.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/az5fsejb.gif" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">np</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Displays what the bot is currently playing.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/iikey95i.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">pause</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Makes the bot resume the music currently playing.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/a3hhyyme.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">play</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Put music to the bot.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/fxdjfqzh.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">queue</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Displays what the current queue is.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/cwymnjam.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">skip</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Skips the song currently playing.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/fdbsqfsf.gif" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">volume</td>
+<td style="text-align:center">Music</td>
+<td style="text-align:left">Adjusts the volume of the bot.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/6lw32fay.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">avatar</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">View your Discord avatar. (or someone else avatar)</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/meunm1cd.png" target="_blank">Preview</a> / <a href="https://am-facut-pe-fortnite.win/pmjvi6tu.png" target="_blank">Preview 2</a></td>
+</tr>
+<tr>
+<td style="text-align:center">discrim</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Searches for users with the specified discriminator.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/60g1oa3k.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">dm</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Direct message a specified user as the bot.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/n4b8ejx7.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">game</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Searches Steam for games.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/h303vzaj.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">reminder</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Set a reminder for you with the given time.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/tbdh1pxu.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">screenshot</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Captures a screenshot of a given URL.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/rwwyzy0q.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">wikipedia</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Searches Wikipedia for the specified article.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/yyw8o6pe.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">wallpaper</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Get a ramdom wallpaper.</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/tamh3g0f.png" target="_blank">Preview</a></td>
+</tr>
+<tr>
+<td style="text-align:center">youtube</td>
+<td style="text-align:center">Utility</td>
+<td style="text-align:left">Search information about a youtube channel</td>
+<td style="text-align:left"><a href="https://am-facut-pe-fortnite.win/8ykgw2tz.png" target="_blank">Preview</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="mt-5 p-5" style="background-color: rgba(0, 0, 0, 0.15);">
+<div class="container">
+<div class="row" style="color: #a750ff;">
+<div class="col-md-4 text-mobile-center">
+<img src="https://static.dasbot.org/assets/img/avatar.png" class="img-responsive img-fluid rounded-circle" height="120" width="120" alt="DAS" />
+</div>
+<div class="col-md-4 mt-mobile-5 text-lg-right text-mobile-center">
+<h5><i class="fas fa-gavel"></i> Legal</h5>
+<ul>
+<li><a href="terms-of-service/index.html">Terms and Conditions</a></li>
+<li><a href="privacy-policy/index.html">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="col-md-4 text-lg-right text-mobile-center">
+<h5><i class="fas fa-paper-plane"></i> Contact Us</h5>
+<ul class="text-white">
+<li><img src="https://static.dasbot.org/assets/img/dragos.webp" class="img-fluid img-responsive rounded-circle" width="25" /> DragosDAS#1337</li>
+<li><img src="https://static.dasbot.org/assets/img/mrtunne.webp" class="img-fluid img-responsive rounded-circle" width="25" /> MrTuNNe#7335</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
