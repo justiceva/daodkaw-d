@@ -39,11 +39,6 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Temizle__`,
-      `<a:black_tik:815280959397691422> \`${prefix}temizle [1-100]\` Sayı Kadar Mesaj Siler.`,
-      true
-    )
-    .addField(
       `__Say__`,
       `<a:black_tik:815280959397691422> \`${prefix}say\` Sunucudaki Toplam , Boost ve Sesteki Üye Sayısını Gösterir.`,
       true
