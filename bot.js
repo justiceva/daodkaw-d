@@ -1088,9 +1088,10 @@ client.on("guildMemberAdd", member => {
         "`) \n\n Hesap durumu : **" +
         kontrol +
         "**"
-    ) //codare
+    ) 
     .setTimestamp();
   client.channels.cache.get(kanal).send(codare);
 });
 
 //Güvenlik Son
+
