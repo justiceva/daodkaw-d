@@ -3,7 +3,7 @@ const fs = require("fs");
 
 exports.run = async (client, message, args) => {
   const db = require("quick.db");
-
+  let botadi = process.env.botadi;
   let prefix = process.env.prefix;
   if (!message.member.hasPermission("ADMINISTRATOR"))
     return message.channel.send(
@@ -78,10 +78,15 @@ exports.run = async (client, message, args) => {
 
   db.set(`sayac_${message.guild.id}`, args[0]);
 
-  const embed = new Discord.MessageEmbed().setColor("BLACK").setAuthor(`
+  const embed = new Discord.MessageEmbed()
+    .setColor("BLACK")
+   .setFooter(`${botadi} | Sayaç Ayarlar`, client.user.avatarURL())
+    .setThumbnail(
+      "https://cdn.discordapp.com/emojis/511644642492547084.gif?v=1"
+    ).setAuthor(`
 <a:evet:815534728493006858> | Sayaç Başarıyla Ayarlandı: \`${args[0]}\`
-<:rules:816959237439750155> | Sayaç Kapatmak İsterseniz \`${prefix}sayaç kapat\` yazmanız yeterlidir.
-<:rules:816959237439750155> |Sayaç Kanalı İçin \`${prefix}sayaç-kanal-ayarla #kanal\`
+<:rules:816959237439750155> | Sayaç Kapatmak İsterseniz \`${prefix}sayaç kapat\` Yazmanız Yeterlidir.
+<:rules:816959237439750155> | Sayaç Kanalı İçin \`${prefix}sayaç-kanal-ayarla #kanal\`
 `);
   message.channel.send(embed);
 };
