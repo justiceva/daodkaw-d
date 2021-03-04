@@ -20,15 +20,20 @@ exports.run = async (bot, msg, args) => {
       `<a:black_tik:815280959397691422>  \`${prefix}otorol rol-ayarla [@Rol]\` \n OtoRol Rol Ayarlama `,
       true
     )
-  .addField(
-      `**__OtoRol Rol Sıfırla__** `,
-      `<a:black_tik:815280959397691422>  \`${prefix}otorol rol-sıfırla\` \n OtoRol Rol Ayarlarını Sıfırlar `,
-      true
-    )
-  .addField(
+    .addField(
       `**__OtoRol Kanal Ayarlama__** `,
       `<a:black_tik:815280959397691422>  \`${prefix}otorol kanal-ayarla [#Kanal]\` \n OtoRol Kanal Ayarlama `,
       true
+    )
+    .addField(
+      `**__OtoRol Rol Sıfırla__** `,
+      `<a:black_tik:815280959397691422>  \`${prefix}otorol rol-sıfırla\` \n OtoRol Rol Ayarlarını Sıfırlar `,
+      false
+    )
+    .addField(
+      `**__OtoRol Kanal Sıfırla__** `,
+      `<a:black_tik:815280959397691422>  \`${prefix}otorol kanal-sıfırla\` \n OtoRol Kanal Ayarlarını Sıfırlar `,
+      false
     )
     .addField(
       `__Bilgilendirme__`,
