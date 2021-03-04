@@ -27,7 +27,7 @@ exports.run = async (bot, msg, args) => {
     )
   .addField(
       `**__OtoRol Kanal Ayarlama__** `,
-      `<a:black_tik:815280959397691422>  \`${prefix}otorol rol-ayarla [@Rol]\` \n OtoRol Rol Ayarlama `,
+      `<a:black_tik:815280959397691422>  \`${prefix}otorol kanal-ayarla [#Kanal]\` \n OtoRol Kanal Ayarlama `,
       true
     )
     .addField(
