@@ -22,7 +22,8 @@ exports.run = async (client, message, args) => {
   if (!victim) return message.channel.send(new Discord.MessageEmbed()   .setDescription(`<@${message.author.id}> | Lütfen Birinin ID Sini Yaz`));
   victim = message.guild.member(victim);
   if (!victim)
-    return message.reply("İD Sini Yazdığınız Kişi Sunucuda Bulunmamaktadır.");
+    return message.channel.send(new Discord.MessageEmbed()   .setDescription(`<@${message.author.id}> | ID Sini Yazdığınız Kişi Sunucuda Bulunmamaktadır.`)
+                                );
 
   var num = Number(args[1]);
   if (isNaN(num)) return message.reply("Lütfen Bonus Olacak Sayı Giriniz.");
