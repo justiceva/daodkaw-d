@@ -10,6 +10,26 @@ const db = require("quick.db");
 const queue = new Map();
 const YouTube = require("simple-youtube-api");
 const ytdl = require("ytdl-core");
+require('./invite.js')
+require('events').EventEmitter.prototype._maxListeners = 70;
+require('events').defaultMaxListeners = 70;
+  process.on('warning', function (err) {
+    if ( 'MaxListenersExceededWarning' == err.name ) {
+    process.exit(1); 
+
+    }
+  });
+
+function foo() {
+  return new Promise((resolve, reject) => {
+  return resolve();
+});
+}
+async function foobar() {
+foobar();
+foo().then(() => {}).catch(() => {});
+foobar().catch(console.error);
+}
 
 var prefix = process.env.prefix;
 
