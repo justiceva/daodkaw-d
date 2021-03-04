@@ -83,7 +83,7 @@ exports.run = async (client, message, args) => {
    .setFooter(`${botadi} | Sayaç Ayarlar`, client.user.avatarURL())
     .setThumbnail(
       "https://cdn.discordapp.com/emojis/511644642492547084.gif?v=1"
-    ).setAuthor(`
+    ).setDescription(`
 <a:evet:815534728493006858> | Sayaç Başarıyla Ayarlandı: \`${args[0]}\`
 <:rules:816959237439750155> | Sayaç Kapatmak İsterseniz \`${prefix}sayaç kapat\` Yazmanız Yeterlidir.
 <:rules:816959237439750155> | Sayaç Kanalı İçin \`${prefix}sayaç-kanal-ayarla #kanal\`

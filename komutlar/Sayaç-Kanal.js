@@ -1,14 +1,18 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-var ayarlar = require("../ayarlar.json");
+
 exports.run = async (client, message, args) => {
   let user = message.mentions.users.first() || message.author;
 
   let userinfo = {};
   userinfo.avatar = user.avatarURL();
   if (!message.member.hasPermission("ADMINISTRATOR"))
-    return message.reply(
-      `Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `Bu komutu kullanabilmek için \`Yönetici\` iznine sahip olmalısın!`
+        )
     );
 
   const db = require("quick.db");
@@ -19,29 +23,45 @@ exports.run = async (client, message, args) => {
 
       if (db.has(`sayac_${message.guild.id}`) === true) {
         db.delete(`sayac_${message.guild.id}`);
-        message.channel.send("Sayaç kanalı ve sayaç başarıyla kaldırıldı");
+        message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(
+              `<@${message.author.id}> | <a:evet:815534728493006858> Sayaç kanalı ve sayaç başarıyla kaldırıldı`
+            )
+        );
         return;
       }
 
-      message.channel.send("Sayaç kanalı kaldırıldı.");
+      message.channel.send(
+        new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setDescription(
+            `<:rules:816959237439750155> | Sayaç kanalı kaldırıldı.`
+          )
+      );
       return;
     }
-    message.channel.send(new Discord.MessageEmbed()
-                                .setColor("BLACK")
-    .setDescription(`<@${message.author.id}> | Sayaç Kanalı Ayarlanmamış.`));
+    message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(`<@${message.author.id}> | Sayaç Kanalı Ayarlanmamış.`)
+    );
     return;
   }
 
   let channel =
     message.mentions.channels.first() ||
-    message.guild.channels.find(c => c.name === args.slice(0).join(" "));
-  let prefix = ayarlar.prefix;
+    message.guild.channels.cache.find(c => c.name === args.slice(0).join(" "));
+  let prefix = process.env.prefix;
 
   if (!channel) {
     return message.channel.send(new Discord.MessageEmbed()
                                 .setColor("BLACK")
-    .setDescription(`<@${message.author.id}> | Lütfen Ayarlamak İstediğiniz Kanalı Etiketleyin`)
-                         );
+    .setDescription(
+      `<@${message.author.id}> | Lütfen Ayarlamak İstediğiniz Kanalı Etiketleyin`
+      )
+    );
   }
 
   db.set(`sKanal_${message.guild.id}`, channel.id);

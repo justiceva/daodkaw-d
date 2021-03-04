@@ -984,7 +984,7 @@ client.on("guildMemberRemove", async member => {
       new Discord.MessageEmbed()
         .setColor("BLACK")
         .setDescription(
-          `**${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
+          `__${member.user.tag}__ Sunucudan ayrıldı! \`${db.fetch(
             `sayac_${member.guild.id}`
           )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
             member.guild.memberCount}\` üye kaldı!`
@@ -1002,7 +1002,7 @@ client.on("guildMemberAdd", async member => {
       new Discord.MessageEmbed()
         .setColor("BLACK")
         .setDescription(
-          `**${member.user.tag}** Sunucuya Katıldı :tada:! \`${db.fetch(
+          `:inbox_tray: | __${member.user.tag}__ Sunucuya Katıldı :tada:! \`${db.fetch(
             `sayac_${member.guild.id}`
           )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
             member.guild.memberCount}\` üye kaldı!`
