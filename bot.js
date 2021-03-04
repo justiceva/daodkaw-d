@@ -984,7 +984,7 @@ client.on("guildMemberRemove", async member => {
       new Discord.MessageEmbed()
         .setColor("BLACK")
         .setDescription(
-          `__${member.user.tag}__ Sunucudan ayrıldı! \`${db.fetch(
+          `:outbox_tray: | __${member.user.tag}__ Sunucudan ayrıldı! \`${db.fetch(
             `sayac_${member.guild.id}`
           )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
             member.guild.memberCount}\` üye kaldı!`
