@@ -1,18 +1,27 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const ayarlar = require("../ayarlar.json");
 
 exports.run = async (client, message, args) => {
   const db = require("quick.db");
 
-  let prefix = ayarlar.prefix;
+  let prefix = process.env.prefix;
   if (!message.member.hasPermission("ADMINISTRATOR"))
-    return message.reply(
-      `Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `<@${message.author.id}> | Bu Komutu Kullanabilmek İçin \`Yönetici\` iznine sahip olmalısın!`
+        )
     );
 
   if (!args[0]) {
-    return message.reply("Lütfen ayarlamak istediğiniz sayıyı yazınız");
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `<@${message.author.id}> | Lütfen Ayarlamak İstediğiniz Sayıyı Yazınız`
+        )
+    );
   }
 
   if (args[0] === "kapat") {
@@ -21,36 +30,58 @@ exports.run = async (client, message, args) => {
 
       if (db.has(`sKanal_${message.guild.id}`) === true) {
         db.delete(`sKanal_${message.guild.id}`);
-        message.channel.send("Sayaç kanalı ve sayaç başarıyla kaldırıldı");
+        message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("BLACK")
+            .setDescription(
+              `<a:evet:815534728493006858>  Sayaç Kanalı | Sayaç Başarıyla Kaldırıldı.`
+            )
+        );
         return;
       }
 
-      message.channel.send("Sayaç kaldırıldı.");
+      message.channel.send(
+        new Discord.MessageEmbed()
+          .setColor("BLACK")
+          .setDescription(
+            `<@${message.author.id}> | <a:evet:815534728493006858> Sayaç Başaralı Şekilde Kaldırıldı.`
+          )
+      );
       return;
     }
-    message.channel.send(`Sayaç ayarlanmamış.`);
+    message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(`<@${message.author.id}> | Sayaç Ayarlanmamış.`)
+    );
     return;
   }
 
   if (isNaN(args[0])) {
-    return message.reply("Sadece sayı!");
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(`<@${message.author.id}> | Sadece Sayı!`)
+    );
   }
 
   if (args[0] <= message.guild.memberCount) {
     const embed = new Discord.MessageEmbed();
     return message.channel.send(
-      new Discord.MessageEmbed().setDescription(
-        "Lütfen sunucu sayısından daha yüksek bir değer girin!"
-      )
+      new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(
+          `<@${message.author.id}> | Lütfen __Sunucu Sayısından Daha Yüksek Bir Değer__ Girin!`
+        )
     );
   }
 
   db.set(`sayac_${message.guild.id}`, args[0]);
 
-  const embed = new Discord.MessageEmbed().setTimestamp().setAuthor(`
-Sayaç başarıyla ayarlandı: **${args[0]}**
-Sayaç kapatmak isterseniz **${prefix}sayaç kapat** yazmanız yeterlidir.
-Sayaç kanalı için -sayaç-kanal-ayarla #kanal
+  const embed = new Discord.MessageEmbed().setColor("BLACK").setAuthor(`
+<a:evet:815534728493006858> | Sayaç Başarıyla Ayarlandı: \`${args[0]}\`
+<:rules:816959237439750155> | Sayaç Kapatmak İsterseniz \`${prefix}sayaç kapat\` yazmanız yeterlidir.
+<:rules:816959237439750155> |Sayaç Kanalı İçin \`${prefix}sayaç-kanal-ayarla #kanal\`
 `);
   message.channel.send(embed);
 };
