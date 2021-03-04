@@ -11,7 +11,7 @@ exports.run = async (client, message, args, ayar, emoji) => {
     return message.channel
       .send(
         embed.setDescription(
-          "<a:hayir:815534736725901322> Bu komutu kullanabilmek için \`Mesajları Yönet\` iznine sahip olmalısın!"
+          "<a:hayir:815534736725901322> Bu komutu kullanabilmek için `Mesajları Yönet` iznine sahip olmalısın!"
         )
       )
       .then(x => x.delete({ timeout: 5000 }));

@@ -62,7 +62,8 @@ exports.run = async (client, message) => {
       `__Yavaş Mod__`,
       `<a:black_tik:815280959397691422> \`${prefix}yavaşmod [0/10]\` Yavaş Mod Ayarlar.`,
       true
-    ).addField(
+    )
+    .addField(
       `__HG BB__`,
       `<a:black_tik:815280959397691422> \`${prefix}hg-bb-ayarla [#Kanal]\` HG BB Kanal Ayarlar.`,
       true

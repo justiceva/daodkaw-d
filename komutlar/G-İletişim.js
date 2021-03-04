@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 exports.run = async (client, message) => {
   let prefix = process.env.prefix;
   let botadi = process.env.botadi;
-  
-    let user = message.mentions.users.first() || message.author;
+
+  let user = message.mentions.users.first() || message.author;
 
   let userinfo = {};
   userinfo.avatar = user.avatarURL();
