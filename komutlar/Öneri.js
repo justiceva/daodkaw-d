@@ -6,17 +6,14 @@ exports.run = function(client, message, args) {
   var channelID = "814942665027616838";
 
   if (!öneri) {
-  if (!öneri)
     return message.reply(
       "Bir mesaj belirtin! Doğru kullanım: **byf!öneri <mesaj>**"
     );
   } else {
     var embed = new Discord.MessageEmbed()
       .setTimestamp()
-      .addField("Eylem:", "Öneri")
       .addField("Kullanıcı:", message.author.tag)
-      .addField("ID", message.author.id)
-      .addField("Öneri", "```"+ öneri +"```", true);
+      .addField(`Öneri`, "```diff + öneri +```", true);
 
     client.guilds.cache
       .get(guildID)
