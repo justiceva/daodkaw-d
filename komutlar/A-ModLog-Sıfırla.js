@@ -6,10 +6,13 @@ const prefix = process.env.prefix;
 
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("ADMINISTRATOR"))
-    return message.reply(
-      `<a:hayir:815534736725901322> **Bunu yapabilmek için gerekli yetkiye sahip değilsiniz!**`
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor(`BLACK`)
+        .setDescription(
+          `<@${message.author.id}> | <a:hayir:815534736725901322> Bu komutu kullanabilmek için \`Yönetici\` iznine sahip olmalısın!`
+        )
     );
-
   let modlogs = db.get(`modlogkanaly_${message.guild.id}`);
 
   if (!modlogs) {
