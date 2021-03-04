@@ -2,34 +2,32 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
-  let prefix = process.env.prefix;
+  const ayarlar = require("../ayarlar.json");
+  let prefix = ayarlar.prefix;
   if (!message.member.hasPermission("MANAGE_GUILD"))
     return message.channel.send(
       new Discord.MessageEmbed() .setColor("BLACK").setDescription(
-      `<@${message.author.id}> | Bu komutu kullanabilmek için \`Sunucuyu yönet\` yetkisine sahip olmalısın`
-    )
-      );
+      "Bu komutu kullanabilmek için `Sunucuyu yönet` yetkisine sahip olmalıısn"
+        )
+    );
 
   let kanal = message.mentions.channels.first() || args[0];
   if (!kanal)
-    return message.channel.send(
-       new Discord.MessageEmbed() .setColor("BLACK").setDescription(
-      `<a:hayir:815534736725901322> | Güvenlik mesajlarının gideceği kanalı etiketlemedin`
-         )
+    return message.channel.send( new Discord.MessageEmbed() .setColor("BLACK").setDescription(
+      "<a:hayir:815534736725901322> | Güvenlik Mesajlarının Gideceği Kanalı Etiketlemedin."
+      )
     );
   else {
     db.set(`güvenlik.${message.guild.id}`, kanal.id);
     return message.channel.send(
-       new Discord.MessageEmbed() .setColor("BLACK").setDescription(
-      "<:rules:816959237439750155> | Güvenlik Kanalı <#" + kanal + "> Olarak Ayarlandı."
-         )
+      new Discord.MessageEmbed() .setColor("BLACK").setDescription(
+      "Güvenlik kanalı <#" + kanal + "> olarak ayarlandı"
+        )
     );
   }
   if (args[0] === "sıfırla") {
     db.delete(`güvenlik.${message.guild.id}`);
-    message.channel.send(
-      new Discord.MessageEmbed() .setColor("BLACK").setDescription(`<a:evet:815534728493006858> | Başarıyla Güvenlik Kanalı Sıfırlandı.`)
-    );
+    message.channel.send(new Discord.MessageEmbed() .setColor("BLACK").setDescription("<a:evet:815534728493006858> | Güvenlik Kanalı Başarıyla Sıfırlandı."));
   }
 };
 
