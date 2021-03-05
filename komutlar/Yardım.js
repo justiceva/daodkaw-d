@@ -58,12 +58,12 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}eklenti\``,
       true
     )
-  .addField(
+    .addField(
       `__Sahibimi Çağır__`,
       `<a:black_tik:815280959397691422> \`${prefix}çağır <sebep>\` Bi Durum Varsa Sahibimi Bildir.`,
       true
     )
-  .addField(
+    .addField(
       `__Öneri__`,
       `<a:black_tik:815280959397691422> \`${prefix}öneri <mesaj>\` Minecraft Sunucuya Öneri Yapabilirsin.`,
       false

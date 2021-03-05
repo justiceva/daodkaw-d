@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args) => {
   const rolkoruma = await db.fetch(`rolk_${message.guild.id}`);
   const kanalkoruma = await db.fetch(`kanalk_${message.guild.id}`);
   const botkoruma = await db.fetch(`antiraidK_${message.guild.id}`);
+   const genelbot = await db.fetch(`genelbot_${message.guild.id}`);
 
   let sayfalar = [
     `
@@ -41,6 +42,16 @@ module.exports.run = async (client, message, args) => {
     kanalkoruma
       ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
       : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
+  }
+  > <a:black_tik:815280959397691422> **__Bot Koruma__**: ${
+    botkoruma
+      ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
+      : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
+  }
+  > ───────────────────────────── ${
+   genelbot
+      ? ""
+      : ""
   }
   > <a:black_tik:815280959397691422> **__Bot Koruma__**: ${
     botkoruma
