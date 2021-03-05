@@ -12,7 +12,12 @@ module.exports.run = async (client, message, args) => {
   const rolkoruma = await db.fetch(`rolk_${message.guild.id}`);
   const kanalkoruma = await db.fetch(`kanalk_${message.guild.id}`);
   const botkoruma = await db.fetch(`antiraidK_${message.guild.id}`);
-   const genelbot = await db.fetch(`genelbot_${message.guild.id}`);
+  const genelbot = await db.fetch(`genelbot_${message.guild.id}`);
+  const ticketkanal = await db.fetch(`kanal.${message.guild.id}`);
+  const sayaçkanal = await db.fetch(`sKanal_${message.guild.id}`);
+  const seviyekanal = await db.fetch(`seviyekanal_${message.guild.id}`);
+  const hgbbkanal = await db.fetch(`gçkanal_${message.guild.id}`);
+  const otorolkanal = await db.fetch(`${message.guild.id}_otokanal`);
 
   let sayfalar = [
     `
@@ -48,13 +53,29 @@ module.exports.run = async (client, message, args) => {
       ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
       : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
   }
-  > ───────────────────────────── ${
-   genelbot
-      ? ""
-      : ""
+  > ───────────────────────────── ${genelbot ? "" : ""}
+  > <a:black_tik:815280959397691422> **__Ticket Kanal__**: ${
+    ticketkanal
+      ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
+      : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
   }
-  > <a:black_tik:815280959397691422> **__Bot Koruma__**: ${
-    botkoruma
+  > <a:black_tik:815280959397691422> **__Sayaç Kanal__**: ${
+    sayaçkanal
+      ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
+      : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
+  }
+  > <a:black_tik:815280959397691422> **__Seviye Kanal__**: ${
+    seviyekanal
+      ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
+      : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
+  }
+  > <a:black_tik:815280959397691422> **__OtoRol Kanal__**: ${
+    otorolkanal
+      ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
+      : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
+  }
+  > <a:black_tik:815280959397691422> **__HG-BB Kanal__**: ${
+    hgbbkanal
       ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
       : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
   }
