@@ -7,8 +7,8 @@ exports.run = function(client, message, args) {
 
       var öneriler = öneri[Math.floor(Math.random() * öneri.length)];
   var öneri = args.slice(0).join(" ");
-  var guildID = "773159215631958028";
-  var channelID = "813073099704631346";
+  var guildID = "814905098505420820";
+  var channelID = "814942665027616838";
 
   if (!öneri) {
     return  message.channel.send(new Discord.MessageEmbed()
@@ -22,7 +22,7 @@ exports.run = function(client, message, args) {
       .setAuthor(`${message.author.username} | Sunucu İçin Önerisini Yaptı`)
     .setThumbnail(öneriler)
     .setColor("BLACK")
-      .setDescription("```" + öneri + "```")
+      .setDescription("'````'")
        .setTimestamp()
     .setFooter(`Play.ShadowRise.Com`, client.user.avatarURL())
 
