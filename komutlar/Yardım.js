@@ -58,6 +58,16 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}eklenti\``,
       true
     )
+  .addField(
+      `__Sahibimi Çağır__`,
+      `<a:black_tik:815280959397691422> \`${prefix}çağır <sebep>\` Bi Durum Varsa Sahibimi Bildir.`,
+      true
+    )
+  .addField(
+      `__Öneri__`,
+      `<a:black_tik:815280959397691422> \`${prefix}öneri <mesaj>\` Minecraft Sunucuya Öneri Yapabilirsin.`,
+      false
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:like:815282443086725151>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:like:815282443086725151> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:like:815282443086725151> \`${prefix}siteler\` | ShadowRise Network Sitelerini Görürsün`
