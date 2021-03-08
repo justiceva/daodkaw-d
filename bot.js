@@ -804,37 +804,29 @@ client.on("guildMemberRemove", async member => {
   let msj = await db.fetch(`cikisM_${member.guild.id}`);
   if (!msj) msj = `{uye}, ${randomMsg_integer}`;
 
-  const canvas = Canvas.createCanvas(640, 360);
+  const canvas = Canvas.createCanvas(1280, 720);
   const ctx = canvas.getContext("2d");
 
   const background = await Canvas.loadImage(
-    "https://i.hizliresim.com/Wrn1XW.jpg"
+    "https://cdn.discordapp.com/attachments/621045237137276929/623246660948197423/da.png"
   );
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-  ctx.strokeStyle = "#74037b";
-  ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = `#D3D3D3`;
-  ctx.font = `37px "Warsaw"`;
+  ctx.fillStyle = `#ffffff`;
+  ctx.font = `80px "SONGER"`;
   ctx.textAlign = "center";
-  ctx.fillText(`${member.user.username}`, 300, 342);
+  ctx.fillText(`${member.user.username.toUpperCase()}`, 640, 350);
 
-  let avatarURL = member.user.displayAvatarURL({
-    format: "png",
-    dynamic: true,
-    size: 1024
-  });
+  let avatarURL = member.user.avatarURL || member.user.defaultAvatarURL;
   const { body } = await request.get(avatarURL);
   const avatar = await Canvas.loadImage(body);
 
   ctx.beginPath();
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 0;
   ctx.fill();
-  ctx.lineWidth = 4;
-  ctx.arc(250 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
+  ctx.lineWidth = 0;
+  ctx.arc(580 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
   ctx.clip();
-  ctx.drawImage(avatar, 250, 55, 110, 110);
+  ctx.drawImage(avatar, 580, 55, 110, 110);
 
   const attachment = new Discord.MessageAttachment(
     canvas.toBuffer(),
@@ -870,37 +862,30 @@ client.on("guildMemberAdd", async member => {
   let msj = await db.fetch(`cikisM_${member.guild.id}`);
   if (!msj) msj = `{uye}, ${randomMsg_integer}`;
 
-  const canvas = Canvas.createCanvas(640, 360);
+  const canvas = Canvas.createCanvas(1280, 720);
   const ctx = canvas.getContext("2d");
 
   const background = await Canvas.loadImage(
-    "https://i.hizliresim.com/UyVZ4f.jpg"
+    "https://cdn.discordapp.com/attachments/621045237137276929/623239032536825919/giris.png"
   );
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-  ctx.strokeStyle = "#74037b";
-  ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = `#D3D3D3`;
-  ctx.font = `37px "Warsaw"`;
+  ctx.fillStyle = `#ffffff`;
+  ctx.font = `80px "SONGER"`;
   ctx.textAlign = "center";
-  ctx.fillText(`${member.user.username}`, 300, 342);
+  ctx.fillText(`${member.user.username.toUpperCase()}`, 640, 350);
 
-  let avatarURL = member.user.displayAvatarURL({
-    format: "png",
-    dynamic: true,
-    size: 1024
-  });
+  let avatarURL = member.user.avatarURL || member.user.defaultAvatarURL;
   const { body } = await request.get(avatarURL);
   const avatar = await Canvas.loadImage(body);
 
   ctx.beginPath();
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 0;
   ctx.fill();
-  ctx.lineWidth = 4;
-  ctx.arc(250 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
+  ctx.lineWidth = 0;
+  ctx.arc(580 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
   ctx.clip();
-  ctx.drawImage(avatar, 250, 55, 110, 110);
+  ctx.drawImage(avatar, 580, 55, 110, 110);
 
   const attachment = new Discord.MessageAttachment(
     canvas.toBuffer(),
@@ -1088,10 +1073,9 @@ client.on("guildMemberAdd", member => {
         "`) \n\n Hesap durumu : **" +
         kontrol +
         "**"
-    ) 
+    )
     .setTimestamp();
   client.channels.cache.get(kanal).send(codare);
 });
 
 //Güvenlik Son
-
