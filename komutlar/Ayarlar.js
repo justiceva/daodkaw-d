@@ -43,6 +43,11 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}kick [@Kullanıcı]\` Sunucudan Atacagın Kişiyi Atar.`,
       true
     )
+   .addField(
+      `__Sil__`,
+      `<a:black_tik:815280959397691422> \`${prefix}sil [Mesaj]\` Yazdıgınız Yazı Kadar Mesaj Siler.`,
+      true
+    )
     .addField(
       `__Ban__`,
       `<a:black_tik:815280959397691422> \`${prefix}ban [@Kullanıcı]\` Sunucudan Banlayacan Kişiyi Atar.`,
