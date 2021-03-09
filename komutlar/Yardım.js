@@ -61,7 +61,7 @@ exports.run = async (client, message) => {
     .addField(
       `__Sahibimi Çağır__`,
       `<a:black_tik:815280959397691422> \`${prefix}çağır <sebep>\` Bi Durum Varsa Sahibimi Bildir.`,
-      true
+      false
     )
     .addField(
       `__Öneri__`,

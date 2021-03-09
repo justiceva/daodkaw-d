@@ -9,8 +9,8 @@ exports.run = function(client, message, args) {
 
   var öneriler = öneri[Math.floor(Math.random() * öneri.length)];
   var öneri = args.slice(0).join(" ");
-  var guildID = "814905098505420820";
-  var channelID = "814942665027616838";
+  var guildID = "773159215631958028";
+  var channelID = "813073099704631346";
 
   if (!öneri) {
     return message.channel.send(
