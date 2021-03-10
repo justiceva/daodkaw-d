@@ -4,6 +4,7 @@ dependencies:
   chalk: 4.1.0
   common-tags: 1.8.0
   crypto: 1.0.1
+  discord-rpc: 3.2.0
   discord.js: 12.5.1
   discord.js-commando: 0.12.2
   discord.js-pagination: 1.0.3
@@ -1078,6 +1079,15 @@ packages:
       node: '>=0.3.1'
     resolution:
       integrity: sha1-yc45Okt8vQsFinJck98pkCeGj/k=
+  /discord-rpc/3.2.0:
+    dependencies:
+      node-fetch: 2.6.1
+      ws: 7.4.4
+    dev: false
+    peerDependencies:
+      register-scheme: 'github:devsnek/node-register-scheme'
+    resolution:
+      integrity: sha512-KJv0EVbGMlr04HoG6f5b3wD7X9kSHzQ2Ed2qfHSDvYJ1MkE8RbCQmMcQQrSvAxpfsqZgUjB/bsfi/mjyicCH+A==
   /discord.js-commando/0.12.2:
     dependencies:
       common-tags: 1.8.0
@@ -3099,6 +3109,15 @@ packages:
       utf-8-validate: ^5.0.2
     resolution:
       integrity: sha512-hr6vCR76GsossIRsr8OLR9acVVm1jyfEWvhbNjtgPOrfvAlKzvyeg/P6r8RuDjRyrcQoPQT7K0DGEPc7Ae6jzA==
+  /ws/7.4.4:
+    dev: false
+    engines:
+      node: '>=8.3.0'
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    resolution:
+      integrity: sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
   /xhr/2.6.0:
     dependencies:
       global: 4.4.0
@@ -3192,6 +3211,7 @@ specifiers:
   chalk: ^4.1.0
   common-tags: ^1.8.0
   crypto: ^1.0.1
+  discord-rpc: ^3.2.0
   discord.js: ^12.5.1
   discord.js-commando: ^0.12.1
   discord.js-pagination: ^1.0.1
