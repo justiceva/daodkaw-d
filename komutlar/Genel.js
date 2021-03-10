@@ -38,6 +38,11 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}iletişim\` Bizimle İletişime Geçebilmek İçin Bilgiler.`,
       true
     )
+   .addField(
+      `__Ping__`,
+      `<a:black_tik:815280959397691422> \`${prefix}ping\` Botun Ping Gösterir.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:like:815282443086725151>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:like:815282443086725151> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:like:815282443086725151> \`${prefix}siteler\` | ShadowRise Network Sitelerini Görürsün`
