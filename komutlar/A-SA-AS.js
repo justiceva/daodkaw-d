@@ -15,7 +15,7 @@ exports.run = async (bot, message, args) => {
 
   if (!args[0])
     return message.channel.send(
-      "Sa-as yazısını açmak için; k.`sa-as aç veya kapat`"
+      "Sa-as yazısını açmak için; sn!`sa-as aç veya kapat`"
     );
 
   if (args[0] == "aç") {
@@ -38,7 +38,7 @@ exports.run = async (bot, message, args) => {
 
     const embed = new Discord.MessageEmbed()
       .setColor("BLACK")
-     .setTitle(`${botadi} | Selam Sistem`)
+      .setTitle(`${botadi} | Selam Sistem`)
       .setFooter(
         `${message.author.username} tarafından istendi.`,
         userinfo.avatar

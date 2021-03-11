@@ -23,6 +23,11 @@ exports.run = async (client, message) => {
       `<a:black_tik:815280959397691422> \`${prefix}modlog-sıfırla\` ModLog Kanal Ayalarını Sıfırlar.`,
       true
     )
+  .addField(
+      `__Selam Sistem__`,
+      `<a:black_tik:815280959397691422> \`${prefix}sa-as [aç/kapat]\` Selam Sistemini Açar Kapatır.`,
+      true
+    )
     .addField(
       `__Küfür Engel__`,
       `<a:black_tik:815280959397691422> \`${prefix}küfür-engel [aç/kapat]\` Küfür Filtresini Aktif Eder.`,

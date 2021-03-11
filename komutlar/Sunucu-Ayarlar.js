@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
   const botkoruma = await db.fetch(`antiraidK_${message.guild.id}`);
   const genelbot = await db.fetch(`genelbot_${message.guild.id}`);
   const ticketkanal = await db.fetch(`kanal.${message.guild.id}`);
-  const sa-as
+  const saas = await db.fetch (`saas_${message.guild.id}`)
   const sayaçkanal = await db.fetch(`sKanal_${message.guild.id}`);
   const seviyekanal = await db.fetch(`seviyekanal_${message.guild.id}`);
   const hgbbkanal = await db.fetch(`gçkanal_${message.guild.id}`);
@@ -46,6 +46,11 @@ module.exports.run = async (client, message, args) => {
     }
   > <a:black_tik:815280959397691422> **__Kanal Koruma__**: ${
     kanalkoruma
+      ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
+      : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
+  }
+  > <a:black_tik:815280959397691422> **__Selam Sistem__**: ${
+    saas
       ? "<a:evet:815534728493006858> **``| Ayarlandı``**"
       : "<a:hayir:815534736725901322> **``| Ayarlanmadı``**"
   }
