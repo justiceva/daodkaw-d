@@ -2,6 +2,8 @@ const chalk = require("chalk");
 const moment = require("moment");
 const Discord = require("discord.js");
 
+let prefix = process.env.prefix;
+
 module.exports = client => {
   console.log(
     ` [${moment().format(
@@ -15,7 +17,7 @@ module.exports = client => {
   );
   client.user.setStatus("idle");
 
-  client.user.setActivity(`© ShadowRise Network | Yakında`, { type: "WATCHING" });
+  client.user.setActivity(`© ShadowRise Network | ${prefix}yardım`, { type: "WATCHING" });
 
   console.log(
     ` [${moment().format("YYYY-MM-DD HH:mm:ss")}] Oyun ismi ayarlandı!`
