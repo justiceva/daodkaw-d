@@ -28,12 +28,6 @@ exports.run = function(client, message, args) {
       .setDescription("```" + öneri + "```")
       .setTimestamp()
       .setFooter(`Play.ShadowRise.Com`, client.user.avatarURL())
-      .then(function(message) {
-      message.react("<a:evet:815534728493006858>");
-
-      message.react("<a:hayir:815534736725901322>");
-    })
-
     client.guilds.cache
       .get(guildID)
       .channels.cache.get(channelID)
