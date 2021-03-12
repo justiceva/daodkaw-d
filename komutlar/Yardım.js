@@ -15,47 +15,47 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Genel Komutlar__`,
-      `<a:black_tik:815280959397691422> \`${prefix}genel\``,
+      `<a:turuncu:819972071999275018> \`${prefix}genel\``,
       true
     )
     .addField(
       `__Moderasyon Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}ayarlar\` `,
+      `<a:turuncu:819972071999275018> \`${prefix}ayarlar\` `,
       true
     )
     .addField(
       `__Sunucu Koruma__`,
-      `<a:black_tik:815280959397691422> \`${prefix}koruma\`  `,
+      `<a:turuncu:819972071999275018> \`${prefix}koruma\`  `,
       true
     )
     .addField(
       `__Sunucu Ayarlar__`,
-      `<a:black_tik:815280959397691422> \`${prefix}sunucu\` `,
+      `<a:turuncu:819972071999275018> \`${prefix}sunucu\` `,
       true
     )
     .addField(
       `__Eğlence Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}eğlence\`  `,
+      `<a:turuncu:819972071999275018> \`${prefix}eğlence\`  `,
       true
     )
     .addField(
       `__Kullanıcı Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}kullanıcı\` `,
+      `<a:turuncu:819972071999275018> \`${prefix}kullanıcı\` `,
       true
     )
     .addField(
       `__Oyun Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}oyunlar\` `,
+      `<a:turuncu:819972071999275018> \`${prefix}oyunlar\` `,
       true
     )
     .addField(
       `__Logo Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}logo\` `,
+      `<a:turuncu:819972071999275018> \`${prefix}logo\` `,
       true
     )
     .addField(
       `__Eklenti Komutları__`,
-      `<a:black_tik:815280959397691422> \`${prefix}eklenti\``,
+      `<a:turuncu:819972071999275018> \`${prefix}eklenti\``,
       true
     )
     .addField(
