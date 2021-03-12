@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
 
   if (!question)
     return message.channel
-      .send(new Discord.MessageEmbed().setDescription(`<a:uyari:815530496871366657> Oylama Yapmak İçin Yazı Yazman Lazım`))
+      .send(new Discord.MessageEmbed().setDescription(`<a:uyari:819984831563038720> Oylama Yapmak İçin Yazı Yazman Lazım`))
       .then(m => m.delete(5000));
 
   console.log(
