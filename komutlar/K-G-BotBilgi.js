@@ -25,7 +25,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       "__**Bot Geliştiricisi**__",
-      "<a:like:815282443086725151> **Sunucu Sahipileri**  <@802181483170103316> | <@595178859968856074> \n **OrhanEmin#0819** | **Laxquer_#7207** \n\n <a:like:815282443086725151> **Bot Geliştiricisi**  <@802181483170103316> \n **OrhanEmin#0819** \n\n"
+      "<a:like:815282443086725151> **Sunucu Sahipileri**  <@644639431818739728> | <@466211003600863232> \n **MODLOFF#0920** | **Laxquer_#7207** \n\n <a:like:815282443086725151> **Bot Geliştiricisi**  <@802181483170103316> \n **OrhanEmin#0819** \n\n"
     )
     .addField(
       "__**Sürümler**__",
