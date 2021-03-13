@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
   const canvas = createCanvas(1000, 333);
   const ctx = canvas.getContext("2d");
   const background = await loadImage(
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1aD0fxgxQVG2IMmS1LZ-sl7-zoQBek5Ia4A&usqp=CAU"
+    "https://cdn.discordapp.com/attachments/772182628681383936/773704764273852448/Web_1920_1.png"
   );
   ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
