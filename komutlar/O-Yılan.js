@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
   const embed = new GameCord.SnakeGame(message)
     .setTitle("Yılan Oyunu")
     .setColor("BLACK")
-    .setTime(60000) // Always better to set max time because the default one is just 5s
+    .setTime(60000)
     .run();
   message.channel.send(embed);
 };
