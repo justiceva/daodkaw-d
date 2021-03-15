@@ -14,19 +14,19 @@ exports.run = async (client, message, args) => {
           `<@${message.author.id}> | Aramam İçin Bir Şey Gerekiyor.`
         )
     );
-  let c = await film.ara(args.join(" "));
+  let film = await film.ara(args.join(" "));
   const embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setTitle(c.ismi)
-    .setThumbnail(c.poster)
-    .addField("Yıldızlar:", c.yıldızlar)
-    .addField("Tür:", c.tür)
-    .addField("Puan:", c.puan)
-    .addField("Yıl:", c.yıl)
-    .addField("Süre:", c.süre)
-    .addField("Sezon:", c.sezon)
-    .addField("Bölüm:", c.bölüm)
-    .addField("Benzerler:", c.benzerler)
+    .setTitle(film.ismi)
+    .setThumbnail(film.poster)
+    .addField("Yıldızlar:", film.yıldızlar)
+    .addField("Tür:", film.tür)
+    .addField("Puan:", film.puan)
+    .addField("Yıl:", film.yıl)
+    .addField("Süre:", film.süre)
+    .addField("Sezon:", film.sezon)
+    .addField("Bölüm:", film.bölüm)
+    .addField("Benzerler:", film.benzerler)
   .setFooter(
       `${message.author.username} tarafından istendi.`,
       userinfo.avatar
