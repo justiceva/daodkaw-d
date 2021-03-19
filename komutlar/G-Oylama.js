@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
         new Discord.MessageEmbed()
               .setColor("#00ff00")
           .setDescription(
-            `<a:uyari:819984831563038720> Oylama Yapmak İçin Yazı Yazman Lazım`
+            `<a:unlem:822546045706698763> **Yanlış Kullanım** \n Oylama Yapmak İçin Yazı Yazman Lazım`
           )
       )
       .then(m => m.delete(5000));
@@ -31,10 +31,10 @@ exports.run = (client, message, args) => {
     .send(
       new Discord.MessageEmbed()
 
-           .setColor("#00ff00")
+        .setColor("#00ff00")
         .setThumbnail(
-      "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
-    )
+          "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
+        )
         .setTimestamp()
         .setFooter(`ShadowRise Network | Oylama`)
 
@@ -43,7 +43,7 @@ exports.run = (client, message, args) => {
     .then(function(message) {
       message.react("<:kabulet:822545421628342312>");
 
-      message.react("<:reddet:822545421938196520>");
+      message.react("<:reddet:822546675221397584>");
     });
 };
 
