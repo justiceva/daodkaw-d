@@ -8,10 +8,10 @@ exports.run = async (client, message) => {
     .setTitle(``)
     .setColor(`#ee7621`)
     .setThumbnail(
-      "https://cdn.discordapp.com/icons/818740312293376000/a_9c062cea607a11f22199bda24788785a.gif?size=128"
+      "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
     )
     .setDescription(
-      `<:yildiz:819973383667056680> CruzyHost Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<:yildiz:819973383667056680> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Genel Komutlar__`,
