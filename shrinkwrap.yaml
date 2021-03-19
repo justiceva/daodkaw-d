@@ -1,6 +1,7 @@
 dependencies:
   axios: 0.21.1
   canvas: 2.6.1
+  canvas-constructor: 4.1.0
   chalk: 4.1.0
   common-tags: 1.8.0
   crypto: 1.0.1
@@ -748,6 +749,14 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
+  /canvas-constructor/4.1.0:
+    dev: false
+    engines:
+      node: '>=8.6.0'
+    peerDependencies:
+      canvas: '*'
+    resolution:
+      integrity: sha512-IWZ80DeKIODMnZS1ygaalM7AYaa02KeTnMzMmLhuUK/K1p+pmetMPu6ab9DAT7HsmC9H/xHMn/oSH0K/EnEbYQ==
   /canvas/2.6.1:
     dependencies:
       nan: 2.14.2
@@ -3227,6 +3236,7 @@ shrinkwrapVersion: 3
 specifiers:
   axios: ^0.21.1
   canvas: ^2.6.1
+  canvas-constructor: ^4.1.0
   chalk: ^4.1.0
   common-tags: ^1.8.0
   crypto: ^1.0.1

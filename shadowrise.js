@@ -8,7 +8,9 @@ const fs = require("fs");
 require("./util/eventLoader.js")(client);
 const db = require("quick.db");
 const queue = new Map();
+const { Canvas } = require("canvas-constructor");
 const YouTube = require("simple-youtube-api");
+const superagent = require("superagent");
 const ytdl = require("ytdl-core");
 
 var prefix = process.env.prefix;
@@ -172,127 +174,245 @@ client.on("message", async message => {
 
 //HG-BB Baş
 
- client.on("guildMemberRemove", async member => {
-  
-    if (db.has(`gçkanal_${member.guild.id}`) === false) return;
-    var canvaskanal = member.guild.channels.cache.get(db.fetch(`gçkanal_${member.guild.id}`));
-    if (!canvaskanal) return;
-  
-    const request = require("node-superfetch");
-    const Canvas = require("canvas"),
-      Image = Canvas.Image,
-      Font = Canvas.Font,
-      path = require("path");
-  
-    var randomMsg = ["**Sunucudan Çıkış Yaptı.** `{sunucu}` **Yineden Gelmeyi Unutmayın** | <a:cikis:820005113179275324>"];
-    var randomMsg_integer =
-      randomMsg[Math.floor(Math.random() * randomMsg.length)];
-  
-    let msj = await db.fetch(`cikisM_${member.guild.id}`);
-    if (!msj) msj = `{uye}, ${randomMsg_integer}`;
-  
-    const canvas = Canvas.createCanvas(640, 360);
-    const ctx = canvas.getContext("2d");
-  
-    const background = await Canvas.loadImage(
-      "https://i.hizliresim.com/Wrn1XW.jpg"
-    );
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  
-    ctx.strokeStyle = "#74037b";
-    ctx.strokeRect(0, 0, canvas.width, canvas.height);
-  
-    ctx.fillStyle = `#D3D3D3`;
-    ctx.font = `37px "Warsaw"`;
-    ctx.textAlign = "center";
-    ctx.fillText(`${member.user.username}`, 300, 342);
-  
-    let avatarURL = member.user.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 });
-    const { body } = await request.get(avatarURL);
-    const avatar = await Canvas.loadImage(body);
-  
-    ctx.beginPath();
-    ctx.lineWidth = 4;
-    ctx.fill();
-    ctx.lineWidth = 4;
-    ctx.arc(250 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
-    ctx.clip();
-    ctx.drawImage(avatar, 250, 55, 110, 110);
-  
-    const attachment = new Discord.MessageAttachment(
-      canvas.toBuffer(),
-      "ro-BOT-güle-güle.png"
-    );
-  
-      canvaskanal.send(attachment);
-      canvaskanal.send(
-        msj.replace("{uye}", member).replace("{sunucu}", member.guild.name)
-      );
-      if (member.user.bot)
-        return canvaskanal.send(`🤖 Bu bir bot, ${member.user.tag}`);
-    
-  });
-  
-  client.on("guildMemberAdd", async member => {
-    if (db.has(`gçkanal_${member.guild.id}`) === false) return;
-    var canvaskanal = member.guild.channels.cache.get(db.fetch(`gçkanal_${member.guild.id}`));
-  
-    if (!canvaskanal || canvaskanal ===  undefined) return;
-    const request = require("node-superfetch");
-    const Canvas = require("canvas"),
-      Image = Canvas.Image,
-      Font = Canvas.Font,
-      path = require("path");
-  
-    var randomMsg = ["**Sunucuya Giriş Yaptı.** **`{sunucu}` Hoşgeldin Huzur Verdin.** | <a:giris:819998381711687700>"];
-    var randomMsg_integer =
-      randomMsg[Math.floor(Math.random() * randomMsg.length)];
-  
-    let paket = await db.fetch(`pakets_${member.id}`);
-    let msj = await db.fetch(`cikisM_${member.guild.id}`);
-    if (!msj) msj = `{uye}, ${randomMsg_integer}`;
-  
-    const canvas = Canvas.createCanvas(640, 360);
-    const ctx = canvas.getContext("2d");
-  
-    const background = await Canvas.loadImage(
-      "https://i.hizliresim.com/UyVZ4f.jpg"
-    );
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-  
-    ctx.strokeStyle = "#74037b";
-    ctx.strokeRect(0, 0, canvas.width, canvas.height);
-  
-    ctx.fillStyle = `#D3D3D3`;
-    ctx.font = `37px "Warsaw"`;
-    ctx.textAlign = "center";
-    ctx.fillText(`${member.user.username}`, 300, 342);
-  
-    let avatarURL = member.user.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 }) ;
-    const { body } = await request.get(avatarURL);
-    const avatar = await Canvas.loadImage(body);
-  
-    ctx.beginPath();
-    ctx.lineWidth = 4;
-    ctx.fill();
-    ctx.lineWidth = 4;
-    ctx.arc(250 + 55, 55 + 55, 55, 0, 2 * Math.PI, false);
-    ctx.clip();
-    ctx.drawImage(avatar, 250, 55, 110, 110);
-  
-    const attachment = new Discord.MessageAttachment(
-      canvas.toBuffer(),
-      "ro-BOT-hosgeldin.png"
-    );
-  
-    canvaskanal.send(attachment);
-    canvaskanal.send(
-      msj.replace("{uye}", member).replace("{sunucu}", member.guild.name)
-    );
-    if (member.user.bot)
-      return canvaskanal.send(`🤖 Bu bir bot, ${member.user.tag}`);
-  });
+client.on("guildMemberAdd", async member => {  
+            var namam = member.user.username
+            var yazı = namam.length > 12 ? namam.substring(0, 10) + "..." : namam;
+            async function createCanvas() {
+            var imageUrlRegex = /\?size=2048$/g;
+      var resimm = JSON.parse(fs.readFileSync("./image.json", "utf8"))
+      if (!resimm[member.guild.id]){
+        resimm[member.guild.id] = {
+resimm: "http://wallperio.com/data/out/121/flat-wallpaper_601075203.jpg"
+};
+}
+           let anan = resimm[member.guild.id].resimm;
 
+      var hoşgeldin = JSON.parse(fs.readFileSync("./warnawelcome.json", "utf8"))
+      if (!hoşgeldin[member.guild.id]){
+        hoşgeldin[member.guild.id] = {
+warna: "hgbb"
+};
+}
+
+const karışık = [
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428790137487370/prembegiirs0000.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428841022783510/yesilgiris0000.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/604700767269421076/sar.png`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428786895028224/krmz_giris0001.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428830042095617/1.jpg`,
+                `https://cdn.discordapp.com/attachments/510927533353598976/608428851265011763/ssiyah_giris0001.jpg`
+
+    ]
+
+let atış = Math.floor((Math.random() * karışık.length));
+
+
+           let resimler = warnawelcomes[member.guild.id].warna;
+      let resim = warnawelcomes[member.guild.id].warna
+      resimler = resim.replace('pembe', 'https://cdn.discordapp.com/attachments/510927533353598976/608428790137487370/prembegiirs0000.jpg')
+      resimler = resim.replace('yeşil', 'https://cdn.discordapp.com/attachments/510927533353598976/608428841022783510/yesilgiris0000.jpg')
+      resimler = resim.replace('sarı', 'https://cdn.discordapp.com/attachments/510927533353598976/608428794432192523/sargiris0001.jpg')
+      resimler = resim.replace('kırmızı', 'https://cdn.discordapp.com/attachments/510927533353598976/608428786895028224/krmz_giris0001.jpg')
+      resimler = resim.replace('beyaz', 'https://cdn.discordapp.com/attachments/510927533353598976/608428830042095617/1.jpg')
+            resimler = resimler.replace('siyah', 'https://cdn.discordapp.com/attachments/510927533353598976/608428851265011763/ssiyah_giris0001.jpg')
+      resimler = resimler.replace('karışık', `${karışık[atış]}`)
+
+            var {body: background} = await superagent.get(`${resimler}`);
+            var {body: background1} = await superagent.get(`${anan}`);
+            var {body: avatar} = await superagent.get(member.user.displayAvatarURL.replace(imageUrlRegex, "?size=128"));
+
+            return new Canvas(360, 250)
+              .setColor('white')
+              .setTextAlign('center')
+              .addImage(background1, 0, 0, 360, 250)
+              .addImage(background, 0, 0, 360, 250)
+             // .addText("Görüşürüz", 260, 325)
+              .addText(`${yazı}`, 165, 350)
+  .addCircularImage(avatar, 179, 137, 57)
+              .toBufferAsync();
+            }
+  var hg = JSON.parse(fs.readFileSync("./welcome.json", "utf8"))
+ let hoşgeldinAayarlar = JSON.parse(fs.readFileSync("./welcomeonoff.json", "utf8"));
+     if (!hoşgeldinAayarlar[member.guild.id]) {
+    hoşgeldinAayarlar[member.guild.id] = {
+     values: 1
+      };
+    }
+
+    if(!hg[member.guild.id]) return;  
+    let values = hoşgeldinAayarlar[member.guild.id].checker
+  
+    if (values === undefined) return;
+    if (values === 0) return;
+    if (values === 1) {
+    var hggg = JSON.parse(fs.readFileSync("./welcome.json", "utf8"))
+    if (!hggg) return;
+    let channel = member.guild.channels.get(`${hggg[member.guild.id].nick}`);
+    if (!channel) return;
+
+
+      var text1 = JSON.parse(fs.readFileSync("./imgtext.json", "utf8"))
+      if (!text1[member.guild.id]){
+        text1[member.guild.id] = {
+kata: `anan `
+};
+}
+           let text2 = text1[member.guild.id].resimm;
+
+  channel.send(`
+**${member}** Sunucuya Katıldı.
+${text2}
+`,{
+  files: [{
+    attachment: await createCanvas(),
+    name: 'HGBB.jpg'
+  }] })
+  }
+});
+
+
+
+
+
+
+
+  client.on("guildMemberRemove", async member => {  
+            var namam = member.user.username
+            var yazi = namam.length > 12 ? namam.substring(0, 10) + "..." : namam;
+            async function createCanvas() {
+            var imageUrlRegex = /\?size=2048$/g;
+             // let image = JSON.parse(fs.readFileSync("./image.json", "utf8"))
+      var backgrounds = JSON.parse(fs.readFileSync("./image.json", "utf8"))
+      if (!backgrounds[member.guild.id]){
+        backgrounds[member.guild.id] = {
+backgrounds: "https://img.traveltriangle.com/attachments/pictures/892481/original/boat-at-rameshwaram-beach-in-bay-of-begal-sea.png"
+};
+}
+           let siye = backgrounds[member.guild.id].backgrounds;
+
+      var warnawelcomes = JSON.parse(fs.readFileSync("./warnawelcome.json", "utf8"))
+      if (!warnawelcomes[member.guild.id]){
+        warnawelcomes[member.guild.id] = {
+warna: "biru"
+};
+}
+
+const karisik = [
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428789080522782/pembecks0001.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428847729475595/yesilcks0001.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428792125325322/sarcks0001.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428785808965656/krmz_cks0001.jpg`,
+        `https://cdn.discordapp.com/attachments/510927533353598976/608428860043952146/2.jpg`,
+                `https://cdn.discordapp.com/attachments/510927533353598976/608428853374746670/siyahcks0001.jpg`
+
+    ]
+
+let karisik2 = Math.floor((Math.random() * pokeself.length));
+
+
+           let hop = warnawelcomes[member.guild.id].warna;
+      const resim = warnawelcomes[member.guild.id].warna
+      hop = resim.replace('pembe', 'https://cdn.discordapp.com/attachments/510927533353598976/608428789080522782/pembecks0001.jpg')
+      hop = resim.replace('yeşil', 'https://cdn.discordapp.com/attachments/510927533353598976/608428847729475595/yesilcks0001.jpg')
+      hop = resim.replace('sarı', 'https://cdn.discordapp.com/attachments/510927533353598976/608428792125325322/sarcks0001.jpg')
+      hop = resim.replace('kırmızı', 'https://cdn.discordapp.com/attachments/510927533353598976/608428785808965656/krmz_cks0001.jpg')
+      hop = resim.replace('beyaz', 'https://cdn.discordapp.com/attachments/510927533353598976/608428860043952146/2.jpg')
+            ho = hop.replace('siyah', 'https://cdn.discordapp.com/attachments/510927533353598976/608428853374746670/siyahcks0001.jpg')
+      hop = hop.replace('karışık', `${karisik[karisik2]}`)
+
+            var {body: background} = await superagent.get(`${hop}`);
+            var {body: background1} = await superagent.get(`${siye}`);
+            var {body: avatar} = await superagent.get(member.user.displayAvatarURL.replace(imageUrlRegex, "?size=128"));
+
+            return new Canvas(360, 250)
+              .setColor('white')
+              .setTextAlign('center')
+             // .setTextFont('bold 40px System')
+              .addImage(background1, 0, 0, 360, 250)
+              .addImage(background, 0, 0, 360, 250)
+            // .addText("Görüşürüz", 260, 325)
+              .addText(`${yazi}`, 165, 350)
+  .addCircularImage(avatar, 180, 143, 57)
+              .toBufferAsync();
+            }
+  var welcome = JSON.parse(fs.readFileSync("./welcome.json", "utf8"))
+ let welcomesetting = JSON.parse(fs.readFileSync("./welcomeonoff.json", "utf8"));
+     if (!welcomesetting[member.guild.id]) {
+    welcomesetting[member.guild.id] = {
+     values: 1
+      };
+    }
+
+    if(!welcome[member.guild.id]) return;  
+    let values = welcomesetting[member.guild.id].checker
+  
+    if (values === undefined) return;
+    if (values === 0) return;
+    if (values === 1) {
+    var welcome = JSON.parse(fs.readFileSync("./welcome.json", "utf8"))
+    if (!welcome) return;
+    let channel = member.guild.channels.get(`${welcome[member.guild.id].nick}`);
+    if (!channel) return;
+
+
+      var yazi = JSON.parse(fs.readFileSync("./imgtext.json", "utf8"))
+      if (!yazi[member.guild.id]){
+        yazi[member.guild.id] = {
+baban: `hgbb!gkanal yazı <yazı>`
+};
+}
+           let yazi2 = yazi[member.guild.id].backgrounds;
+
+  channel.send(`
+**${member}** Sunucumuzdan Ayrıldı
+`,{
+  files: [{
+    attachment: await createCanvas(),
+    name: 'hgbb.jpg'
+  }] })
+  }
+});
+
+client.on("guildMemberRemove", async member => {
+        let sayac = JSON.parse(fs.readFileSync("./ayarlar/giris.json", "utf8"));
+  let giriscikis = JSON.parse(fs.readFileSync("./ayarlar/giris.json", "utf8"));  
+  let embed = new Discord.RichEmbed()
+    .setTitle('')
+    .setDescription(``)
+ .setColor("RED")
+    .setFooter("", client.user.avatarURL);
+ 
+  
+  if (!giriscikis[member.guild.id].kanal) {
+    return;
+  }
+ 
+  try {
+    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
+    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
+    giriscikiskanali.send(` <a:cks:524956995183312897> ${member} Sunucumuzdan Ayrıldı, Çıkışın ile Sunucuda **${member.guild.memberCount}** Kullanıcı Kaldı!`);
+  } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
+    return console.log(e)
+  }
+ 
+});
+client.on("guildMemberAdd", async member => {  
+        let sayac = JSON.parse(fs.readFileSync("./ayarlar/giris.json", "utf8"));
+  let giriscikis = JSON.parse(fs.readFileSync("./ayarlar/giris.json", "utf8"));  
+ 
+  if (!giriscikis[member.guild.id].kanal) {
+    return;
+  }
+ 
+  try {
+    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
+    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
+    giriscikiskanali.send(`<a:giris:524956676583849984> **${member.guild.name}** Sunucusuna Hoşgeldin ${member} \n**${member.guild.memberCount}** Kişi Olduk!` );
+  } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
+    return console.log(e)
+  }
+ 
+});
 //HG-BB Son
 
  
