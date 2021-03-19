@@ -774,14 +774,6 @@ client.on("message", function(message) {
 
 //Seviye Son
 
-//Ses Baş
-
-client.on("ready", () => {
-  client.channels.cache.get("812725743414411274").join();
-});
-
-//Ses Son
-
 //HG-BB Baş
 
 
