@@ -172,7 +172,11 @@ client.on("message", async message => {
 
 //AFK Son
 
-//HG-BB Baş
+//Güvenlik Baş
+
+
+
+//Güvenlik Son
 
 
 
