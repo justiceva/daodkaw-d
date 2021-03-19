@@ -9,7 +9,7 @@ exports.run = async (client, message, args, level) => {
         client.commands.size +
         `\` **Komut Vardır!**`
     )
-    .setColor(`#00ff00`)
+    .setColor("#00ff00")
     .setTimestamp()
     .setFooter(`Play.ShadowRise.Com`, client.user.avatarURL());
 
