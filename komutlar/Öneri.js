@@ -9,13 +9,13 @@ exports.run = function(client, message, args) {
 
   var öneriler = öneri[Math.floor(Math.random() * öneri.length)];
   var öneri = args.slice(0).join(" ");
-  var guildID = "773159215631958028";
-  var channelID = "813073099704631346";
+  var guildID = "814905098505420820";
+  var channelID = "814942665027616838";
 
   if (!öneri) {
     return message.channel.send(
       new Discord.MessageEmbed()
-        .setColor("BLACK")
+        .setColor("#00ff00")
         .setDescription(
           `<@${message.author.id}> | Bir mesaj belirtin! Doğru kullanım ➣ ${prefix}öneri <mesaj>`
         )
@@ -24,7 +24,7 @@ exports.run = function(client, message, args) {
     var embed = new Discord.MessageEmbed()
       .setAuthor(`${message.author.username} | Sunucu İçin Önerisini Yaptı`)
       .setThumbnail(öneriler)
-      .setColor("BLACK")
+       .setColor("#00ff00")
       .setDescription("```" + öneri + "```")
       .setTimestamp()
       .setFooter(`Play.ShadowRise.Com`, client.user.avatarURL())
@@ -34,9 +34,9 @@ exports.run = function(client, message, args) {
       .send(embed);
     message.channel.send(
       new Discord.MessageEmbed()
-        .setColor("BLACK")
+       .setColor("#00ff00")
         .setDescription(
-          `<@${message.author.id}> | Öneriniz alınmıştır! Teşekkür ederiz. ➣ <#813073099704631346> Gelmiştir.`
+          `<@${message.author.id}> | Öneriniz alınmıştır! Teşekkür ederiz.`
         )
     );
   }
