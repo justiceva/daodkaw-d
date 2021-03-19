@@ -15,28 +15,33 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Oylama__`,
-      `<a:green:822530401301954632>  \`${prefix}oylama\` Sunucuda Oylama Başlatırsın.`,
+      `<a:green:822530401301954632>  \`${prefix}oylama\` Sunucudan Bir Oylama Başlatırsın.`,
       true
     )
     .addField(
       `__Toplam Komut__`,
-      `<a:green:822530401301954632>  \`${prefix}komutlar\` Toplam Komut Sayısı Gösterir.`,
+      `<a:green:822530401301954632>  \`${prefix}komutlar\` Discord Botta Toplam Kaç Komut Var Ona Bakarsın.`,
       true
     )
     .addField(
       `__Bot Bilgi__`,
-      `<a:green:822530401301954632>  \`${prefix}botbilgi\` Bot İstatistiklerini Görürsün.`,
+      `<a:green:822530401301954632>  \`${prefix}botbilgi\` Botun Sunucu Ve Sürüm , Sahip İstatistikleri Bakarsın.`,
       true
     )
     .addField(
       `__Davet__`,
-      `<a:green:822530401301954632>   \`${prefix}davet\` Davet Menüsünü Gösterir.`,
+      `<a:green:822530401301954632>   \`${prefix}davet\` ShadowRise Network Davet Menüsünü Görürsün.`,
       true
     )
     .addField(
       `__Ping__`,
-      `<a:green:822530401301954632>  \`${prefix}ping\` Botun Ping Gösterir.`,
-      false
+      `<a:green:822530401301954632>  \`${prefix}ping\` Discord Botun Mesaj Geçikmesi ve Bot Geçikmesini Gösterir.`,
+      true
+    )
+    .addField(
+      `__AFK__`,
+      `<a:green:822530401301954632>  \`${prefix}afk\` Kullanıcı Bir Sebeple AFK Moduna Girer.`,
+      true
     )
     .addField(
       `__Bilgilendirme__`,

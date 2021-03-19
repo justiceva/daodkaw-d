@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let talkedRecently = new Set();
 
-let commands = process.env.message 
+let commands = process.env.message;
 
 module.exports = message => {
   if (talkedRecently.has(message.author.id)) {
@@ -28,7 +28,7 @@ module.exports = message => {
       if (command == "") return;
       const embed = new Discord.MessageEmbed()
         .setDescription("Botta `" + command + "` Adında Bir Komut Bulunamadı.")
-        .setColor("BLACK")
+        .setColor("#00ff00");
       return message.channel.send(embed);
     }
   }
@@ -43,16 +43,16 @@ module.exports = message => {
   if (cmd) {
     if (cmd.conf.enabled === false) {
       if (
-        !process.env.sahip2.includes(message.author.id) &&
-        !process.env.sahip2.includes(message.author.id),
+        (!process.env.sahip2.includes(message.author.id) &&
+          !process.env.sahip2.includes(message.author.id),
         !process.env.sahip.includes(message.author.id) &&
-        !process.env.sahip.includes(message.author.id)
+          !process.env.sahip.includes(message.author.id))
       ) {
         const embed = new Discord.MessageEmbed()
           .setDescription(
             `:x: **${cmd.help.name}** isimli komut şuanda geçici olarak kullanıma kapalıdır!`
           )
-       .setColor("BLACK")
+          .setColor("BLACK");
         message.channel.send({ embed });
         return;
       }
@@ -64,7 +64,7 @@ module.exports = message => {
           .setDescription(
             `Bu komutu kullanabilmek için \`Mesajları Yönet\` iznine sahip olmalısın!`
           )
-          .setColor("BLACK")
+          .setColor("BLACK");
         message.channel.send({ embed });
         return;
       }
@@ -75,7 +75,7 @@ module.exports = message => {
           .setDescription(
             `Bu komutu kullanabilmek için \`Üyeleri At\` iznine sahip olmalısın!`
           )
-          .setColor("BLACK")
+          .setColor("BLACK");
         message.channel.send({ embed });
         return;
       }
@@ -97,17 +97,17 @@ module.exports = message => {
           .setDescription(
             `Bu komutu kullanabilmek için \`Yönetici\` iznine sahip olmalısın!`
           )
-          .setColor("BLACK")
+          .setColor("BLACK");
         message.channel.send({ embed });
         return;
       }
     }
     if (cmd.conf.permLevel === 5) {
-      if (!process.env.sahip2.includes(message.author.id)) {  
-      if (!process.env.sahip.includes(message.author.id)); 
+      if (!process.env.sahip2.includes(message.author.id)) {
+        if (!process.env.sahip.includes(message.author.id));
         const embed = new Discord.MessageEmbed()
           .setDescription(`Bu komutu sadece \`Sahibim\` kullanabilir!`)
-         .setColor("BLACK")
+          .setColor("BLACK");
         message.channel.send({ embed });
         return;
       }
@@ -116,4 +116,3 @@ module.exports = message => {
     cmd.run(client, message, params, perms);
   }
 };
-
