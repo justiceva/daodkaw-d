@@ -24,17 +24,17 @@ exports.run = function(client, message, args) {
     var embed = new Discord.MessageEmbed()
       .setAuthor(`${message.author.username} | Sunucu İçin Önerisini Yaptı`)
       .setThumbnail(öneriler)
-       .setColor("#00ff00")
+      .setColor("#00ff00")
       .setDescription("```" + öneri + "```")
       .setTimestamp()
-      .setFooter(`Play.ShadowRise.Com`, client.user.avatarURL())
+      .setFooter(`Play.ShadowRise.Com`, client.user.avatarURL());
     client.guilds.cache
       .get(guildID)
       .channels.cache.get(channelID)
       .send(embed);
     message.channel.send(
       new Discord.MessageEmbed()
-       .setColor("#00ff00")
+        .setColor("#00ff00")
         .setDescription(
           `<@${message.author.id}> | Öneriniz alınmıştır! Teşekkür ederiz.`
         )

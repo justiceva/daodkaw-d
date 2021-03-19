@@ -6,7 +6,7 @@ exports.run = async (client, message) => {
   const embed = new Discord.MessageEmbed()
     .setAuthor(`ShadowRise Network`)
     .setTitle(``)
-    .setColor(`#ee7621`)
+    .setColor("#00ff00")
     .setThumbnail(
       "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
     )
@@ -53,7 +53,7 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}eklenti\``,
       true
     )
-     .addField(
+    .addField(
       `__Eğlence Komutlar__`,
       `<a:green:822530401301954632> \`${prefix}eklenti\``,
       true
