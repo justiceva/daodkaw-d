@@ -53,15 +53,10 @@ exports.run = async (client, message) => {
       `<a:turuncu:822084547386146836> \`${prefix}eklenti\``,
       true
     )
-    .addField(
-      `__Sahibimi Çağır__`,
-      `<a:turuncu:822084547386146836> \`${prefix}çağır <sebep>\` Bi Durum Varsa Sahibimi Bildir.`,
-      false
-    )
-    .addField(
-      `__Öneri__`,
-      `<a:turuncu:822084547386146836> \`${prefix}öneri <mesaj>\` Sunucuya Öneri Yapabilirsin.`,
-      false
+     .addField(
+      `__Eğlence Komutlar__`,
+      `<a:turuncu:822084547386146836> \`${prefix}eklenti\``,
+      true
     )
     .addField(
       `__Bilgilendirme__`,
