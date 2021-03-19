@@ -4,63 +4,63 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embed = new Discord.MessageEmbed()
-    .setAuthor(`CruzyHost | Bilişim Merkezi`)
+    .setAuthor(`ShadowRise Network`)
     .setTitle(``)
     .setColor(`#ee7621`)
     .setThumbnail(
       "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
     )
     .setDescription(
-      `<:yildiz:819973383667056680> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Genel Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}genel\``,
+      `<a:green:822530401301954632> \`${prefix}genel\``,
       true
     )
     .addField(
       `__Ayarlar Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}ayarlar\` `,
+      `<a:green:822530401301954632> \`${prefix}ayarlar\` `,
       true
     )
     .addField(
       `__Sunucu Koruma__`,
-      `<a:turuncu:822084547386146836> \`${prefix}koruma\`  `,
+      `<a:green:822530401301954632> \`${prefix}koruma\`  `,
       true
     )
     .addField(
       `__Sunucu Ayarlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}sunucu\` `,
+      `<a:green:822530401301954632> \`${prefix}sunucu\` `,
       true
     )
     .addField(
       `__Kullanıcı Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}kullanıcı\` `,
+      `<a:green:822530401301954632> \`${prefix}kullanıcı\` `,
       true
     )
     .addField(
       `__Oyun Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}oyunlar\` `,
+      `<a:green:822530401301954632> \`${prefix}oyunlar\` `,
       true
     )
     .addField(
       `__Logo Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}logo\` `,
+      `<a:green:822530401301954632> \`${prefix}logo\` `,
       true
     )
     .addField(
       `__Eklenti Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}eklenti\``,
+      `<a:green:822530401301954632> \`${prefix}eklenti\``,
       true
     )
      .addField(
       `__Eğlence Komutlar__`,
-      `<a:turuncu:822084547386146836> \`${prefix}eklenti\``,
+      `<a:green:822530401301954632> \`${prefix}eklenti\``,
       true
     )
     .addField(
       `__Bilgilendirme__`,
-      `<a:logo:822085656540610591>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:logo:822085656540610591> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:logo:822085656540610591> \`${prefix}siteler\` | CruzyHost Sitelerini Görürsün`
+      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
     );
   return message.channel.send(embed);
 };
