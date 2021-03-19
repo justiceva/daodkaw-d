@@ -169,3 +169,94 @@ client.on("message", async message => {
 });
 
 //AFK Son
+
+//Güvenli - Süpheli Baş
+
+client.on("guildMemberAdd", async member => {
+  let user = client.users.cache.get(member.id);
+  let chan = client.channels.cache.get(db.fetch(`guvenlik3_${member.guild.id}`));
+  const Canvas = require("canvas");
+  const canvas = Canvas.createCanvas(360, 100);
+  const ctx = canvas.getContext("2d");
+  let memberChannel = await db.fetch(`guvenlik3_${member.guild.id}`);
+  const resim1 = await Canvas.loadImage(
+    "https://cdn.discordapp.com/attachments/621045237137276929/621046566106431488/tes3.png"
+  );
+  const resim2 = await Canvas.loadImage(
+    "https://cdn.discordapp.com/attachments/621045237137276929/621046061875724298/tes1.png"
+  );
+  const kurulus = new Date().getTime() - user.createdAt.getTime();
+  const gün = moment.duration(kurulus).format("D");
+  var kontrol;
+  if (kurulus > 1296000000) kontrol = resim2;
+  if (kurulus < 1296000000) kontrol = resim1;
+
+  const background = await Canvas.loadImage(
+    "https://cdn.discordapp.com/attachments/621045237137276929/621045305089064980/arka.png"
+  );
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL());
+  ctx.drawImage(kontrol, 0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.lineWidth = 4;
+  ctx.fill();
+  ctx.lineWidth = 4;
+  ctx.arc(180, 46, 36, 0, 2 * Math.PI);
+  ctx.clip();
+  ctx.drawImage(avatar, 143, 10, 73, 72);
+
+  const attachment = new Discord.MessageAttachment(
+    canvas.toBuffer(),
+    "vortex-güvenlik3.png"
+  );
+  if (db.has(`karalist_${user.id}`)) {
+    member.guild.channels
+      .get(memberChannel)
+      .send("Yasaklı kullanıcı geldi. Lütfen DİKKATLİ olun");
+    if (!member.guild.channels.cache.get(memberChannel)) return;
+  } else if (db.has(`üyelikk_${user.id}`)) {
+    return;
+  } else if (!member.guild.channels.cache.get(memberChannel)) return;
+  member.guild.channels.cache.get(memberChannel).send(attachment);
+});
+client.on("guildMemberAdd", async member => {
+  let user = client.users.cache.get(member.id);
+  let chan = client.channels.cache.get(db.fetch(`guvenlik3_${member.guild.id}`));
+  const Canvas = require("canvas");
+  const canvas = Canvas.createCanvas(360, 100);
+  const ctx = canvas.getContext("2d");
+  let memberChannel = await db.fetch(`guvenlik3_${member.guild.id}`);
+  const resim1 = await Canvas.loadImage(
+    "https://cdn.discordapp.com/attachments/621045237137276929/621046566106431488/tes3.png"
+  );
+  const resim2 = await Canvas.loadImage(
+    "https://cdn.discordapp.com/attachments/621045237137276929/621046061875724298/tes1.png"
+  );
+  const kurulus = new Date().getTime() - user.createdAt.getTime();
+  const gün = moment.duration(kurulus).format("D");
+  var kontrol;
+  if (kurulus > 1296000000) kontrol = resim2;
+  if (kurulus < 1296000000) kontrol = resim1;
+
+  const background = await Canvas.loadImage(
+    "https://i.hizliresim.com/7Br6Av.jpg"
+  );
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL());
+  ctx.drawImage(kontrol, 0, 0, canvas.width, canvas.height);
+
+  ctx.beginPath();
+  ctx.lineWidth = 4;
+  ctx.fill();
+  ctx.lineWidth = 4;
+  ctx.arc(180, 46, 36, 0, 2 * Math.PI);
+  ctx.clip();
+  ctx.drawImage(avatar, 143, 10, 73, 72);
+
+  const attachment = new Discord.MessageAttachment(
+    canvas.toBuffer(),
+    "vortex-güvenlik3.png"
+    );
+})
