@@ -28,6 +28,16 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}küfürlog\` Discord Sunucuna Küfür Edenlerin Mesaji Silinir Ve Log Kanalına Gider.`,
       true
     )
+  .addField(
+      `__Reklam Engel__`,
+      `<a:green:822530401301954632> \`${prefix}reklamengel\` Discord Sunucuna Reklam Yapmaya Çalışanları Durdurursun.`,
+      true
+    )
+  .addField(
+      `__Reklam Log__`,
+      `<a:green:822530401301954632> \`${prefix}reklamlog\` Discord Sunucuna Reklam Yapmayı Mesaji Silinir Ve Log Kanalına Gider.`,
+      true
+    )
     .addField(
       `__Ban__`,
       `<a:green:822530401301954632> \`${prefix}ban\` Discord Sunucundan Birisini Banlamaya Sağlar.`,
