@@ -727,3 +727,5 @@ client.on("message", async msg => {
 });
 
 //Reklam Engel Son
+
+//Güe
