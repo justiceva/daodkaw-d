@@ -12,14 +12,19 @@ exports.run = async (bot, msg, args) => {
       `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
+      `**__Profilim__**`,
+      `<a:green:822530401301954632> \`${prefix}profilim\` \n Kendi Yaptıgın Özel Profilini Görürsün.`,
+        true
+    )
+    .addField(
       `**__İsim Ayarla__**`,
       `<a:green:822530401301954632> \`${prefix}isim-ayarla\` \n Özel Profilinize İsim Ayarlarsınız.`,
-      false
+         true
     )
   .addField(
       `**__Yaş Ayarla__**`,
       `<a:green:822530401301954632> \`${prefix}yaş-ayarla\` \n Özel Profilinize Yaş Ayarlarsınız.`,
-      false
+            true
     )
   .addField(
       `**__Soyİsim Ayarla__**`,
@@ -49,7 +54,7 @@ exports.conf = {
   permLevel: 0
 };
 exports.help = {
-  name: "seviye-sistem",
+  name:"profil-sistem",
   description: "İstediğiniz kullanıcını bilgilerini gösterir.",
   usage: "seviye"
 };

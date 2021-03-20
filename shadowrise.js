@@ -133,7 +133,6 @@ const ms = require("parse-ms");
 const { DiscordAPIError } = require("discord.js");
 
 client.on("message", async message => {
-
   if (message.author.bot) return;
   if (!message.guild) return;
   if (message.content.includes(`afk`)) return;
@@ -161,7 +160,7 @@ client.on("message", async message => {
 
     const afk = new Discord.MessageEmbed()
 
-        .setColor("#00ff00")
+      .setColor("#00ff00")
       .setDescription(
         `**Bu Kullanıcı AFK**\n\n**Afk Olan Kullanıcı :** \`${USER.tag}\`\n**Afk Süresi :** \`${timeObj.hours}saat\` \`${timeObj.minutes}dakika\` \`${timeObj.seconds}saniye\`\n**Sebep :** \`${REASON}\``
       );
@@ -172,14 +171,371 @@ client.on("message", async message => {
 
 //AFK Son
 
-//Güvenlik Baş
+//ModLog Baş
 
+client.on("messageDelete", async message => {
+  if (message.author.bot || message.channel.type == "dm") return;
 
+  let log = message.guild.channels.cache.get(
+    await db.fetch(`log_${message.guild.id}`)
+  );
 
-//Güvenlik Son
+  if (!log) return;
 
+  const embed = new Discord.MessageEmbed()
 
+    .setTitle(message.author.username + " | Mesaj Silindi")
 
- 
+    .addField("Kullanıcı: ", message.author)
 
-  
+    .addField("Kanal: ", message.channel)
+
+    .addField("Mesaj: ", "" + message.content + "");
+
+  log.send(embed);
+});
+
+client.on("messageUpdate", async (oldMessage, newMessage) => {
+  let modlog = await db.fetch(`log_${oldMessage.guild.id}`);
+
+  if (!modlog) return;
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(oldMessage.author.username, oldMessage.author.avatarURL())
+
+    .addField("**Eylem:**", "Mesaj Düzenleme")
+
+    .addField(
+      "**Mesajın sahibi:**",
+      `<@${oldMessage.author.id}> === **${oldMessage.author.id}**`
+    )
+
+    .addField("**Eski Mesajı:**", `${oldMessage.content}`)
+
+    .addField("**Yeni Mesajı:**", `${newMessage.content}`)
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(
+      `Sunucu: ${oldMessage.guild.name} - ${oldMessage.guild.id}`,
+      oldMessage.guild.iconURL()
+    )
+
+    .setThumbnail(oldMessage.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("channelCreate", async channel => {
+  let modlog = await db.fetch(`log_${channel.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await channel.guild
+    .fetchAuditLogs({ type: "CHANNEL_CREATE" })
+    .then(audit => audit.entries.first());
+
+  let kanal;
+
+  if (channel.type === "text") kanal = `<#${channel.id}>`;
+
+  if (channel.type === "voice") kanal = `\`${channel.name}\``;
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Kanal Oluşturma")
+
+    .addField("**Kanalı Oluşturan Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Oluşturduğu Kanal:**", `${kanal}`)
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(
+      `Sunucu: ${channel.guild.name} - ${channel.guild.id}`,
+      channel.guild.iconURL()
+    )
+
+    .setThumbnail(channel.guild.iconUR);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("channelDelete", async channel => {
+  let modlog = await db.fetch(`log_${channel.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await channel.guild
+    .fetchAuditLogs({ type: "CHANNEL_DELETE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Kanal Silme")
+
+    .addField("**Kanalı Silen Kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Silinen Kanal:**", `\`${channel.name}\``)
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(
+      `Sunucu: ${channel.guild.name} - ${channel.guild.id}`,
+      channel.guild.iconURL()
+    )
+
+    .setThumbnail(channel.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("roleCreate", async role => {
+  let modlog = await db.fetch(`log_${role.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await role.guild
+    .fetchAuditLogs({ type: "ROLE_CREATE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Rol Oluşturma")
+
+    .addField("**Rolü oluşturan kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Oluşturulan rol:**", `\`${role.name}\` **=** \`${role.id}\``)
+
+    .setTimestamp()
+
+    .setFooter(
+      `Sunucu: ${role.guild.name} - ${role.guild.id}`,
+      role.guild.iconURL
+    )
+
+    .setColor("#00ff00")
+
+    .setThumbnail(role.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("roleDelete", async role => {
+  let modlog = await db.fetch(`log_${role.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await role.guild
+    .fetchAuditLogs({ type: "ROLE_DELETE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Rol Silme")
+
+    .addField("**Rolü silen kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Silinen rol:**", `\`${role.name}\` **=** \`${role.id}\``)
+
+    .setTimestamp()
+
+    .setFooter(
+      `Sunucu: ${role.guild.name} - ${role.guild.id}`,
+      role.guild.iconURL
+    )
+
+    .setColor("#00ff00")
+
+    .setThumbnail(role.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("emojiCreate", async emoji => {
+  let modlog = await db.fetch(`log_${emoji.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await emoji.guild
+    .fetchAuditLogs({ type: "EMOJI_CREATE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Emoji Oluşturma")
+
+    .addField("**Emojiyi oluşturan kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Oluşturulan emoji:**", `${emoji} - İsmi: \`${emoji.name}\``)
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(
+      `Sunucu: ${emoji.guild.name} - ${emoji.guild.id}`,
+      emoji.guild.iconURL
+    )
+
+    .setThumbnail(emoji.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("emojiDelete", async emoji => {
+  let modlog = await db.fetch(`log_${emoji.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await emoji.guild
+    .fetchAuditLogs({ type: "EMOJI_DELETE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Emoji Silme")
+
+    .addField("**Emojiyi silen kişi:**", `<@${entry.executor.id}>`)
+
+    .addField("**Silinen emoji:**", `${emoji}`)
+
+    .setTimestamp()
+
+    .setFooter(
+      `Sunucu: ${emoji.guild.name} - ${emoji.guild.id}`,
+      emoji.guild.iconURL
+    )
+
+    .setColor("#00ff00")
+
+    .setThumbnail(emoji.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("emojiUpdate", async (oldEmoji, newEmoji) => {
+  let modlog = await db.fetch(`log_${oldEmoji.guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await oldEmoji.guild
+    .fetchAuditLogs({ type: "EMOJI_UPDATE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Emoji Güncelleme")
+
+    .addField("**Emojiyi güncelleyen kişi:**", `<@${entry.executor.id}>`)
+
+    .addField(
+      "**Güncellenmeden önceki emoji:**",
+      `${oldEmoji} - İsmi: \`${oldEmoji.name}\``
+    )
+
+    .addField(
+      "**Güncellendikten sonraki emoji:**",
+      `${newEmoji} - İsmi: \`${newEmoji.name}\``
+    )
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(
+      `Sunucu: ${oldEmoji.guild.name} - ${oldEmoji.guild.id}`,
+      oldEmoji.guild.iconURL
+    )
+
+    .setThumbnail(oldEmoji.guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("guildBanAdd", async (guild, user) => {
+  let modlog = await db.fetch(`log_${guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await guild
+    .fetchAuditLogs({ type: "MEMBER_BAN_ADD" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Yasaklama")
+
+    .addField("**Kullanıcıyı yasaklayan yetkili:**", `<@${entry.executor.id}>`)
+
+    .addField("**Yasaklanan kullanıcı:**", `**${user.tag}** - ${user.id}`)
+
+    .addField("**Yasaklanma sebebi:**", `${entry.reason}`)
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(`Sunucu: ${guild.name} - ${guild.id}`, guild.iconURL)
+
+    .setThumbnail(guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+
+client.on("guildBanRemove", async (guild, user) => {
+  let modlog = await db.fetch(`log_${guild.id}`);
+
+  if (!modlog) return;
+
+  const entry = await guild
+    .fetchAuditLogs({ type: "MEMBER_BAN_REMOVE" })
+    .then(audit => audit.entries.first());
+
+  let embed = new Discord.MessageEmbed()
+
+    .setAuthor(entry.executor.username, entry.executor.avatarURL())
+
+    .addField("**Eylem:**", "Yasak kaldırma")
+
+    .addField("**Yasağı kaldıran yetkili:**", `<@${entry.executor.id}>`)
+
+    .addField(
+      "**Yasağı kaldırılan kullanıcı:**",
+      `**${user.tag}** - ${user.id}`
+    )
+
+    .setTimestamp()
+
+    .setColor("#00ff00")
+
+    .setFooter(`Sunucu: ${guild.name} - ${guild.id}`, guild.iconURL)
+
+    .setThumbnail(guild.iconURL);
+
+  client.channels.cache.get(modlog).send(embed);
+});
+// ModLog Son
