@@ -23,6 +23,11 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}seviye-sistem\` Gelişmiş Seviye Sistem`,
       true
     )
+      .addField(
+      `__OtoRol Sistem__`,
+      `<a:green:822530401301954632> \`${prefix}otorol-sistem\` Gelişmiş OtoRol Sistem`,
+      true
+        )
     .addField(
       `__ÖzelProfil Sistem__`,
       `<a:green:822530401301954632> \`${prefix}profil-sistem\` Gelişmiş Profil Sistem`,

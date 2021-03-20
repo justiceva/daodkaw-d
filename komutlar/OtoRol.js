@@ -4,10 +4,10 @@ let prefix = process.env.prefix;
 exports.run = (client, message, args) => {
   const embed = new Discord.MessageEmbed()
     .setAuthor("ShadowRise Network | OtoRol", client.user.avatarURL())
-       .setColor("#00ff00")
+    .setColor("#00ff00")
     .addField(
       "__OTOROL Ayarlamak__",
-      "__**Oto-Rol-Ayarla**__ <:sag:822547800481988628> **Otorolü Ayarlar.**\n Örnek: `sn!oto-rol-ayarla @rolünüz #logkanalı` \n \n __**sn!otorol-msg**__》 **Otorol Mesajını Ayarlar.** \n Örnek: `sn!otorol-msg -server-, Sunucumuza Hoşgeldin, -uye-! -rol- Adlı Rolün Başarı İle Verildi Seninle Beraber, **-uyesayisi-** Kişiyiz`"
+      "__**Oto-Rol-Ayarla**__ <:sag:822547800481988628> **Otorolü Ayarlar.**\n Örnek: `sn!oto-rol-ayarla @rolünüz #logkanalı` \n \n __**sn!otorol-msg**__ <:sag:822547800481988628>  **Otorol Mesajını Ayarlar.** \n Örnek: `sn!otorol-msg -server-, Sunucumuza Hoşgeldin, -uye-! -rol- Adlı Rolün Başarı İle Verildi Seninle Beraber, **-uyesayisi-** Kişiyiz`"
     )
 
     .addField(
