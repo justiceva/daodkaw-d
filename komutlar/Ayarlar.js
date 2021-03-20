@@ -28,12 +28,12 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}küfürlog\` Discord Sunucuna Küfür Edenlerin Mesaji Silinir Ve Log Kanalına Gider.`,
       true
     )
-  .addField(
+    .addField(
       `__Reklam Engel__`,
       `<a:green:822530401301954632> \`${prefix}reklamengel\` Discord Sunucuna Reklam Yapmaya Çalışanları Durdurursun.`,
       true
     )
-  .addField(
+    .addField(
       `__Reklam Log__`,
       `<a:green:822530401301954632> \`${prefix}reklamlog\` Discord Sunucuna Reklam Yapmayı Mesaji Silinir Ve Log Kanalına Gider.`,
       true
@@ -46,6 +46,16 @@ exports.run = async (client, message) => {
     .addField(
       `__BanSay__`,
       `<a:green:822530401301954632> \`${prefix}bansay\` Discord Sunucunuzda Toplam Kaç Banlanmış Kişi Var Onu Gösterir.`,
+      true
+    )
+    .addField(
+      `__Sohbet AÇ__`,
+      `<a:green:822530401301954632> \`${prefix}sohbet-aç\` Komutu Kullandıgınız Kanalda Sohbeti Açar.`,
+      true
+    )
+    .addField(
+      `__Sohbet Kapat__`,
+      `<a:green:822530401301954632> \`${prefix}sohbet-kapat\` Komutu Kullandıgınız Kanalda Sohbeti Kapat.`,
       true
     )
     .addField(
