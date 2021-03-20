@@ -6,7 +6,7 @@ exports.run = async (client, message) => {
   const embedayarlar = new Discord.MessageEmbed()
     .setAuthor(`CruzyHost Bilişim | Ayarlar `)
     .setTitle(``)
-    .setColor(`#ee7621`)
+        .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/icons/818740312293376000/a_9c062cea607a11f22199bda24788785a.gif?size=128"
     )
