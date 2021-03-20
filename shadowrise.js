@@ -127,6 +127,8 @@ client.login(process.env.TOKEN);
 
 ////-----------------------------\\\\\\\\\
 
+
+
 //AFK Baş
 
 const ms = require("parse-ms");
