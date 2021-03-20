@@ -4,23 +4,43 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedayarlar = new Discord.MessageEmbed()
-    .setAuthor(`CruzyHost Bilişim | Ayarlar `)
+    .setAuthor(`ShadowRise Network | Ayarlar`)
     .setTitle(``)
-        .setColor("#00ff00")
+    .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/icons/818740312293376000/a_9c062cea607a11f22199bda24788785a.gif?size=128"
+      "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
     )
     .setDescription(
-      `<:yildiz:819973383667056680> CruzyHost Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
-      `__Komut__`,
-      `<a:turuncu:822084547386146836> \`${prefix}modlog [#kanal]\` ModLog Kanal Ayalar.`,
+      `__ModLog__`,
+      `<a:green:822530401301954632> \`${prefix}modlog\` Komutla Discord Sunucuza ModLog Kanalını Ayarlarsınız.`,
+      true
+    )
+    .addField(
+      `__KüfürEngel__`,
+      `<a:green:822530401301954632> \`${prefix}küfürengel\` Discord Sunucuna Küfür Etmeye Çalışanları Durdurursun.`,
+      true
+    )
+    .addField(
+      `__Küfür Log__`,
+      `<a:green:822530401301954632> \`${prefix}küfürlog\` Discord Sunucuna Küfür Edenlerin Mesaji Silinir Ve Log Kanalına Gider.`,
+      true
+    )
+    .addField(
+      `__Ban__`,
+      `<a:green:822530401301954632> \`${prefix}ban\` Discord Sunucundan Birisini Banlamaya Sağlar.`,
+      true
+    )
+    .addField(
+      `__BanSay__`,
+      `<a:green:822530401301954632> \`${prefix}bansay\` Discord Sunucunuzda Toplam Kaç Banlanmış Kişi Var Onu Gösterir.`,
       true
     )
     .addField(
       `__Bilgilendirme__`,
-      `<a:logo:822085656540610591>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:logo:822085656540610591> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:logo:822085656540610591> \`${prefix}siteler\` | CruzyHost Sitelerini Görürsün`
+      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
     );
   return message.channel.send(embedayarlar);
 };

@@ -11,16 +11,27 @@ exports.run = (client, message) => {
   if (küfür) {
     db.delete(`küfür.${message.guild.id}`);
     message.channel
-      .send(new Discord.MessageEmbed()  .setColor("#00ff00") .setDescription(`**Başarılı Bir Şekilde KüfürEngel Koruması Kapatıldı**`)
-            )
+      .send(
+        new Discord.MessageEmbed()
+          .setColor("#00ff00")
+          .setDescription(
+            `**Başarılı Bir Şekilde KüfürEngel Koruması Kapatıldı**`
+          )
+      )
       .then(l => {
         l.delete({ timeout: 5000 });
       });
   } else {
     db.set(`küfür.${message.guild.id}.durum`, true);
-    message.channel.send(new Discord.MessageEmbed()  .setColor("#00ff00") .setDescription(` **BA**`)).then(l => {
-      l.delete({ timeout: 5000 });
-    });
+    message.channel
+      .send(
+       new Discord.MessageEmbed()
+          .setColor("#00ff00")
+          .setDescription(` **Başarılı Bir Şekilde KüfürEngel Koruma Açıldı**`)
+      )
+      .then(l => {
+        l.delete({ timeout: 5000 });
+      });
   }
 };
 
