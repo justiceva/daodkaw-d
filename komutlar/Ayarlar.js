@@ -58,9 +58,14 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}sohbet-kapat\` Komutu Kullandıgınız Kanalda Sohbeti Kapat.`,
       true
     )
-      .addField(
+    .addField(
       `__İsim Değiştir__`,
       `<a:green:822530401301954632> \`${prefix}isimdeğiştir\` Discord Sunucunuzda Etiketlediginiz Kişinin İsmini Değiştir.`,
+      true
+    )
+    .addField(
+      `__Sil_`,
+      `<a:green:822530401301954632> \`${prefix}sil\` Yazdıgınız Sayı Kadar Discord Botta O Kadar Mesaj Siler.`,
       true
     )
     .addField(
