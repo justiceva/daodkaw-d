@@ -5,7 +5,7 @@ const prefix = process.env.prefix;
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_NICKNAMES"))
     return message.reply(
-      `<a:uyari:819984831563038720> Bunu yapabilmek için gerekli yetkiye sahip değilsiniz!`
+      ` | <a:unlem:822546045706698763> Bunu yapabilmek için gerekli yetkiye sahip değilsiniz!`
     );
   let isim = args.slice(1).join(" ");
   let kullanici = message.mentions.users.first();
@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   if (!kullanici)
     return message.channel.send(
       new Discord.MessageEmbed()
-   .setColor("#00ff00")
+        .setColor("#00ff00")
         .setTitle("HATA")
         .setDescription("Kişiyi Etiketlemelisin!")
     );
@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
   message.guild.members.cache.get(kullanici.id).setNickname(`${isim}`);
   return message.channel.send(
     new Discord.MessageEmbed()
-   .setColor("#00ff00")
+      .setColor("#00ff00")
       .setTitle("İsim Değiştirildi!")
       .addField("İsmi Değiştirilen", `${kullanici.username}`)
       .addField("Yeni İsmi", `${isim}`)

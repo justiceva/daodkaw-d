@@ -58,6 +58,11 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}sohbet-kapat\` Komutu Kullandıgınız Kanalda Sohbeti Kapat.`,
       true
     )
+      .addField(
+      `__İsim Değiştir__`,
+      `<a:green:822530401301954632> \`${prefix}isimdeğiştir\` Discord Sunucunuzda Etiketlediginiz Kişinin İsmini Değiştir.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
