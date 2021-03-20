@@ -6,7 +6,11 @@ let prefix = process.env.prefix;
 module.exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("ADMINISTRATOR"))
     return message.channel.send(
-      "Bu Komutu kullanmanız için `Yönetici` yetkisine sahip olmalısınız."
+      new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setDescription(
+          "Bu Komutu kullanmanız için `Yönetici` yetkisine sahip olmalısınız."
+        )
     );
 
   let d = await db.fetch(`okanal_${message.guild.id}`);
@@ -14,9 +18,10 @@ module.exports.run = async (client, message, args) => {
   if (!sea)
     return message.channel.send(
       new Discord.MessageEmbed()
-       .setDescription(
-      `Oylama kanalı ayarlanmamış. Ayarlamak için \`${prefix}oylama-kanal #kanal\``
-         )
+        .setColor("RANDOM")
+        .setDescription(
+          `<a:unlem:822546045706698763> Oylama Kanalı Ayarlanmamış. \n Ayarlamak İçin \`${prefix}oylama-kanal #kanal\``
+        )
     );
 
   let yazi = args.slice(0).join(" ");
