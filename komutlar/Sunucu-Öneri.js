@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
   message.delete();
   message.channel.send(":tada: Önerin başarıyla alınmıştır!");
 
-  let log = "LOG_KANALID";
+  let log = "822524719437447178";
   let veri = db.get(`CodEmingOneri.${message.author.id}`);
   let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
