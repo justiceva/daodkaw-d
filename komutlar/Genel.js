@@ -18,6 +18,11 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632>  \`${prefix}oylama\` Sunucudan Bir Oylama Başlatırsın.`,
       true
     )
+   .addField(
+      `__Oylama Kanal__`,
+      `<a:green:822530401301954632>  \`${prefix}oylama-kanal\` Sunucudan Bir Oylama Kanal Ayarlar.`,
+      true
+    )
     .addField(
       `__Toplam Komut__`,
       `<a:green:822530401301954632>  \`${prefix}komutlar\` Discord Botta Toplam Kaç Komut Var Ona Bakarsın.`,
