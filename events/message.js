@@ -41,13 +41,19 @@ module.exports = message => {
     cmd = client.commands.get(client.aliases.get(command));
   }
   if (cmd) {
-    const CodEmingHerDaim = require("quick.db")
-let meteyasin = CodEmingHerDaim.fetch("!methesu7washere")
-if(meteyasin) {
-if(message.author.id !== process.env.sahip) {
-return message.channel.send(new Discord.MessageEmbed() .setDescription(' Şu anda bot bakımda. Bakım bitince lütfen tekrar deneyiniz. Bakım sebebi : ' + meteyasin))
-}
-}
+    const CodEmingHerDaim = require("quick.db");
+    let meteyasin = CodEmingHerDaim.fetch("!methesu7washere");
+    if (meteyasin) {
+      if (message.author.id !== process.env.sahip) {
+        return message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor("#00ff00")
+            .setDescription(
+              `<:list:822876631194402850> **Bot Şuanda Bakımdadır  \`${meteyasin}\` Sebebi Dolayı Bakımdadır.**`
+            )
+        );
+      }
+    }
 
     if (cmd.conf.enabled === false) {
       if (
