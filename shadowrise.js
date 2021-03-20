@@ -539,3 +539,101 @@ client.on("guildBanRemove", async (guild, user) => {
   client.channels.cache.get(modlog).send(embed);
 });
 // ModLog Son
+
+//KüfürEngel Baş
+
+const küfür = [
+  "siktir",
+  "fuck",
+  "puşt",
+  "pust",
+  "piç",
+  "sikerim",
+  "sik",
+  "yarra",
+  "yarrak",
+  "amcık",
+  "orospu",
+  "orosbu",
+  "orosbucocu",
+  "oç",
+  ".oc",
+  "ibne",
+  "yavşak",
+  "bitch",
+  "dalyarak",
+  "amk",
+  "awk",
+  "taşak",
+  "taşşak",
+  "daşşak",
+  "sikm",
+  "sikim",
+  "sikmm",
+  "skim",
+  "skm",
+  "sg"
+];
+client.on("messageUpdate", async (old, nev) => {
+  if (old.content != nev.content) {
+    let i = await db.fetch(`küfür.${nev.member.guild.id}.durum`);
+    let y = await db.fetch(`küfür.${nev.member.guild.id}.kanal`);
+    if (i) {
+      if (küfür.some(word => nev.content.includes(word))) {
+        if (nev.member.hasPermission("BAN_MEMBERS")) return;
+        //if (ayarlar.gelistiriciler.includes(nev.author.id)) return ;
+        const embed = new Discord.MessageEmbed()
+          .setColor("#00ff00")
+          .setDescription(
+            ` ${nev.author} , **Mesajını editleyerek küfür etmeye çalıştı!**`
+          )
+          .addField("Mesajı:", nev);
+
+        nev.delete();
+        const embeds = new Discord.MessageEmbed()
+          .setColor("#00ff00")
+          .setDescription(
+            ` ${nev.author} , **Mesajı editleyerek küfür etmene izin veremem!**`
+          );
+        client.channels.cache.get(y).send(embed);
+        nev.channel.send(embeds).then(msg => msg.delete({ timeout: 5000 }));
+      }
+    } else {
+    }
+    if (!i) return;
+  }
+});
+
+client.on("message", async msg => {
+  if (msg.author.bot) return;
+  if (msg.channel.type === "dm") return;
+  let y = await db.fetch(`küfür.${msg.member.guild.id}.kanal`);
+
+  let i = await db.fetch(`küfür.${msg.member.guild.id}.durum`);
+  if (i) {
+    if (küfür.some(word => msg.content.toLowerCase().includes(word))) {
+      try {
+        if (!msg.member.hasPermission("MANAGE_GUILD")) {
+          //  if (!ayarlar.gelistiriciler.includes(msg.author.id)) return ;
+          msg.delete({ timeout: 750 });
+          const embeds = new Discord.MessageEmbed()
+            .setColor("#00ff00")
+            .setDescription(
+              ` <@${msg.author.id}> , **Bu sunucuda küfür yasak!**`
+            );
+          msg.channel.send(embeds).then(msg => msg.delete({ timeout: 5000 }));
+          const embed = new Discord.MessageEmbed()
+            .setColor("#00ff00")
+            .setDescription(` ${msg.author} , **Küfür etmeye çalıştı!**`)
+            .addField("Mesajı:", msg);
+          client.channels.cache.get(y).send(embed);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+  if (!i) return;
+});
+
+//KüfürEngel Son
