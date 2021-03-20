@@ -28,6 +28,11 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}profil-sistem\` Gelişmiş Profil Sistem`,
       true
     )
+   .addField(
+      `__Öneri Sistem__`,
+      `<a:green:822530401301954632> \`${prefix}öneri-sistem\` Ayarlanabilir Öneri Sistem`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
