@@ -29,7 +29,6 @@ setInterval(() => {
 }, 280000);
 //-----------------------------------------------\\
 
-
 const log = message => {
   console.log(`${message}`);
 };
@@ -127,8 +126,6 @@ client.on("error", e => {
 client.login(process.env.TOKEN);
 
 ////-----------------------------\\\\\\\\\
-
-
 
 //AFK Baş
 
@@ -740,81 +737,160 @@ client.on("guildMemberAdd", async member => {
   if (!rol) return;
 
   if (!mesaj) {
-    client.channels.cache.get(kanal).send(":loudspeaker: :inbox_tray: Otomatik Rol Verildi Seninle Beraber `" + member.guild.memberCount + "` Kişiyiz! Hoşgeldin! `" + member.user.username + "`");
+    client.channels.cache
+      .get(kanal)
+      .send(
+        ":loudspeaker: :inbox_tray: Otomatik Rol Verildi Seninle Beraber `" +
+          member.guild.memberCount +
+          "` Kişiyiz! Hoşgeldin! `" +
+          member.user.username +
+          "`"
+      );
     return member.roles.add(rol);
   }
 
   if (mesaj) {
-    var mesajs = mesaj.replace("-uye-", `${member.user}`).replace("-uyetag-", `${member.user.tag}`).replace("-rol-", `${member.guild.roles.cache.get(rol).name}`).replace("-server-", `${member.guild.name}`).replace("-uyesayisi-", `${member.guild.memberCount}`).replace("-botsayisi-", `${member.guild.members.cache.filter(m => m.user.bot).size}`).replace("-bolge-", `${member.guild.region}`).replace("-kanalsayisi-", `${member.guild.channels.size}`);
+    var mesajs = mesaj
+      .replace("-uye-", `${member.user}`)
+      .replace("-uyetag-", `${member.user.tag}`)
+      .replace("-rol-", `${member.guild.roles.cache.get(rol).name}`)
+      .replace("-server-", `${member.guild.name}`)
+      .replace("-uyesayisi-", `${member.guild.memberCount}`)
+      .replace(
+        "-botsayisi-",
+        `${member.guild.members.cache.filter(m => m.user.bot).size}`
+      )
+      .replace("-bolge-", `${member.guild.region}`)
+      .replace("-kanalsayisi-", `${member.guild.channels.size}`);
     member.roles.add(rol);
     return client.channels.cache.get(kanal).send(mesajs);
-     }
+  }
 });
 
 //OtORol Son
 
 //Mute Sistem Baş
 
-client.on("ready", async() => {
+client.on("ready", async () => {
+  setInterval(() => {
+    let datalar = db.all().filter(data => data.ID.startsWith("mute_"));
 
-setInterval(() => {
- 
-let datalar = db.all().filter(data => data.ID.startsWith("mute_"))  
+    if (datalar.size < 0) return;
 
-if(datalar.size < 0) return;
+    datalar.forEach(datacık => {
+      let kullanıcı = datacık.ID.replace("mute_", "");
+      let data = db.fetch(`mute_${kullanıcı}`);
 
-datalar.forEach(datacık => {
+      let süre = data.ms - (Date.now() - data.başlangıç);
 
-let kullanıcı = datacık.ID.replace("mute_", "")
-let data = db.fetch(`mute_${kullanıcı}`)
+      let sunucu = client.guilds.cache.get(data.sunucu);
+      let member = sunucu.members.cache.get(kullanıcı);
+      let kanal = sunucu.channels.cache.get(data.kanal);
+      let sebep = data.sebep;
+      let moderator = client.users.cache.get(data.moderator);
+      let mute_rol = sunucu.roles.cache.find(
+        rol =>
+          rol.name.toLowerCase().includes("susturuldu") ||
+          rol.name.toLowerCase().includes("muted")
+      );
 
+      if (!member) {
+        let hata = new Discord.MessageEmbed()
+          .setTitle("Mute Devam Edemedi!")
+          .setDescription(
+            "**" +
+              kullanıcı +
+              "** ID'ye sahip; **" +
+              moderator.username +
+              "** Tarafından mutelenen kullanıcı **" +
+              sunucu.name +
+              "** Sunucusundan ayrılmış!"
+          )
+          .setColor("RED");
+        kanal.send("<@!" + moderator.id + ">", hata);
+        db.delete(datacık.ID);
 
+        return;
+      }
 
-let süre = data.ms - (Date.now() - data.başlangıç)
+      if (süre > 0) return;
 
-let sunucu = client.guilds.cache.get(data.sunucu)
-let member = sunucu.members.cache.get(kullanıcı)
-let kanal = sunucu.channels.cache.get(data.kanal)
-let sebep = data.sebep
-let moderator = client.users.cache.get(data.moderator)
-let mute_rol = sunucu.roles.cache.find(rol => rol.name.toLowerCase().includes("susturuldu") || rol.name.toLowerCase().includes("muted"))
+      let bitti = new Discord.MessageEmbed()
+        .setTitle(":hammer_pick: Mute Kaldırıldı!")
+        .setDescription(
+          "Aşağıdaki kullanıcıya ait mute; **Süresi Dolduğu** için sonlandırıldı!"
+        )
+        .addField("\u200b", "\u200b")
+        .addField(
+          ":bust_in_silhouette: __KULLANICI__ :bust_in_silhouette:",
+          "» Kullanıcı: **" +
+            member.user.username +
+            "**\n» Mute Sebebi: **" +
+            sebep +
+            "**\n» ID: **" +
+            member.user.id +
+            "**"
+        )
+        .addField("\u200b", "\u200b")
+        .addField(
+          ":maple_leaf: __YETKİLİ__ :maple_leaf:",
+          "» Yetkili: **" +
+            moderator.username +
+            "**\n» ID: **" +
+            moderator.id +
+            "**"
+        )
+        .setColor("GREEN");
+      kanal.send(
+        "<@!" + member.user.id + "> , <@!" + moderator.id + ">",
+        bitti
+      );
 
-
-if(!member) {
-
-  let hata = new Discord.MessageEmbed()
-  .setTitle("Mute Devam Edemedi!")
-  .setDescription("**"+kullanıcı+"** ID'ye sahip; **"+moderator.username+"** Tarafından mutelenen kullanıcı **"+sunucu.name+"** Sunucusundan ayrılmış!")
-  .setColor("RED")
-kanal.send("<@!"+moderator.id+">", hata)
-db.delete(datacık.ID)
-
-return
-} 
-
-
-
-if(süre > 0) return
-
-let bitti = new Discord.MessageEmbed()
-.setTitle(":hammer_pick: Mute Kaldırıldı!")
-.setDescription("Aşağıdaki kullanıcıya ait mute; **Süresi Dolduğu** için sonlandırıldı!")
-.addField('\u200b', '\u200b')
-.addField(":bust_in_silhouette: __KULLANICI__ :bust_in_silhouette:", "» Kullanıcı: **"+member.user.username+"**\n» Mute Sebebi: **"+sebep+"**\n» ID: **"+member.user.id+"**")
-.addField('\u200b', '\u200b')
-.addField(":maple_leaf: __YETKİLİ__ :maple_leaf:", "» Yetkili: **"+moderator.username+"**\n» ID: **"+moderator.id+"**")
-.setColor("GREEN")
-kanal.send("<@!"+member.user.id+"> , <@!"+moderator.id+">",bitti)
-
-
-
-member.roles.remove(mute_rol)
-db.delete(datacık.ID)
-})
-
-}, 5000);
-
-})
+      member.roles.remove(mute_rol);
+      db.delete(datacık.ID);
+    });
+  }, 5000);
+});
 
 //Mute Sistem Son
 
+//Kelime Türetmece Baş
+
+client.on("message", async message => {
+  if (message.author.id === client.user.id) return;
+  let kanal = ""
+  if (message.channel.id !== kanal) return;
+
+  let kelime = await db.fetch(`kelime`)
+
+  if (message.author.id === db.fetch(`kelime-sahip`)) {
+    message.delete({ timeout: 100, reason: "ce" });
+    message
+      .reply(
+        " En son kelimeyi sen **yazmışsın**, başkasının oyuna katılmasını bekle."
+      )
+      .then(s => s.delete({ timeout: 5000, reason: "s" }));
+    return;
+  }
+
+  if (!kelime) {
+    message.react("✅");
+    db.set(`kelime`, message.content.substr(-1));
+    db.set(`kelime-sahip`, message.author.id);
+    return;
+  }
+
+  if (!message.content.toLowerCase().startsWith(kelime)) {
+    message.delete({ timeout: 100, reason: "ce" });
+    message
+      .reply(" Yeni kelime **" + kelime + "** harfi ile başlamalıdır.")
+      .then(s => s.delete({ timeout: 5000, reason: "s" }));
+    return;
+  }
+
+  message.react("✅");
+  db.set(`kelime`, message.content.substr(-1));
+  db.set(`kelime-sahip`, message.author.id);
+});
+
+//Kelime Türetmece Son
