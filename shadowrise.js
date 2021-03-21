@@ -753,5 +753,68 @@ client.on("guildMemberAdd", async member => {
 
 //OtORol Son
 
-//Destek Sistemi Baş
+//Mute Sistem Baş
+
+client.on("ready", async() => {
+
+setInterval(() => {
+ 
+let datalar = db.all().filter(data => data.ID.startsWith("mute_"))  
+
+if(datalar.size < 0) return;
+
+datalar.forEach(datacık => {
+
+let kullanıcı = datacık.ID.replace("mute_", "")
+let data = db.fetch(`mute_${kullanıcı}`)
+
+
+
+let süre = data.ms - (Date.now() - data.başlangıç)
+
+let sunucu = client.guilds.cache.get(data.sunucu)
+let member = sunucu.members.cache.get(kullanıcı)
+let kanal = sunucu.channels.cache.get(data.kanal)
+let sebep = data.sebep
+let moderator = client.users.cache.get(data.moderator)
+let mute_rol = sunucu.roles.cache.find(rol => rol.name.toLowerCase().includes("susturuldu") || rol.name.toLowerCase().includes("muted"))
+
+
+if(!member) {
+
+  let hata = new Discord.MessageEmbed()
+  .setTitle("Mute Devam Edemedi!")
+  .setDescription("**"+kullanıcı+"** ID'ye sahip; **"+moderator.username+"** Tarafından mutelenen kullanıcı **"+sunucu.name+"** Sunucusundan ayrılmış!")
+  .setColor("RED")
+kanal.send("<@!"+moderator.id+">", hata)
+db.delete(datacık.ID)
+
+return
+} 
+
+
+
+if(süre > 0) return
+
+let bitti = new Discord.MessageEmbed()
+.setTitle(":hammer_pick: Mute Kaldırıldı!")
+.setDescription("Aşağıdaki kullanıcıya ait mute; **Süresi Dolduğu** için sonlandırıldı!")
+.addField('\u200b', '\u200b')
+.addField(":bust_in_silhouette: __KULLANICI__ :bust_in_silhouette:", "» Kullanıcı: **"+member.user.username+"**\n» Mute Sebebi: **"+sebep+"**\n» ID: **"+member.user.id+"**")
+.addField('\u200b', '\u200b')
+.addField(":maple_leaf: __YETKİLİ__ :maple_leaf:", "» Yetkili: **"+moderator.username+"**\n» ID: **"+moderator.id+"**")
+.setColor("GREEN")
+kanal.send("<@!"+member.user.id+"> , <@!"+moderator.id+">",bitti)
+
+
+
+member.roles.remove(mute_rol)
+db.delete(datacık.ID)
+})
+
+}, 5000);
+
+})
+
+//Mute Sistem Son
 

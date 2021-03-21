@@ -68,6 +68,11 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632> \`${prefix}sil\` Yazdıgınız Sayı Kadar Discord Botta O Kadar Mesaj Siler.`,
       true
     )
+  .addField(
+      `__Mute_`,
+      `<a:green:822530401301954632> \`${prefix}mute\` Discord Sunucunuzda Birisini Susturursunz.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
