@@ -858,10 +858,10 @@ client.on("ready", async () => {
 
 client.on("message", async message => {
   if (message.author.id === client.user.id) return;
-  let kanal = ""
+  let kanal = "";
   if (message.channel.id !== kanal) return;
 
-  let kelime = await db.fetch(`kelime`)
+  let kelime = await db.fetch(`kelime`);
 
   if (message.author.id === db.fetch(`kelime-sahip`)) {
     message.delete({ timeout: 100, reason: "ce" });
@@ -893,41 +893,48 @@ client.on("message", async message => {
   db.set(`kelime-sahip`, message.author.id);
 });
 
-
 //Kelime Türetmece Son
 
 //Sayı Sayma Baş
 
-client.on('message', async message => {
-if(message.author.id === client.user.id) return;
-let sayıcık = await db.fetch(`sayı`)
-if(!sayıcık) sayıcık = 1
-let sayı = sayıcık.toString()
-let kanal = ""
-if(message.channel.id !== kanal) return;
+client.on("message", async message => {
+  if (message.author.id === client.user.id) return;
+  let sayıcık = await db.fetch(`sayı`);
+  if (!sayıcık) sayıcık = 1;
+  let sayı = sayıcık.toString();
+  let kanal = "";
+  if (message.channel.id !== kanal) return;
 
-if(message.author.id === db.fetch(`sayı-sahip`)) {
-message.delete({timeout: 100, reason:"ce"})
-message.reply(" En son sayıyı sen yazmışsın, başkasının oyuna katılmasını bekle.").then(s => s.delete({timeout : 5000, reason: "s"}))
-return
-}
+  if (message.author.id === db.fetch(`sayı-sahip`)) {
+    message.delete({ timeout: 100, reason: "ce" });
+    message
+      .reply(
+        " En son sayıyı sen yazmışsın, başkasının oyuna katılmasını bekle."
+      )
+      .then(s => s.delete({ timeout: 5000, reason: "s" }));
+    return;
+  }
 
-if(isNaN(message.content)) {
-message.delete({timeout: 100, reason:"ce"})
-  
-message.reply(" Sadece sayı girebilirsin.").then(s => s.delete({timeout : 5000, reason: "s"}))
-return
-}  
+  if (isNaN(message.content)) {
+    message.delete({ timeout: 100, reason: "ce" });
 
-if(message.content !== sayı) {
-message.delete({timeout: 100, reason:"ce"})
-message.reply(" Lütfen bir sonraki sayıyı gir. Bir sonraki sayı; "+sayı).then(s => s.delete({timeout : 5000, reason: "s"}))
-  
-let ce = Number(message.content)
-db.set(`sayı`, ce+1)
-db.set(`sayı-sahip`, message.author.id)
-return
-}
-})
+    message
+      .reply(" Sadece sayı girebilirsin.")
+      .then(s => s.delete({ timeout: 5000, reason: "s" }));
+    return;
+  }
+
+  if (message.content !== sayı) {
+    message.delete({ timeout: 100, reason: "ce" });
+    message
+      .reply(" Lütfen bir sonraki sayıyı gir. Bir sonraki sayı; " + sayı)
+      .then(s => s.delete({ timeout: 5000, reason: "s" }));
+
+    let ce = Number(message.content);
+    db.set(`sayı`, ce + 1);
+    db.set(`sayı-sahip`, message.author.id);
+    return;
+  }
+});
 
 //Sayı Sayma Son
