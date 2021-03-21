@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const db = require("quick.db");
 let talkedRecently = new Set();
 
 let commands = process.env.message;
