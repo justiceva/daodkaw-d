@@ -44,7 +44,8 @@
     "superagent": "^6.1.0",
     "gamecord-fork": "^1.0.6",
     "film-apisi": "^1.0.0",
-    "canvas-constructor": "^4.1.0"
+    "canvas-constructor": "^4.1.0",
+    "hastebin-gen": "^2.0.5"
   },
   "engines": {
     "node": "12.x"
