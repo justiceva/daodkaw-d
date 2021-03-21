@@ -752,3 +752,6 @@ client.on("guildMemberAdd", async member => {
 });
 
 //OtORol Son
+
+//Destek Sistemi Baş
+
