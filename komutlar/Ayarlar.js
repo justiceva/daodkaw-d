@@ -64,12 +64,12 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Sil_`,
+      `__Sil__`,
       `<a:green:822530401301954632> \`${prefix}sil\` Yazdıgınız Sayı Kadar Discord Botta O Kadar Mesaj Siler.`,
       true
     )
-  .addField(
-      `__Mute_`,
+    .addField(
+      `__Mute__`,
       `<a:green:822530401301954632> \`${prefix}mute\` Discord Sunucunuzda Birisini Susturursunz.`,
       true
     )
