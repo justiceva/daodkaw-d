@@ -12,8 +12,18 @@ exports.run = async (bot, msg, args) => {
       `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
-      `**__OtoRol__**`,
-      `<a:green:822530401301954632> \`${prefix}otorol\` \n OtoRolü Nasıl Ayarlayacagınız Hakkında Bilgi Tablosu.`,
+      `**__Ban__**`,
+      `<a:green:822530401301954632> \`${prefix}ban\` \n Discord Sunucundan Bir Kişiyi Banlarsın.`,
+        true
+    )
+     .addField(
+      `**__Ban Log__**`,
+      `<a:green:822530401301954632> \`${prefix}ban-log\` \n Discord Sunucunda Bir Ban Log Kanalı Ayarlarsın.`,
+        true
+    )
+     .addField(
+      `**__Ban Log__**`,
+      `<a:green:822530401301954632> \`${prefix}ban-yetkili\` \n Discord Sunucunda Bir Ban Yetkili Rölü Ayarlarsın.`,
         true
     )
     .addField(
