@@ -9,8 +9,17 @@ exports.run = async (client, message, args) => {
       .get(message.author.id)
       .hasPermission("BAN_MEMBERS")
   )
-    return message.channel.send(`<@${message.author.id}> Ban Yetkin Olmadan Ban Sistemdeki Hiç Birşeyi Ayarlamassın.`);
-  if (!CEChannel) return message.channel.send(`> <a:unlem:822546045706698763> Daha BanLog Ayarlamadın \n > <:kabulet:822545421628342312> Doğru Ayarlamak İçin \`${prefix}ban-log #kanal\``);
+    return message.channel.send(
+      `> <@${message.author.id}> Ban Yetkin Olmadan Ban Sistemdeki Hiç Birşeyi Ayarlamassın.`
+    );
+  if (!CEChannel)
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("#00ff00")
+        .setDescription(
+          `> <a:unlem:822546045706698763> Daha BanLog Ayarlamadın \n > <:kabulet:822545421628342312> Doğru Ayarlamak İçin \`${prefix}ban-log #kanal\``
+        )
+    );
   await db.set("ce-banlog." + message.guild.id, CEChannel.id);
   return message.channel.send(
     "Daha önceden " +

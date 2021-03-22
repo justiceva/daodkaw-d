@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
+let prefix = process.env.prefix;
 exports.run = async (client, message, args) => {
   let CEKişi = message.mentions.users.first();
   let CESebep = args.slice(1).join(" ") || "Belirtilmemiş";
@@ -10,8 +11,13 @@ exports.run = async (client, message, args) => {
   if (!CELog) return message.channel.send("Sistem ayarlanmamış!");
 
   if (!message.member.roles.cache.has(CEYetkili))
-    return message.channel.send(" Buna yetkin yok! ");
-  if (!CEKişi) return message.channel.send("Banlanacak Kişiyi Etiketle");
+    return message.channel.send(`> <@${message.author.id}> Ban Yetkin Olmadan Ban Sistemdeki Hiç Birşeyi Ayarlamassın.`);
+  if (!CEKişi)
+    return message.channel.send(
+      new Discord.MessageEmbed()
+        .setColor("#00ff00")
+        .setDescription(`> <:kabulet:822545421628342312> Banlanacak Kişiyi Etiketle \n > <:kabulet:822545421628342312> Doğru Kullanım \`${prefix}ban @Kişi <Sebep>\``)
+    );
   if (
     !message.guild.members.cache
       .get(client.user.id)
