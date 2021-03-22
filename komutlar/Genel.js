@@ -53,6 +53,11 @@ exports.run = async (client, message) => {
       `<a:green:822530401301954632>  \`${prefix}çevir\` Disord Botlara Koyulan V11 Kodu V12 Çevirebilirsiniz.`,
       true
     )
+     .addField(
+      `__Say__`,
+      `<a:green:822530401301954632>  \`${prefix}say\` Toplam Kanal Seviyeni Gösteren Gelişmiş Say Komutu.`,
+      true
+    )
     .addField(
       `__Bilgilendirme__`,
       `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`

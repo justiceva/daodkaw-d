@@ -5,6 +5,7 @@ exports.run = async (client, message, args) => {
     return message.author.send(
       "Bu Komutu Sadece Sunucularda Kulanabilirsiniz!"
     );
+  let güvenlik = ["Zayıf","Orta","Yüsek"]
 
   const say = new Discord.MessageEmbed()
     .setColor("#00ff00")
