@@ -17,7 +17,12 @@ module.exports = client => {
   );
   client.user.setStatus("idle");
 
-  client.user.setActivity(`ShadowRise Network`, { type: "WATCHING" });
+  client.user.setActivity(
+    `${client.guilds.cache
+      .reduce((a, b) => a + b.memberCount, 0)
+      .toLocaleString()} Kişi ShadowRise `,
+    { type: "WATCHING" }
+  );
 
   console.log(
     ` [${moment().format("YYYY-MM-DD HH:mm:ss")}] Oyun ismi ayarlandı!`
