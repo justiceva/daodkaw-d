@@ -7,31 +7,38 @@ exports.run = async (client, message, args) => {
     );
 
   const say = new Discord.MessageEmbed()
-    .setColor(message.guild.me.displayColor)
+    .setColor("#00ff00")
+    .setImage(
+      "https://media.discordapp.net/attachments/822526781839245332/823609376522371092/divider.gif"
+    )
     .setTitle(message.guild.name)
     .addField(
       "<a:guard:822552681863315516> **__Sunucudaki Toplam Üye Sayısı__**",
       `\`\`\`${message.guild.memberCount}\`\`\``
     )
     .addField(
-      `**__Sunucudaki Toplam Kanal Sayısı__**`,
+      `<:rules:822553517226590271> **__Sunucudaki Toplam Kanal Sayısı__**`,
       `  \`\`\`${message.guild.channels.cache.size}\`\`\``
     )
     .addField(
-      "🟢 **__Çevrimiçi üye sayısı__**",
-      message.guild.members.cache.filter(
-        m => m.user.presence.status !== "offline"
-      ).size
+      "<:okey:822549962532847676> **__Çevrimiçi üye sayısı__**",
+      `» ${
+        message.guild.members.cache.filter(
+          m => m.user.presence.status !== "offline"
+        ).size
+      }`
     )
     .addField(
-      "🔘 **__Çevrimdışı üye sayısı__**",
-      message.guild.members.cache.filter(
-        m => m.user.presence.status == "offline"
-      ).size
+      "<:kapat:823608707807969371> **__Çevrimdışı üye sayısı__**",
+      `» ${
+        message.guild.members.cache.filter(
+          m => m.user.presence.status == "offline"
+        ).size
+      }`
     )
     .addField(
-      "🤖 **__Sunucudaki Bot Sayısı__**","»"
-      message.guild.members.cache.filter(m => m.user.bot).size
+      "<a:sinyal:822553082889633794> **__Sunucudaki Bot Sayısı__**",
+      `» ${message.guild.members.cache.filter(m => m.user.bot).size}`
     )
     .addField(
       `<a:boost:823605267769065542> **__Boost Sayısı__**`,
@@ -39,11 +46,11 @@ exports.run = async (client, message, args) => {
     )
     .addField(
       `<a:emoji:823606451922665543> **__Sunucudaki Emoji Sayısı__**`,
-      `» ${message.guild.emojis.cache.size}`
+      `» **${message.guild.emojis.cache.size}**`
     )
     .addField(
       `<a:rol:823605264854548481> **__Sunucudaki Rol Sayısı__**`,
-      `» ${message.guild.roles.cache.size}`
+      `» **${message.guild.roles.cache.size}**`
     );
 
   message.channel.send(say);
