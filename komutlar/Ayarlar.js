@@ -39,11 +39,6 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Ban__`,
-      `<a:green:822530401301954632> \`${prefix}ban\` Discord Sunucundan Birisini Banlamaya Sağlar.`,
-      true
-    )
-    .addField(
       `__BanSay__`,
       `<a:green:822530401301954632> \`${prefix}bansay\` Discord Sunucunuzda Toplam Kaç Banlanmış Kişi Var Onu Gösterir.`,
       true
