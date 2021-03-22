@@ -55,7 +55,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Eğlence Komutlar__`,
-      `<a:green:822530401301954632> \`${prefix}eklenti\``,
+      `<a:green:822530401301954632> \`${prefix}eğlence\``,
       true
     )
     .addField(
