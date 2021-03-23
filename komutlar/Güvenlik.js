@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
       "Lütfen güvenlik mesajlarının gideceği kanalı etiketle"
     );
 
-  db.set(`güvenlik_${message.guild.id}`, chanel.id);
+  db.set(`güvenlik.${message.guild.id}`, chanel.id);
   const basari = new Discord.MessageEmbed().setDescription(
     `Güvenlik kanalı başarıyla <${chanel}> olarak ayarlandı`
   );

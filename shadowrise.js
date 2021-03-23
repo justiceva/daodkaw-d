@@ -5,7 +5,7 @@ const moment = require("moment");
 var Jimp = require("jimp");
 const { Client, Util } = require("discord.js");
 const fs = require("fs");
-const replaceOnce = require('replace-once');
+const replaceOnce = require("replace-once");
 require("./util/eventLoader.js")(client);
 const db = require("quick.db");
 const queue = new Map();
@@ -1103,52 +1103,167 @@ client.on("messageReactionRemove", async (messageReaction, user) => {
 
 //Seviye Sistem Baş
 
-client.on("message", async(message) => {
-    if (message.author.bot) return;
+client.on("message", async message => {
+  if (message.author.bot) return;
 
-    let { status, ranks, logChannel, logRewardMessage, logUpMessage, blockChannels, blockRoles, reqXp } = await db.fetch(`levelSystem_${message.guild.id}`) || { status: false, reqXp: 3 };
-    if (!reqXp) reqXp = 50;
+  let {
+    status,
+    ranks,
+    logChannel,
+    logRewardMessage,
+    logUpMessage,
+    blockChannels,
+    blockRoles,
+    reqXp
+  } = (await db.fetch(`levelSystem_${message.guild.id}`)) || {
+    status: false,
+    reqXp: 3
+  };
+  if (!reqXp) reqXp = 50;
 
-    if (status) {
+  if (status) {
+    if (blockChannels && blockChannels.includes(message.channel.id)) return;
+    if (
+      blockRoles &&
+      message.member.roles.cache.find(r => blockRoles.includes(r.id))
+    )
+      return;
 
-        if (blockChannels && blockChannels.includes(message.channel.id)) return;
-        if (blockRoles && message.member.roles.cache.find(r => blockRoles.includes(r.id))) return;
+    const { level, xp } = db.add(
+      `levelProfile_${message.guild.id}_${message.author.id}.xp`,
+      ((parseInt(message.content.length / 10, 10) + 1) * 10)
+        .toString()
+        .charAt(0)
+    );
 
-        const { level, xp } = db.add(`levelProfile_${message.guild.id}_${message.author.id}.xp`, ((parseInt(message.content.length / 10, 10) + 1) * 10).toString().charAt(0));
+    if (xp >= reqXp) {
+      db.set(`levelProfile_${message.guild.id}_${message.author.id}.xp`, 0);
 
-        if (xp >= reqXp) {
-  
-            db.set(`levelProfile_${message.guild.id}_${message.author.id}.xp`, 0);
-            
-            const { level, xp } = db.add(`levelProfile_${message.guild.id}_${message.author.id}.level`, +1);
-            logChannel = logChannel ? message.guild.channels.cache.get(logChannel) : message.channel;
+      const { level, xp } = db.add(
+        `levelProfile_${message.guild.id}_${message.author.id}.level`,
+        +1
+      );
+      logChannel = logChannel
+        ? message.guild.channels.cache.get(logChannel)
+        : message.channel;
 
-            if (!logUpMessage) logUpMessage = "seviye atladın yeni seviyen {level}";
+      if (!logUpMessage) logUpMessage = "seviye atladın yeni seviyen {level}";
 
-            await logChannel.send(replaceOnce(logUpMessage, ["{user}", "{level}"], [message.member, level]));
+      await logChannel.send(
+        replaceOnce(
+          logUpMessage,
+          ["{user}", "{level}"],
+          [message.member, level]
+        )
+      );
 
-            const data = ranks ? ranks.find(x => x.level === `${level}`) : null;
+      const data = ranks ? ranks.find(x => x.level === `${level}`) : null;
 
-            if (data) {
+      if (data) {
+        if (!logRewardMessage)
+          logRewardMessage =
+            "seviye atladın ve yeni seviyen {level} aldığın seviye rolü {roleName}";
 
-                if (!logRewardMessage) logRewardMessage = "seviye atladın ve yeni seviyen {level} aldığın seviye rolü {roleName}";
-
-                try {
-
-                    await message.member.roles.add(data.roleId);
-                    await logChannel.send( replaceOnce(logRewardMessage, ["{user}", "{level}", "{roleName}"], [message.member, level, message.guild.roles.cache.get(data.roleId).name]));
-
-                } catch (err) {
-                    await message.guild.owner.send(`${data.roleId}'ıd li rol olmadığı için ${message.member} adlı kişiye rolü veremedim.`);
-                }
-            }
+        try {
+          await message.member.roles.add(data.roleId);
+          await logChannel.send(
+            replaceOnce(
+              logRewardMessage,
+              ["{user}", "{level}", "{roleName}"],
+              [
+                message.member,
+                level,
+                message.guild.roles.cache.get(data.roleId).name
+              ]
+            )
+          );
+        } catch (err) {
+          await message.guild.owner.send(
+            `${data.roleId}'ıd li rol olmadığı için ${message.member} adlı kişiye rolü veremedim.`
+          );
         }
+      }
     }
+  }
 });
 
 //Seviye Sistem Son
 
 //Güvenlik Baş
 
+client.on("guildMemberAdd", member => {
+  let kanal = db.fetch(`güvenlik.${member.guild.id}`);
+  if (!kanal) return;
+
+  let aylar = {
+    "01": "Ocak",
+    "02": "Şubat",
+    "03": "Mart",
+    "04": "Nisan",
+    "05": "Mayıs",
+    "06": "Haziran",
+    "07": "Temmuz",
+    "08": "Ağustos",
+    "09": "Eylül",
+    "10": "Ekim",
+    "11": "Kasım",
+    "12": "Aralık"
+  };
+
+  let bitiş = member.user.createdAt;
+  let günü = moment(new Date(bitiş).toISOString()).format("DD");
+  let ayı = moment(new Date(bitiş).toISOString())
+    .format("MM")
+    .replace("01", "Ocak")
+    .replace("02", "Şubat")
+    .replace("03", "Mart")
+    .replace("04", "Nisan")
+    .replace("05", "Mayıs")
+    .replace("06", "Haziran")
+    .replace("07", "Temmuz")
+    .replace("08", "Ağustos")
+    .replace("09", "Eylül")
+    .replace("10", "Ekim")
+    .replace("11", "Kasım")
+    .replace("12", "Aralık")
+    .replace("13", "CodAre");
+  let yılı = moment(new Date(bitiş).toISOString()).format("YYYY");
+  let saati = moment(new Date(bitiş).toISOString()).format("HH:mm");
+
+  let günay = `${günü} ${ayı} ${yılı} ${saati}`;
+
+  let süre = member.user.createdAt;
+  let gün = moment(new Date(süre).toISOString()).format("DD");
+  let hafta = moment(new Date(süre).toISOString()).format("WW");
+  let ay = moment(new Date(süre).toISOString()).format("MM");
+  let ayy = moment(new Date(süre).toISOString()).format("MM");
+  let yıl = moment(new Date(süre).toISOString()).format("YYYY");
+  let yıl2 = moment(new Date().toISOString()).format("YYYY");
+
+  let netyıl = yıl2 - yıl;
+
+  let created = ` ${netyıl} yıl  ${ay} ay ${hafta} hafta ${gün} gün önce`;
+
+  let kontrol;
+  if (süre < 1296000000) kontrol = "\`Bu hesap şüpheli!\` <:alarm:823928423474397205>";
+  if (süre > 1296000000) kontrol = "\`Bu hesap güvenli!\` <:okey:822549962532847676>";
+
+  let codare = new Discord.MessageEmbed()
+    .setColor(`#00ff00`)
+    .setTitle(`${member.user.username} Katıldı`)
+    .setDescription(
+      "<@" +
+        member.id +
+        "> Bilgileri <:sag:822547800481988628> \n\n  __Hesap Oluşturulma Tarihi__ <:sag:822547800481988628> \n\n**[" +
+        created +
+        "]** (`" +
+        günay +
+        "`) \n\n __Hesap durumu__ <:sag:822547800481988628> \n\n**" +
+        kontrol +
+        "**"
+    )
+    .setTimestamp();
+  client.channels.cache.get(kanal).send(codare);
+});
 
 //Güvenlik Son
