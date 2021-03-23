@@ -47,7 +47,8 @@
     "film-apisi": "^1.0.0",
     "canvas-constructor": "^4.1.0",
     "hastebin-gen": "^2.0.5",
-    "wio.db": "^4.0.17"
+    "wio.db": "^4.0.17",
+    "gamedig": "^3.0.0"
   },
   "engines": {
     "node": "12.x"

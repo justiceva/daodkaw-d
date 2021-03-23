@@ -1273,7 +1273,6 @@ client.on("guildMemberAdd", member => {
 
 client.on("guildMemberAdd", member => {
   const hosgeldin = new Discord.MessageEmbed()
-    .setColor("Random")
     .setThumbnail(
       "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
     )
