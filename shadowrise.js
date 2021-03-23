@@ -5,6 +5,7 @@ const moment = require("moment");
 var Jimp = require("jimp");
 const { Client, Util } = require("discord.js");
 const fs = require("fs");
+const replaceOnce = require('replace-once');
 require("./util/eventLoader.js")(client);
 const db = require("quick.db");
 const queue = new Map();
@@ -1099,3 +1100,50 @@ client.on("messageReactionRemove", async (messageReaction, user) => {
 });
 
 //StarBoard Son
+
+//Seviye Sistem Baş
+
+client.on("message", async(message) => {
+    if (message.author.bot) return;
+
+    let { status, ranks, logChannel, logRewardMessage, logUpMessage, blockChannels, blockRoles, reqXp } = await db.fetch(`levelSystem_${message.guild.id}`) || { status: false, reqXp: 3 };
+    if (!reqXp) reqXp = 50;
+
+    if (status) {
+
+        if (blockChannels && blockChannels.includes(message.channel.id)) return;
+        if (blockRoles && message.member.roles.cache.find(r => blockRoles.includes(r.id))) return;
+
+        const { level, xp } = db.add(`levelProfile_${message.guild.id}_${message.author.id}.xp`, ((parseInt(message.content.length / 10, 10) + 1) * 10).toString().charAt(0));
+
+        if (xp >= reqXp) {
+  
+            db.set(`levelProfile_${message.guild.id}_${message.author.id}.xp`, 0);
+            
+            const { level, xp } = db.add(`levelProfile_${message.guild.id}_${message.author.id}.level`, +1);
+            logChannel = logChannel ? message.guild.channels.cache.get(logChannel) : message.channel;
+
+            if (!logUpMessage) logUpMessage = "seviye atladın yeni seviyen {level}";
+
+            await logChannel.send(replaceOnce(logUpMessage, ["{user}", "{level}"], [message.member, level]));
+
+            const data = ranks ? ranks.find(x => x.level === `${level}`) : null;
+
+            if (data) {
+
+                if (!logRewardMessage) logRewardMessage = "seviye atladın ve yeni seviyen {level} aldığın seviye rolü {roleName}";
+
+                try {
+
+                    await message.member.roles.add(data.roleId);
+                    await logChannel.send( replaceOnce(logRewardMessage, ["{user}", "{level}", "{roleName}"], [message.member, level, message.guild.roles.cache.get(data.roleId).name]));
+
+                } catch (err) {
+                    await message.guild.owner.send(`${data.roleId}'ıd li rol olmadığı için ${message.member} adlı kişiye rolü veremedim.`);
+                }
+            }
+        }
+    }
+});
+
+//Seviye Sistem Son
