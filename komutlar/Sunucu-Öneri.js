@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
 
   let log = "";
   let veri = db.get(`CodEmingOneri.${message.author.id}`);
-  let embed = new Discord.MessageEmbed()
+  client.channels.cache.get(log).send( new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTitle(`Kullanıcı: ${message.author.tag} [${message.author.id}]`)
     .setAuthor(
@@ -41,7 +41,7 @@ ${veri.sistemicerik}
 \`\`\`
 `);
 
-  client.channels.cache.get(log).send(embed);
+);
 };
 exports.conf = {
   enabled: true,

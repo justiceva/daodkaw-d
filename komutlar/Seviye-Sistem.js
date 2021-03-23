@@ -22,6 +22,16 @@ exports.run = async (bot, msg, args) => {
         true
     )
     .addField(
+      `**__SeviyeKart Özelleştir Resim__**`,
+      `<a:green:822530401301954632> \`${prefix}seviyekart-özelleştir resim\` \n Seviye Kartınıza Özel Arka Plan Ayarlarsınız.`,
+        true
+    )
+   .addField(
+      `**__SeviyeKart Özelleştir Renk__**`,
+      `<a:green:822530401301954632> \`${prefix}seviyekart-özelleştir renk\` \n Seviye Kartınıza Özel Renk Ayarlarsınız.`,
+        true
+    )
+    .addField(
       `**__Seviye Aç__**`,
       `<a:green:822530401301954632> \`${prefix}seviye-ayarla durum aç\` \n Discord Sunucunuzda Seviye Sistemini Açarsınız.`,
         true
