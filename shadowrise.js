@@ -1268,3 +1268,24 @@ client.on("guildMemberAdd", member => {
 });
 
 //Güvenlik Son
+
+//DM HG Baş
+
+client.on("guildMemberAdd", member => {
+  const hosgeldin = new Discord.MessageEmbed()
+    .setColor("Random")
+    .setThumbnail(
+      "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
+    )
+     .setAuthor(`Merhaba ${}Seni Aramıza Hoşgeldin`)
+    .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz.")
+   .setColor("#00ff00")
+    .addField("**Sunucu Adresimiz**", "_Play.ShadowRise.Com_")
+    .addField(
+      "**WebSitemiz**",
+      "[ShadowRise Network](https://discord.gg/JtCr2Y96)"
+    )
+  member.send(hosgeldin);
+});
+
+//DM HG Son
