@@ -69,6 +69,16 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
+      `__Güvenlik__`,
+      `<a:green:822530401301954632> \`${prefix}güvenlik\` Güvenlik Kanalını Ayarlarsın.`,
+      true
+    )
+    .addField(
+      `__Güvenlik Sıfırla__`,
+      `<a:green:822530401301954632> \`${prefix}güvenlik-sıfırla\` Güvenlik Kanalını Sıfırlarsın.`,
+      true
+    )
+    .addField(
       `__Bilgilendirme__`,
       `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
     );

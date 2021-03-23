@@ -1245,11 +1245,13 @@ client.on("guildMemberAdd", member => {
   let created = ` ${netyıl} yıl  ${ay} ay ${hafta} hafta ${gün} gün önce`;
 
   let kontrol;
-  if (süre < 1296000000) kontrol = "\`Bu hesap şüpheli!\` <:alarm:823928423474397205>";
-  if (süre > 1296000000) kontrol = "\`Bu hesap güvenli!\` <:okey:822549962532847676>";
+  if (süre < 1296000000)
+    kontrol = "`Bu hesap şüpheli!` <:alarm:823928423474397205>";
+  if (süre > 1296000000)
+    kontrol = "`Bu hesap güvenli!` <:okey:822549962532847676>";
 
   let codare = new Discord.MessageEmbed()
-    .setColor(`#00ff00`)
+    .setColor("#00ff00")
     .setTitle(`${member.user.username} Katıldı`)
     .setDescription(
       "<@" +
@@ -1261,8 +1263,7 @@ client.on("guildMemberAdd", member => {
         "`) \n\n __Hesap durumu__ <:sag:822547800481988628> \n\n**" +
         kontrol +
         "**"
-    )
-    .setTimestamp();
+    );
   client.channels.cache.get(kanal).send(codare);
 });
 

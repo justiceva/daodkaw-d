@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
 
   db.set(`güvenlik.${message.guild.id}`, chanel.id);
   const basari = new Discord.MessageEmbed().setDescription(
-    `Güvenlik kanalı başarıyla <${chanel}> olarak ayarlandı`
+    `Güvenlik kanalı başarıyla ${chanel} olarak ayarlandı`
   );
   return message.channel.send(basari);
 };
