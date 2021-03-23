@@ -19,14 +19,15 @@ exports.run = async (client, message, args) => {
 
   let log = "";
   let veri = db.get(`CodEmingOneri.${message.author.id}`);
-  client.channels.cache.get(log).send( new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setTitle(`Kullanıcı: ${message.author.tag} [${message.author.id}]`)
-    .setAuthor(
-      "Bir Öneri Belirdi",
-      message.author.displayAvatarURL({ dynamic: true }),
-      "https://discord.gg/NvjVQCb"
-    ).setDescription(`
+  client.channels.cache.get(log).send(
+    new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setTitle(`Kullanıcı: ${message.author.tag} [${message.author.id}]`)
+      .setAuthor(
+        "Bir Öneri Belirdi",
+        message.author.displayAvatarURL({ dynamic: true }),
+        "https://discord.gg/NvjVQCb"
+      ).setDescription(`
 Konu baslığı
 \`\`\`cs
 ${veri.sistembaslık}
@@ -39,9 +40,8 @@ ${db.get("CodEmingÖneriSıra")}
 \`\`\`cs
 ${veri.sistemicerik}
 \`\`\`
-`);
-
-);
+`)
+  );
 };
 exports.conf = {
   enabled: true,
