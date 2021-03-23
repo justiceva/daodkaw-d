@@ -1147,3 +1147,8 @@ client.on("message", async(message) => {
 });
 
 //Seviye Sistem Son
+
+//Güvenlik Baş
+
+
+//Güvenlik Son
