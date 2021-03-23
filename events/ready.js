@@ -20,7 +20,7 @@ module.exports = client => {
   client.user.setActivity(
     `${client.guilds.cache
       .reduce((a, b) => a + b.memberCount, 0)
-      .toLocaleString()} Kişi ShadowRise `,
+      .toLocaleString()} kişi ShadowRise`,
     { type: "WATCHING" }
   );
 
