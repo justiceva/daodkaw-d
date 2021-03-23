@@ -32,6 +32,7 @@ dependencies:
   superagent: 6.1.0
   tcmb-doviz: 1.0.6
   weather-js: 2.0.0
+  wio.db: 4.0.17
   yt-search: 2.7.4
   ytdl-core: 4.5.0
   ytdl-core-discord: 1.2.5
@@ -1974,6 +1975,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+  /lodash/4.17.21:
+    dev: false
+    resolution:
+      integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
   /lru-cache/6.0.0:
     dependencies:
       yallist: 4.0.0
@@ -3131,6 +3136,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==
+  /wio.db/4.0.17:
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+    resolution:
+      integrity: sha512-xA/LZdr4tZYBqN/BX4eApPszOjqd5wonc1eNRUDy58KCdL1q3gJEHl/JiIPhluYc1ehjOvvkJPGm0csHrOvfNg==
   /wrappy/1.0.2:
     dev: false
     resolution:
@@ -3274,6 +3285,7 @@ specifiers:
   superagent: ^6.1.0
   tcmb-doviz: ^1.0.6
   weather-js: ^2.0.0
+  wio.db: ^4.0.17
   yt-search: ^2.7.2
   ytdl-core: ^4.4.5
   ytdl-core-discord: ^1.2.5
