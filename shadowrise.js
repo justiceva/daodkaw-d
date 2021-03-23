@@ -1289,12 +1289,3 @@ client.on("guildMemberAdd", member => {
 
 //DM HG Son
 
-client.on('guildMemberAdd', async member => {
-    let rol1 = await db.fetch(`otorolrol_${member.guild.id}`);
-
-  let rol = member.guild.roles.cache.get(rol1)
-  if (!kanal) return;
-  if (!rol) return;
-  kanal.send(`${member} adlı kullanıcıya başarıyla **@${rol.name}** rolü verildi.`)
-  member.roles.add(rol)
-});
