@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const prefix = process.env.prefix;
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`ShadowRise Network | Ban Sistem`)
+    .setAuthor(`ShadowRise Network | AboneRol Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
@@ -12,18 +12,23 @@ exports.run = async (bot, msg, args) => {
       `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
-      `**__Ban__**`,
-      `<a:green:822530401301954632> \`${prefix}ban\` \n Discord Sunucundan Bir Kişiyi Banlarsın.`,
+      `**__Abone__**`,
+      `<a:green:822530401301954632> \`${prefix}abone\` \n Youtubunuza Abone Olan Kişiye Abone Rol Verir.`,
         true
     )
      .addField(
-      `**__Ban Log__**`,
-      `<a:green:822530401301954632> \`${prefix}ban-log\` \n Discord Sunucunda Bir Ban Log Kanalı Ayarlarsın.`,
+      `**__Abone Yetkili__**`,
+      `<a:green:822530401301954632> \`${prefix}abone-yetkili\` \n Abone Rölünü Verecek Kişinin AboneRol Yetkilisini Ayarlar.`,
         true
     )
      .addField(
-      `**__Ban Log__**`,
-      `<a:green:822530401301954632> \`${prefix}ban-yetkili\` \n Discord Sunucunda Bir Ban Yetkili Rölü Ayarlarsın.`,
+      `**__Abone Rol__**`,
+      `<a:green:822530401301954632> \`${prefix}abonerol\` \n Abone Olan Kişiye Verilecek Rölü Ayarlama.`,
+        true
+    )
+   .addField(
+      `**__Abone Log__**`,
+      `<a:green:822530401301954632> \`${prefix}abonelog\` \n Abone Rölü Verecek Kişinin Verdigi Mesaj Logu Ayarlarsın`,
         true
     )
     .addField(
@@ -39,7 +44,7 @@ exports.conf = {
   permLevel: 0
 };
 exports.help = {
-  name:"ban-sistem",
+  name:"abonerol-sistem",
   description: "İstediğiniz kullanıcını bilgilerini gösterir.",
   usage: "seviye"
 };
