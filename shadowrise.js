@@ -1276,7 +1276,7 @@ client.on("guildMemberAdd", member => {
     .setThumbnail(
       "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
     )
-     .setAuthor(`Merhaba Seni Aramıza Hoşgeldin`)
+     .setAuthor(`Merhaba Seni ${member.user} Aramıza Hoşgeldin`)
     .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz.")
    .setColor("#00ff00")
     .addField("**Sunucu Adresimiz**", "_Play.ShadowRise.Com_")

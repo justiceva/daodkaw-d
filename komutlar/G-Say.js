@@ -14,11 +14,11 @@ exports.run = async (client, message, args) => {
     )
     .setTitle(message.guild.name)
     .addField(
-      "<a:guard:822552681863315516> **__Sunucudaki Toplam Üye Sayısı__**",
+      "<a:guard:822552681863315516> **__Toplam Üye Sayısı__**",
       `\`\`\`${message.guild.memberCount}\`\`\``
     )
     .addField(
-      `<:rules:822553517226590271> **__Sunucudaki Toplam Kanal Sayısı__**`,
+      `<:rules:822553517226590271> **__Toplam Kanal Sayısı__**`,
       `  \`\`\`${message.guild.channels.cache.size}\`\`\``
     )
     .addField(
@@ -38,21 +38,22 @@ exports.run = async (client, message, args) => {
       }`
     )
     .addField(
-      "<a:sinyal:822553082889633794> **__Sunucudaki Bot Sayısı__**",
+      "<a:sinyal:822553082889633794> **__Bot Sayısı__**",
       `» ${message.guild.members.cache.filter(m => m.user.bot).size}`
     )
+    .addField(
+      `<a:emoji:823606451922665543> **__Emoji Sayısı__**`,
+      `» **${message.guild.emojis.cache.size}**`
+    )
+    .addField(
+      `<a:rol:823605264854548481> **__Rol Sayısı__**`,
+      `» **${message.guild.roles.cache.size}**`
+    )
+    .addField(`<:stats:824276405381759016> **__Boost Seviyesi__**`,`**${message.guild.premiumTier}/3**`)
     .addField(
       `<a:boost:823605267769065542> **__Boost Sayısı__**`,
       `» **${message.guild.premiumSubscriptionCount}**`
     )
-    .addField(
-      `<a:emoji:823606451922665543> **__Sunucudaki Emoji Sayısı__**`,
-      `» **${message.guild.emojis.cache.size}**`
-    )
-    .addField(
-      `<a:rol:823605264854548481> **__Sunucudaki Rol Sayısı__**`,
-      `» **${message.guild.roles.cache.size}**`
-    );
 
   message.channel.send(say);
 };
