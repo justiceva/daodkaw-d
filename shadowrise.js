@@ -1289,3 +1289,185 @@ client.on("guildMemberAdd", member => {
 
 //DM HG Son
 
+//Destek Sistemi
+
+client.on('message', async msg => {
+  
+  if (!msg.guild) return;
+  
+  let prefix = await db.fetch(`prefix_${msg.guild.id}`) || process.env.prefix;
+  
+  if(!msg.guild.channels.cache.get(db.fetch(`destekK_${msg.guild.id}`))) return
+  var tr = 'tr'
+  var trol = 'Destek Ekibi'
+  var trkanal = 'destek-kanalı'
+    if(db.has(`dil_${msg.guild.id}`) === true) {
+        var s = 'en'
+        var r = 'Support Team'
+        var k = 'support-channel'
+    }
+  const dil = tr
+  
+  let rol = trol
+  let kanal = trkanal
+  
+  if (db.has(`destekK_${msg.guild.id}`) === true) {
+ kanal = msg.guild.channels.cache.get(db.fetch(`destekK_${msg.guild.id}`)).name
+  }
+  
+  if (db.has(`destekK_${msg.guild.id}`) === false) {
+  kanal = k
+  }
+  
+  if (db.has(`destekR_${msg.guild.id}`) === true) {
+  rol = msg.guild.roles.cache.get(db.fetch(`destekR_${msg.guild.id}`))
+  }
+  
+  if (db.has(`destekR_${msg.guild.id}`) === false) {
+  rol = r
+  }
+  
+  const reason = msg.content.split(" ").slice(1).join(" ");
+  if (msg.channel.name== kanal) {
+     if (msg.author.bot) return;
+    /*if (!msg.guild.roles.cache.some("name", rol)) return msg.reply(client[dil].desteksistem.rolyok.replace("{rol}", r)).then(m2 => {
+            m2.delete(5000)});*/
+    if (msg.guild.channels.cache.find(c => c.name === `${client[dil].desteksistem.talep}-${msg.author.discriminator}`)) {
+      
+      msg.author.send(client[dil].desteksistem.aciktalepozel.replace("{kisi}", msg.author.tag).replace("{kanal}", `${msg.guild.channels.cache.get(msg.guild.channels.cache.find(c => c.name === `${client[dil].desteksistem.talep}-${msg.author.discriminator}`).id)}`))
+      msg.guild.channels.cache.find(c => c.name === `${client[dil].desteksistem.talep}-${msg.author.discriminator}`).send(client[dil].desteksistem.aciktalep.replace("{kisi}", msg.author.tag).replace("{sebep}", msg.content))
+      
+      msg.delete()
+      return
+    }
+    if(msg.guild.channels.cache.find(c => c.name === client[dil].desteksistem.kategori)) {
+      msg.guild.channels.create(`${client[dil].desteksistem.talep}-${msg.author.discriminator}`, "text").then(c => {
+      const category = msg.guild.channels.cache.find(c => c.name === client[dil].desteksistem.kategori)
+      c.setParent(category.id)
+      let role = msg.guild.roles.cache.find(r => r.name === rol.name);
+      let role2 = msg.guild.roles.cache.find(r => r.name === "@everyone");
+      c.createOverwrite(role, {
+          SEND_MESSAGES: true,
+          VIEW_CHANNEL: true
+      });
+      c.createOverwrite(role2, {
+          SEND_MESSAGES: false,
+          VIEW_CHANNEL: false
+      });
+      c.createOverwrite(msg.author, {
+          SEND_MESSAGES: true,
+          VIEW_CHANNEL: true
+      });
+
+      const embed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(`${client.user.username} | Destek Sistemi`, client.user.avatarURL())
+      .setTitle(`_Merhaba ${msg.author.username}!_`)
+      .addField(`» Destek Talebi Hakkında Bilgilendirme «`, `Yetkililerimiz en yakın zamanda burada sorunun ile ilgilenecektir! \nDestek talebini kapatmak için \`${prefix}kapat\` yazabilir, \nSunucudaki tüm Destek Taleplerini kapatmak için ise \`${prefix}talepleri-kapat\` yazabilirsin!`)
+      .addField(`» Destek Talebi Sebebi «`, `${msg.content}`, true)
+      .addField(`» Destek Talebini Açan Kullanıcı «`, `<@${msg.author.id}>`, true)
+      .setFooter(`${msg.guild.name} adlı sunucu ${client.user.username} Destek Sistemi'ni kullanıyor teşekkürler!`, msg.guild.iconURL())
+      c.send({ embed: embed });
+      c.send(`** @here | 📞Destek Talebi! ** \n**${msg.author.tag}** adlı kullanıcı \`${msg.content}\` sebebi ile Destek Talebi açtı!`)
+      msg.delete()
+      }).catch(console.error);
+    }
+  }
+
+  if (msg.channel.name== kanal) {
+    if(!msg.guild.channels.cache.find(c => c.name === client[dil].desteksistem.kategori)) {
+      msg.guild.channels.create(client[dil].desteksistem.kategori, 'category').then(category => {
+      category.setPosition(1)
+      let every = msg.guild.roles.cache.find(c => c.name === "@everyone");
+      category.createOverwrite(every, {
+        VIEW_CHANNEL: false,
+        SEND_MESSAGES: false,
+        READ_MESSAGE_HISTORY: false
+      })
+      msg.guild.channels.create(`${client[dil].desteksistem.talep}-${msg.author.discriminator}`, "text").then(c => {
+      c.setParent(category.id)
+      let role = msg.guild.roles.cache.find(c => c.name === rol.name);
+      let role2 = msg.guild.roles.cache.find(c => c.name === "@everyone");
+      c.createOverwrite(role, {
+          SEND_MESSAGES: true,
+          VIEW_CHANNEL: true
+      });
+      c.createOverwrite(role2, {
+          SEND_MESSAGES: false,
+          VIEW_CHANNEL: false
+      });
+      c.createOverwrite(msg.author, {
+          SEND_MESSAGES: true,
+          VIEW_CHANNEL: true
+      });
+
+      const embed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(`${client.user.username} | Destek Sistemi`, client.user.avatarURL())
+      .setTitle(`_Merhaba ${msg.author.username}!_`)
+     .addField(`» Destek Talebi Hakkında Bilgilendirme «`, `Yetkililerimiz en yakın zamanda burada sorunun ile ilgilenecektir! \nDestek talebini kapatmak için \`${prefix}kapat\` yazabilir, \nSunucudaki tüm Destek Taleplerini kapatmak için ise \`${prefix}talepleri-kapat\` yazabilirsin!`)
+      .addField(`» Destek Talebi Sebebi «`, `${msg.content}`, true)
+      .addField(`» Destek Talebini Açan Kullanıcı «`, `<@${msg.author.id}>`, true)
+      .setFooter(`${msg.guild.name} adlı sunucu ${client.user.username} Destek Sistemi'ni kullanıyor teşekkürler!`, msg.guild.iconURL())
+      c.send({ embed: embed });
+      c.send(`** @here | 📞Destek Talebi! ** \n**${msg.author.tag}** adlı kullanıcı \`${msg.content}\` sebebi ile Destek Talebi açtı!`)
+      msg.delete()
+      }).catch(console.error);
+    })
+  }
+}
+})
+
+client.on('message', async message => {
+    if(!message.guild.channels.cache.get(db.fetch(`destekK_${message.guild.id}`))) return
+
+  if (!message.guild) return;
+  
+  let prefix = await db.fetch(`prefix_${message.guild.id}`) || process.env.prefix;
+  
+  var s = 'tr'
+  var r = 'Destek Ekibi'
+    if(db.has(`dil_${message.guild.id}`) === true) {
+        var s = 'en'
+        var r = 'Support Team'
+    }
+  const dil = s
+  
+if (message.content.toLowerCase().startsWith(prefix + `kapat`)) {
+  if (!message.channel.name.startsWith(`${client[dil].desteksistem.talep}-`)) return message.channel.send(`Bu komut sadece Destek Talebi kanallarında kullanılabilir.`);
+
+  const embed = new Discord.MessageEmbed()
+  .setColor("RANDOM")
+  .setAuthor(`Destek Talebi Kapatma İşlemi!`)
+  .setDescription(`Destek talebini kapatma işlemini onaylamak için, \n10 saniye içinde \`evet\` yazınız.`)
+  .setFooter(`${client.user.username} | Destek Sistemi`, client.user.avatarURL())
+  message.channel.send({embed})
+  .then((m) => {
+    message.channel.awaitMessages(response => response.content === 'evet', {
+      max: 1,
+      time: 10000,
+      errors: ['time'],
+    })
+    .then((collected) => {
+        message.channel.delete();
+      })
+      .catch(() => {
+        m.edit('Destek talebi kapatma isteği zaman aşımına uğradı.').then(m2 => {
+            m2.delete()
+        }, 3000);
+      });
+  });
+  }
+  
+
+  
+  //if (!message.guild) return;
+  
+ // let prefix = await db.fetch(`prefix_${message.guild.id}`) || process.env.prefix;
+  
+
+  // const dil = tr
+  
+  
+  
+});
