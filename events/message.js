@@ -42,6 +42,7 @@ module.exports = message => {
     cmd = client.commands.get(client.aliases.get(command));
   }
   if (cmd) {
+    //Bakım
     const CodEmingHerDaim = require("quick.db");
     let meteyasin = CodEmingHerDaim.fetch("!methesu7washere");
     if (meteyasin) {
