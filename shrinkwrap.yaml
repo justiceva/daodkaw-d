@@ -16,6 +16,7 @@ dependencies:
   gamecord-fork: 1.0.12
   gamedig: 3.0.0
   hastebin-gen: 2.0.5
+  https: 1.0.0
   hurriyet: 0.3.1
   isgd: 1.1.3
   jimp: 0.16.1
@@ -1893,6 +1894,10 @@ packages:
       node: '>=10.19.0'
     resolution:
       integrity: sha512-V+23sDMr12Wnz7iTcDeJr3O6AIxlnvT/bmaAAAP/Xda35C90p9599p0F1eHR/N1KILWSoWVAiOMFjBBXaXSMxg==
+  /https/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-PDfHrhqO65ZpBKKtHpdaGUt+06Q=
   /human-time/0.0.2:
     dev: false
     resolution:
@@ -3592,6 +3597,7 @@ specifiers:
   gamecord-fork: ^1.0.6
   gamedig: ^3.0.0
   hastebin-gen: ^2.0.5
+  https: ^1.0.0
   hurriyet: ^0.3.1
   isgd: ^1.1.3
   jimp: ^0.16.1

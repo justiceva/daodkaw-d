@@ -6,49 +6,49 @@ exports.run = async (bot, msg, args) => {
     .setAuthor(`Shadow  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
-      "s"
+      "https://cdn.discordapp.com/attachments/824633401096011862/824659950893531156/standard.gif"
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "s"
+      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
     )
     .setDescription(
-      `<:yildiz:819973383667056680> RabiHost Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:green:822530401301954632> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ticket__** `,
-      `<a:turuncu:822084547386146836>  \`${prefix}bilet\` \nTicketi tekrar açar. Ticketi siler `,
+      `<a:green:822530401301954632>  \`${prefix}bilet\` \nTicketi tekrar açar. Ticketi siler `,
       true
     )
     .addField(
       `**__Ticket Kapat__**`,
-      `<a:turuncu:822084547386146836>  \`${prefix}kapat\` \nTicketi 5 saniyede siler`,
+      `<a:green:822530401301954632>  \`${prefix}kapat\` \nTicketi 5 saniyede siler`,
       true
     )
     .addField(
       `**__Ticket Kanal__**`,
-      `<a:turuncu:822084547386146836>  \`${prefix}ticket-kanal\` \nTicket Gittiği Kanalı Ayarlar`,
+      `<a:green:822530401301954632>  \`${prefix}ticket-kanal\` \nTicket Gittiği Kanalı Ayarlar`,
       true
     )
     .addField(
       `**__Ticket Kaldır__**`,
-      `<a:turuncu:822084547386146836>  \`${prefix}ticket-kaldır\` \nTicket Kanalını Kaldırır`,
+      `<a:green:822530401301954632>  \`${prefix}ticket-kaldır\` \nTicket Kanalını Kaldırır`,
       true
     )
     .addField(
       `**__Ticket Ekle__**`,
-      ` <a:turuncu:822084547386146836> \`${prefix}ticket-ekle\` \nTicket Ekler`,
+      ` <a:green:822530401301954632> \`${prefix}ticket-ekle\` \nTicket Ekler`,
 
       true
     )
     .addField(
       `**__Ticket Aç__**`,
-      ` <a:turuncu:822084547386146836>  \`${prefix}ticket-aç\` \nTicket Açar`,
+      ` <a:green:822530401301954632>  \`${prefix}ticket-aç\` \nTicket Açar`,
       true
     )
     .addField(
       `__Bilgilendirme__`,
-      `<a:logo:822085656540610591>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:logo:822085656540610591> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:logo:822085656540610591> \`${prefix}siteler\` | CruzyHost Sitelerini Görürsün`
+      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
     );
   msg.channel.send(çekiliş);
 };
