@@ -83,6 +83,8 @@ client.unload = command => {
     } catch (e) {
       reject(e);
     }
+      console.log(`${message}`);
+};
   });
 };
 
@@ -118,7 +120,8 @@ client.login(process.env.TOKEN);
 
 const ms = require("parse-ms");
 const { DiscordAPIError } = require("discord.js");
-
+  console.log(`${message}`);
+};
 client.on("message", async message => {
   if (message.author.bot) return;
   if (!message.guild) return;
@@ -170,7 +173,8 @@ client.on("messageDelete", async message => {
   if (!log) return;
 
   const embed = new Discord.MessageEmbed()
-
+  console.log(`${message}`);
+};
     .setTitle(message.author.username + " | Mesaj Silindi")
 
     .addField("Kullanıcı: ", message.author)
@@ -220,7 +224,8 @@ client.on("channelCreate", async channel => {
   let modlog = await db.fetch(`log_${channel.guild.id}`);
 
   if (!modlog) return;
-
+  console.log(`${message}`);
+};
   const entry = await channel.guild
     .fetchAuditLogs({ type: "CHANNEL_CREATE" })
     .then(audit => audit.entries.first());
