@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         new Discord.MessageEmbed()
           .setColor("BLACK")
           .setDescription(
-            `<a:unlem:816363628282249266> **Yanlış Kullanım** \n Doğru Kullanım: \`sn!trumptweet [Yazı]\``
+            `<a:unlem:816363628282249266> **Yanlış Kullanım** \n Doğru Kullanım: \`s!trumptweet [Yazı]\``
           )
       );
       return;
