@@ -1274,7 +1274,7 @@ client.on("guildMemberAdd", member => {
 client.on("guildMemberAdd", member => {
   const hosgeldin = new Discord.MessageEmbed()
     .setThumbnail(
-      "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
+      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
     )
      .setAuthor(`Merhaba Sende Aramıza Hoşgeldin`)
     .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz.")
@@ -1282,7 +1282,7 @@ client.on("guildMemberAdd", member => {
     .addField("**Sunucu Adresimiz**", "_Play.ShadowRise.Com_")
     .addField(
       "**WebSitemiz**",
-      "[ShadowRise Network](https://discord.gg/JtCr2Y96)"
+      "[Shadow ](https://discord.gg/vqV5TRaMCa)"
     )
   member.send(hosgeldin);
 });
