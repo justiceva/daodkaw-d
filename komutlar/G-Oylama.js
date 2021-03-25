@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("RANDOM")
     .addField("__Oylama Var!__", `**${yazi}**`)
     .setThumbnail(
-      ` https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png`
+      ` https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif`
     )
     .setFooter(`${message.author.username} oylama yaptı.`)
     .setAuthor(`${client.user.username} Oylama`);
