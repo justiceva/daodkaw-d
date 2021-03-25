@@ -108,9 +108,9 @@ exports.run = async(client, message, args) => {
     ctx.closePath();
     ctx.clip();
 
-    ctx.drawImage(avatar, 10, 10, 200, 200);
+    ctx.drawImage(avatar, 40, 40, 100, 100);
 
-
+     message.channel.send(`> :star: | <@${message.author.id}>  Seviye Bilgi Kartı`)
 
     await message.channel.send(
         new MessageAttachment(canvas.toBuffer(), 'seviye-kartı.gif'));
