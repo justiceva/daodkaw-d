@@ -4,14 +4,14 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedayarlar = new Discord.MessageEmbed()
-    .setAuthor(`ShadowRise Network | Ayarlar`)
+    .setAuthor(`Shadow | Ayarlar`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
     )
     .setDescription(
-      `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:tik:822531200353959937> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__ModLog__`,

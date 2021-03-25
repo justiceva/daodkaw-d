@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
       .setColor("#00ff00")
       .setDescription(mesaj)
       .setFooter(
-        client.user.username + " | ShadowRise Mute Sistemi",
+        client.user.username + " | Shadow Mute Sistemi",
         client.user.avatarURL()
       );
     return message.channel

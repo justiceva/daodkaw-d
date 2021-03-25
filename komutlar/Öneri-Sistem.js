@@ -2,14 +2,14 @@ const Discord = require("discord.js");
 const prefix = process.env.prefix;
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`ShadowRise Network | Öneri Sistem`)
+    .setAuthor(`Shadow Network | Öneri Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
     )
     .setDescription(
-      `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:tik:822531200353959937> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__ÖneriLog Ayarla__**`,
@@ -27,7 +27,7 @@ exports.run = async (bot, msg, args) => {
       true
     )
     .addField(
-      `**__ShadowRise Sunucuya Özel Öneri__**`,
+      `**__Shadow Sunucuya Özel Öneri__**`,
       `<a:green:822530401301954632> \`${prefix}öneri\` \n Discord Sunucumuza Bota Veya MCSunucumuza Öneri Yapabilirsiniz..`,
       true
     )
