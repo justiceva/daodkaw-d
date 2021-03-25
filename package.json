@@ -49,19 +49,6 @@
     "hastebin-gen": "^2.0.5",
     "wio.db": "^4.0.17",
     "gamedig": "^3.0.0"
-    "name": "giveaways replike lord creative",
-  "version": "1.0.0",
-  "description": "Türkçe Çekiliş Botu",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "author": "fasfas",
-  "keywords": [
-    "discord",
-    "giveaways",
-    "giveaway",
-    "bot",
   },
   "engines": {
     "node": "12.x"
