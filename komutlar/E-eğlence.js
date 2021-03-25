@@ -4,14 +4,14 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedeğlence = new Discord.MessageEmbed()
-    .setAuthor(`© ShadowRise Network | Eğlence`)
+    .setAuthor(`© Shadow | Eğlence`)
     .setTitle(``)
     .setColor(`BLACK`)
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     )
     .setDescription(
-      `<a:kirmiziyildiz:815283970820145213> ShadowRise Network Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<:okmavi:822558132600963103> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Steam Oyun__`,
