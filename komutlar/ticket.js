@@ -17,8 +17,8 @@ exports.run = async (client, message, args) => {
       .get(kanalbelirle)
       .send(
         new Discord.MessageEmbed()
-          .setTitle(`**CruzyHost Bilişim Merkezi / Destek Sistemi**`)
-          .setFooter(`CruzyHost.Com`, client.user.avatarURL())
+          .setTitle(`**Shadow / Destek Sistemi**`)
+          .setFooter(`Shadow.Com`, client.user.avatarURL())
           .setColor(`#ee7621`)
           .setDescription(
             `**▸ Destek Talebi açarken lütfen Doğru ve Düzgün bir şekilde açınız, aksi taktirde açılan destek taleblerine Cevap verilmeyecektir ve kapatılcaktır.

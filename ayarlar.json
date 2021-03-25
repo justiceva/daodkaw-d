@@ -1,4 +1,6 @@
 {
+  "token": "TOKEN", 
+  "prefix": "s!",
   "everyoneMention": false,
   "hostedBy": true
 }

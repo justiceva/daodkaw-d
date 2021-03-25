@@ -3,14 +3,14 @@ const Discord = require("discord.js");
 const prefix = process.env.prefix;
 exports.run = async (bot, msg, args) => {
   const çekiliş = new Discord.MessageEmbed()
-    .setAuthor(`CruzyHost Bilişim | Ticket Sistem`)
+    .setAuthor(`Shadow  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
-      "https://media.discordapp.net/attachments/822087973398118450/822089059706470400/cruzyhost.gif"
+      "s"
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "https://cdn.discordapp.com/icons/818740312293376000/a_9c062cea607a11f22199bda24788785a.gif?size=128"
+      "s"
     )
     .setDescription(
       `<:yildiz:819973383667056680> RabiHost Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`

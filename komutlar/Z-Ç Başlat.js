@@ -34,10 +34,10 @@ exports.run = async (client, message, args) => {
         time: ms(giveawayDuration),
         prize: giveawayPrize,
         winnerCount: giveawayNumberWinners,
-        hostedBy: client.ayarlar.hostedBy ? message.author : null,
+        hostedBy: process.env.hostedBy ? message.author : null,
         messages: {
-            giveaway: (client.ayarlar.everyoneMention ? "@everyone\n\n" : "")+"🎉🎉 **ÇEKİLİŞ** 🎉🎉",
-            giveawayEnded: (client.ayarlar.everyoneMention ? "@everyone\n\n" : "")+"🎉🎉 **ÇEKİLİŞ SONA ERDİ** 🎉🎉",
+            giveaway: (process.env.everyoneMention ? "@everyone\n\n" : "")+"🎉🎉 **ÇEKİLİŞ** 🎉🎉",
+            giveawayEnded: (process.env.everyoneMention ? "@everyone\n\n" : "")+"🎉🎉 **ÇEKİLİŞ SONA ERDİ** 🎉🎉",
             timeRemaining: "Kalan süre: **{duration}**!",
             inviteToParticipate: "Katılmak için 🎉 tepkisine tıklayın!",
             winMessage: "Tebrikler, {winners}! **{prize}** Ödülünü Kazandın!",
