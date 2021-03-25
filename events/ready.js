@@ -17,12 +17,7 @@ module.exports = client => {
   );
   client.user.setStatus("idle");
 
-  client.user.setActivity(
-    `${client.guilds.cache
-      .reduce((a, b) => a + b.memberCount, 0)
-      .toLocaleString()} kişi ShadowRise`,
-    { type: "WATCHING" }
-  );
+  client.user.setActivity(`Shadow Bot `, { type: "WATCHING" });
 
   console.log(
     ` [${moment().format("YYYY-MM-DD HH:mm:ss")}] Oyun ismi ayarlandı!`

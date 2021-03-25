@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://media.discordapp.net/attachments/822526781839245332/822526805734850600/20210319_160634.png"
+      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
     )
     .setDescription(
       `<a:tik:822531200353959937> ShadowRise Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
