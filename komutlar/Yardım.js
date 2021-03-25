@@ -44,8 +44,8 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Logo Komutlar__`,
-      `<a:green:822530401301954632> \`${prefix}logo\` `,
+      `__Çekiliş Komutlar__`,
+      `<a:green:822530401301954632> \`${prefix}çekiliş\` `,
       true
     )
     .addField(

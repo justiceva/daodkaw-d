@@ -48,7 +48,8 @@
     "canvas-constructor": "^4.1.0",
     "hastebin-gen": "^2.0.5",
     "wio.db": "^4.0.17",
-    "gamedig": "^3.0.0"
+    "gamedig": "^3.0.0",
+    "discord-giveaways": "^4.4.3"
   },
   "engines": {
     "node": "12.x"
