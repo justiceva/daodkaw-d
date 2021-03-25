@@ -35,7 +35,7 @@ dependencies:
   tcmb-doviz: 1.0.6
   weather-js: 2.0.0
   wio.db: 4.0.17
-  yt-search: 2.7.4
+  yt-search: 2.7.5
   ytdl-core: 4.5.0
   ytdl-core-discord: 1.2.5
 packages:
@@ -3515,7 +3515,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
-  /yt-search/2.7.4:
+  /yt-search/2.7.5:
     dependencies:
       async.parallellimit: 0.5.2
       boolstring: 1.0.2
@@ -3528,7 +3528,7 @@ packages:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-Ecv93yYKTQ/LmB0r4Ry+abDrcxlftFl9cs0ZXY50IE+UJVBtI7WcxgPPme/MiJYrAAZHLkduqLdZT4FaL58HZQ==
+      integrity: sha512-+5rZmv4tSY22C7OzFiX+TrTIMug28OBMFF7l7roB+LDY2bIUS5lizewrsWKVZd2U+aF9ge9sGxgRwmnQmFVEiA==
   /ytdl-core-discord/1.2.5:
     dependencies:
       '@types/node': 14.14.25
@@ -3597,6 +3597,6 @@ specifiers:
   tcmb-doviz: ^1.0.6
   weather-js: ^2.0.0
   wio.db: ^4.0.17
-  yt-search: ^2.7.2
+  yt-search: ^2.7.4
   ytdl-core: ^4.4.5
   ytdl-core-discord: ^1.2.5
