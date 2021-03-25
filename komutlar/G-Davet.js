@@ -14,7 +14,7 @@ exports.run = async (client, message) => {
       `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
     )
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
+      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     );
 
   return message.channel.send(fynxcode);

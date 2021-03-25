@@ -10,7 +10,7 @@ exports.run = async (bot, msg, args) => {
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
+      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     )
     .setDescription(
       `<a:green:822530401301954632> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`

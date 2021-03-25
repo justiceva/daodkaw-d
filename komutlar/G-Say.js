@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
   const say = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setImage(
-      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
+      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     )
     .setTitle(message.guild.name)
     .addField(
