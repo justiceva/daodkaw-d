@@ -25,7 +25,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       "__**Yetkili Bilgi**__",
-      "<:tac:822552060552937542> **Sunucu Sahipleri**  \n <@714096745692397678> | <@786226634466000906> \n **EmreKrbrn#4952** | **Mrt#3307** \n\n <a:green:822530401301954632> **Kurucular** \n <@802181483170103316> \n **OrhanEmin#0819** \n\n"
+      "<:tac:822552060552937542> **Sunucu Sahipleri**  \n <@767377324474630174> | <@786226634466000906> \n **SelmanEmin#9503** | **Mrt#3307** \n\n <a:green:822530401301954632> **Kurucular** \n <@786226634466000906> \n **Mrt#6854** \n\n"
     )
     .addField(
       "__**Sürümler**__",
