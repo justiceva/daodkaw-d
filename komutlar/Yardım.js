@@ -30,7 +30,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Sunucu Ayarlar(Bakımda)__`,
-      `🌐 \`${prefix}sunucu\` `,
+      `⚙️ \`${prefix}sunucu\` `,
       true
     )
     .addField(

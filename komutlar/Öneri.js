@@ -7,28 +7,28 @@ exports.run = (client, message, args) => {
   let öneri = args.slice(0).join(" ");
   if (!kanal)
     return message.channel.send(
-      "<:reddet:822546675221397584> Önerilog kanalı ayarlanmamış. Lütfen ayarlamak için `" +
+      "❌  Önerilog kanalı ayarlanmamış. Lütfen ayarlamak için `" +
         p +
         "önerilog #kanal` komutunu kullanın."
     );
   if (!öneri)
-    return message.reply("<:reddet:822546675221397584> Önerini yaz lütfen. ");
+    return message.reply("❌  Önerini yaz lütfen. ");
   if (öneri.length > 300)
     return message.reply(
-      "<:reddet:822546675221397584> Önerin `300` karakterden fazla olamaz."
+      "❌  Önerin `300` karakterden fazla olamaz."
     );
   if (öneri.length < 10)
     return message.reply(
-      "<:reddet:822546675221397584> Önerin `10` karakterden az olamaz."
+      "❌  Önerin `10` karakterden az olamaz."
     );
   let user = message.mentions.users.first();
   if (user)
     return message.reply(
-      "<:reddet:822546675221397584> Öneri komudunda kimseyi etiketleyemezsin"
+      "❌  Öneri komudunda kimseyi etiketleyemezsin"
     );
 
   message.channel.send(
-    "<:kabulet:822545421628342312> Önerin log kanalına iletildi. "
+    "✔️ Önerin log kanalına iletildi. "
   );
   let codeming = new Discord.MessageEmbed()
     .setThumbnail(message.author.avatarURL())
