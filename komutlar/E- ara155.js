@@ -15,7 +15,7 @@ exports.run = (client, message, params) => {
   }
   if (message.channel.type !== "dm") {
     const sunucubilgi = new Discord.MessageEmbed()
-      .setDescription(`${message.author.username} **Polis Geliyor** <a:unlem:816363628282249266>`)
+      .setDescription(`${message.author.username} **Polis Geliyor** 👮🏽‍♂️`)
       .setColor("BLACK")
       .setFooter(
         `${message.author.username} tarafından istendi.`,
