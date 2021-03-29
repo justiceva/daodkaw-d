@@ -4,14 +4,14 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedkullanıcı = new Discord.MessageEmbed()
-    .setAuthor(`Shadow | Kullanıcı`)
+    .setAuthor(`QualitySel | Kullanıcı`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     )
     .setDescription(
-      `<a:tik:822531200353959937> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:tik:822531200353959937> QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Rozetler__`,
