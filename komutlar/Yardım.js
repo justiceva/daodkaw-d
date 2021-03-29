@@ -24,12 +24,12 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Sunucu Koruma__`,
+      `__Sunucu Koruma(Bakımda)__`,
       `🔰 \`${prefix}koruma\`  `,
       true
     )
     .addField(
-      `__Sunucu Ayarlar__`,
+      `__Sunucu Ayarlar(Bakımda)__`,
       `🌐 \`${prefix}sunucu\` `,
       true
     )
@@ -39,7 +39,7 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Oyun Komutlar__`,
+      `__Oyun Komutlar(Bakımda)__`,
       ` 🎮 \`${prefix}oyunlar\` `,
       true
     )

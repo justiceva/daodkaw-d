@@ -11,24 +11,24 @@ exports.run = (client, message, args) => {
   if (miran === "sıfırla") x = ".";
   if (!x)
     return message.reply(
-      "<:reddet:822546675221397584> Lütfen **ayarla** veya **sfırla** yaz."
+      "❌ Lütfen **ayarla** veya **sfırla** yaz."
     );
 
   if (miran === "ayarla") {
     if (!kanal)
       message.channel.send(
-        "<:reddet:822546675221397584> Bir kanal belirtmelisin."
+        "❌ Bir kanal belirtmelisin."
       );
     db.set(`ökanal_${message.guild.id}`, kanal.id);
     return message.channel.send(
-      "<:kabulet:822545421628342312> Öneri log kanalı başarıyla **" +
+      "✅ Öneri log kanalı başarıyla **" +
         kanal +
         "** olarak ayarlandı"
     );
   }
   if (miran === "sıfırla") db.delete(`ökanal_${message.guild.id}`);
   return message.channel.send(
-    "<:kabulet:822545421628342312> Önerilog kanalı sıfırlandı. "
+    "✅ Önerilog kanalı sıfırlandı. "
   );
 };
 
