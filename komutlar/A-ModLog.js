@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("#00ff00")
         .setDescription(
-          `<:kabulet:822545421628342312> | Mod-log kanalı başarıyla sıfırlandı.`
+          `✅ | Mod-log kanalı başarıyla sıfırlandı.`
         )
     );
     return;
@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("#00ff00")
         .setDescription(
-          `<:reddet:822546675221397584> Yanlış Kullanım \n Doğru Kullanım: ${prefix}mod-log #kanal`
+          `❌ Yanlış Kullanım \n Doğru Kullanım: ${prefix}mod-log #kanal`
         )
     );
 
@@ -45,7 +45,7 @@ exports.run = async (client, message, args) => {
       .setColor("#00ff00")
       .setDescription(` Mod-log kanalı başarıyla ${logk} olarak ayarlandı.`)
   );
-  message.react("<:kabulet:822545421628342312>");
+  message.react("✳️");
 };
 
 exports.conf = {
