@@ -24,8 +24,9 @@ exports.run = async (client, message, args) => {
             `**▸ Destek Talebi açarken lütfen Doğru ve Düzgün bir şekilde açınız, aksi taktirde açılan destek taleblerine Cevap verilmeyecektir ve kapatılcaktır.
                 
             ▸ Destek Talebi açmak için aşağıdaki Emojiye Basmanız Yeterli Olucaktır, ardından size Özel Kanal açılır ve sizinle özel olarak ilgileniriz.
+                          ▸Destek Odası Açılış - Kapanış Saatleri
+
                 =Hafta İçi: 16.00 - 22.00
-                
                  =Hafta Sonu: 16.00 - 22.00 **`
             
           )
