@@ -4,41 +4,40 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const botbilgi = new Discord.MessageEmbed()
-    .setAuthor(`Shadow | Discord Bot Bilgi Tablosu`)
+    .setAuthor(`SelmanEmin | Discord Bot Bilgi Tablosu`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
-    )
+      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"    )
     .setDescription(
-      `<a:tik:822531200353959937> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `📯 SelmanEmin Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       "__**Bot Verileri**__",
-      `<:rules:822553517226590271> **Toplam Sunucu** **|**  \`${
+      `📗 **Toplam Sunucu** **|**  \`${
         client.guilds.cache.size
-      }\` \n <:rules:822553517226590271> **Toplam Kullanıcı** **|** \`${client.guilds.cache
+      }\` \n 📗 **Toplam Kullanıcı** **|** \`${client.guilds.cache
         .reduce((a, b) => a + b.memberCount, 0)
-        .toLocaleString()}\` \n <:rules:822553517226590271> **Toplam Kanal** **|** \`${
+        .toLocaleString()}\` \n 📗 **Toplam Kanal** **|** \`${
         client.channels.cache.size
       }\``
     )
     .addField(
       "__**Yetkili Bilgi**__",
-      "<:tac:822552060552937542> **Sunucu Sahipleri**  \n <@767377324474630174> | <@786226634466000906> \n **SelmanEmin#9503** | **Mrt#3307** \n\n <a:green:822530401301954632> **Kurucular** \n <@786226634466000906> \n **Mrt#6854** \n\n"
+      "👑 **Sunucu Sahipleri**  \n @SelmanEmin#9503  | <@786226634466000906> \n **SelmanEmin#9503** |  **Kurucular** \n < \n **SelmanEmin#9503* \n\n"
     )
     .addField(
       "__**Sürümler**__",
-      `<a:guard:822552681863315516> **Discord.js Sürümü** **|**  \`v${Discord.version}\` \n <a:guard:822552681863315516>  **Node.js Sürümü** **|**  \`${process.version}\``
+      `@SelmanEmin#9503🥽 **Discord.js Sürümü** **|**  \`v${Discord.version}\` \n 🦺  **Node.js Sürümü** **|**  \`${process.version}\``
     )
     .addField(
       "__**Gecikmeler**__",
-      `<a:sinyal:822553082889633794> \`${client.ws.ping}\` **MS**`,
+      `🩱 \`${client.ws.ping}\` **MS**`,
       true
     )
     .addField(
       `__Bilgilendirme__`,
-      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
+      `🎓  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎓 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎓 \`${prefix}iletişim\` | SelmanEmin İletişim Bilgileri.`
     );
   return message.channel.send(botbilgi);
 };
