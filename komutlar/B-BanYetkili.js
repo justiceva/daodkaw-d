@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
   if (!CERol) return message.channel.send( new Discord.MessageEmbed()
         .setColor("#00ff00")
         .setDescription(
-          `> <a:unlem:822546045706698763> Daha Ban Yetkili Rölünü Ayarlamadın \n > <:kabulet:822545421628342312> Doğru Ayarlamak İçin \`${prefix}ban-yetkili @Rol\``
+          `> <‼️ Daha Ban Yetkili Rölünü Ayarlamadın \n ‼️ Doğru Ayarlamak İçin \`${prefix}ban-yetkili @Rol\``
         ));
   await db.set("ce-banyetkili." + message.guild.id, CERol.id);
   return message.channel.send(

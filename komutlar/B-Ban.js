@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
     return message.channel.send(
       new Discord.MessageEmbed()
         .setColor("#00ff00")
-        .setDescription(`> <:kabulet:822545421628342312> Banlanacak Kişiyi Etiketle \n > <:kabulet:822545421628342312> Doğru Kullanım \`${prefix}ban @Kişi <Sebep>\``)
+        .setDescription(`🔮 Banlanacak Kişiyi Etiketle \n > 🔮 Doğru Kullanım \`${prefix}ban @Kişi <Sebep>\``)
     );
   if (
     !message.guild.members.cache
