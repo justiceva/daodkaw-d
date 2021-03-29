@@ -3,17 +3,17 @@ const Discord = require("discord.js");
 const prefix = process.env.prefix;
 exports.run = async (bot, msg, args) => {
   const çekiliş = new Discord.MessageEmbed()
-    .setAuthor(`Shadow  | Ticket Sistem`)
+    .setAuthor(`QualitySel  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
       "https://cdn.discordapp.com/attachments/824633401096011862/824659950893531156/standard.gif"
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
+      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `<a:green:822530401301954632> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `<a:green:822530401301954632> QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ticket__** `,
@@ -48,7 +48,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
+      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
     );
   msg.channel.send(çekiliş);
 };
