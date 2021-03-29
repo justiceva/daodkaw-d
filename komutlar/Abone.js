@@ -12,15 +12,15 @@ exports.run = async (client, message, args) => {
   );
   if (!abonerol)
     return message.channel.send(
-      `<:reddet:822546675221397584> **__Abone rolü ayarlanmamış!__**`
+      `❌ **__Abone rolü ayarlanmamış!__**`
     );
   if (!abonelog)
     return message.channel.send(
-      `<:reddet:822546675221397584> **__Abone log kanalı ayarlanmamış!__**`
+      `❌ **__Abone log kanalı ayarlanmamış!__**`
     );
   if (!aboneyetkilisi)
     return message.channel.send(
-      `<:reddet:822546675221397584> **__Abone yetkili rolü ayarlanmamış!__**`
+      `❌ **__Abone yetkili rolü ayarlanmamış!__**`
     );
   let user = message.mentions.users.first();
   if (!message.member.roles.cache.has(aboneyetkilisi))
@@ -33,7 +33,7 @@ exports.run = async (client, message, args) => {
 
   await abonekisi.roles.add(abonerol);
   const embed = new Discord.MessageEmbed()
-    .setTitle(`<:kabulet:822545421628342312> Abone Rolü Verildi!`)
+    .setTitle(`✅ Abone Rolü Verildi!`)
     .addField(
       `🎃 Abone Rolünü Veren Kişi:`,
       `<@${message.author.id}>`,

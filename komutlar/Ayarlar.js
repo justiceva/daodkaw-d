@@ -4,11 +4,11 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedayarlar = new Discord.MessageEmbed()
-    .setAuthor(`Shadow | Ayarlar`)
+    .setAuthor(`QualitySel | Ayarlar`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
+      ""
     )
     .setDescription(
       `<a:tik:822531200353959937> Shadow Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`

@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
       .setColor("#00ff00")
         .setDescription(
-          "<a:hayir:819984394420486175> Süre limiti maksimum **10** saniye olabilir."
+          "⭕️  Süre limiti maksimum **10** saniye olabilir."
         )
     );
   }
@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
     new Discord.MessageEmbed()
     .setColor("#00ff00")
       .setDescription(
-        `<a:evet:819984394101325886> Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır.`
+        `<✅ Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır.`
       )
   );
   var request = require("request");

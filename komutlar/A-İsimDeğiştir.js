@@ -5,7 +5,7 @@ const prefix = process.env.prefix;
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_NICKNAMES"))
     return message.reply(
-      ` | <a:unlem:822546045706698763> Bunu yapabilmek için gerekli yetkiye sahip değilsiniz!`
+      ` | ❗️ Bunu yapabilmek için gerekli yetkiye sahip değilsiniz!`
     );
   let isim = args.slice(1).join(" ");
   let kullanici = message.mentions.users.first();

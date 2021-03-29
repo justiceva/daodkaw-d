@@ -22,7 +22,7 @@ exports.run = async (yashinu, message, args) => {
     new Discord.MessageEmbed()
       .setColor("#00ff00")
       .setDescription(
-        `<:kabulet:822545421628342312> | **\`\`${
+        `🗑 | **\`\`${
           args[0]
         }\`\` Adet Mesaj Silindi.**`
       )
