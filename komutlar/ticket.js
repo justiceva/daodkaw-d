@@ -17,13 +17,17 @@ exports.run = async (client, message, args) => {
       .get(kanalbelirle)
       .send(
         new Discord.MessageEmbed()
-          .setTitle(`**Shadow / Destek Sistemi**`)
-          .setFooter(`Shadow.Com`, client.user.avatarURL())
+          .setTitle(`**QualitySel / Destek Sistemi**`)
+          .setFooter(`QualitySel`, client.user.avatarURL())
           .setColor(`#ee7621`)
           .setDescription(
             `**▸ Destek Talebi açarken lütfen Doğru ve Düzgün bir şekilde açınız, aksi taktirde açılan destek taleblerine Cevap verilmeyecektir ve kapatılcaktır.
-
-            ▸ Destek Talebi açmak için aşağıdaki Emojiye Basmanız Yeterli Olucaktır, ardından size Özel Kanal açılır ve sizinle özel olarak ilgileniriz.**`
+                
+            ▸ Destek Talebi açmak için aşağıdaki Emojiye Basmanız Yeterli Olucaktır, ardından size Özel Kanal açılır ve sizinle özel olarak ilgileniriz.
+                =Hafta İçi: 16.00 - 22.00
+                
+                 =Hafta Sonu: 16.00 - 22.00 **`
+            
           )
       )
       .then(m => {
