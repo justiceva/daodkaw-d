@@ -55,25 +55,25 @@ exports.run = function(client, message, args) {
       .setThumbnail(üye.displayAvatarURL)
       .addField(
         "Profil",
-        `**Ad <:okmavi:822558132600963103> ** ${üye.username +
+        `**Ad 🌀 ** ${üye.username +
           "#" +
-          üye.discriminator}\n**ID <:okmavi:822558132600963103> ** ${
+          üye.discriminator}\n**ID 🌀 ** ${
           üye.id
         }\n**Son Mesaj: ** ${
           üye.lastMessage
-        }\n**Son Mesaj İD <:okmavi:822558132600963103> ** ${
+        }\n**Son Mesaj İD 🌀 ** ${
           üye.lastMessageID
         }\n**Oynadığı Oyun: ** ${
           üye.presence.game ? üye.presence.game.name : "Şu an oyun oynamıyor"
-        }\n**Durum** ${durm}\n**Oluşturulduğu Tarih <:okmavi:822558132600963103> ** ${`${moment(
+        }\n**Durum** ${durm}\n**Oluşturulduğu Tarih 🌀 ** ${`${moment(
           üye.createdAt
         ).format("DD")} ${aylar[moment(üye.createdAt).format("MM")]} ${moment(
           üye.createdAt
         ).format("YYYY HH:mm:ss")}`}\n**Bot mu?** ${
           üye.bot
-            ? "<:kabulet:822545421628342312>"
-            : "<:reddet:822546675221397584>"
-        }\n**Rolleri <:okmavi:822558132600963103> ** ${message.guild.members
+            ? "✅"
+            : "❌"
+        }\n**Rolleri 🌀 ** ${message.guild.members
           .get(üye.id)
           .roles.filter(r => r.name !== "@everyone")
           .map(r => r)
@@ -89,19 +89,19 @@ exports.run = function(client, message, args) {
       .setThumbnail(message.author.avatarURL())
       .addField(
         "Profil",
-        `**Ad <:okmavi:822558132600963103> ** ${message.author.username +
+        `**Ad 🌀 ** ${message.author.username +
           "#" +
-          message.author.discriminator}\n**ID <:okmavi:822558132600963103> ** ${
+          message.author.discriminator}\n**ID 🌀 ** ${
           message.author.id
-        }\n**Son Mesaj <:okmavi:822558132600963103> ** ${
+        }\n**Son Mesaj 🌀 ** ${
           message.author.lastMessage
-        }\n**Son Mesaj İD <:okmavi:822558132600963103> ** ${
+        }\n**Son Mesaj İD 🌀 ** ${
           message.author.lastMessageID
-        }\n**Oynadığı Oyun <:okmavi:822558132600963103> ** ${
+        }\n**Oynadığı Oyun 🌀 ** ${
           message.author.presence.game
             ? message.author.presence.game.name
             : "Şu an oyun oynamıyor"
-        }\n**Durum** ${durm}\n**Oluşturulduğu Tarih <:okmavi:822558132600963103> ** ${`${moment(
+        }\n**Durum** ${durm}\n**Oluşturulduğu Tarih 🌀 ** ${`${moment(
           message.author.createdAt
         ).format("DD")} ${
           aylar[moment(message.author.createdAt).format("MM")]
@@ -109,16 +109,16 @@ exports.run = function(client, message, args) {
           "YYYY HH:mm:ss"
         )}`}\n**Bot mu?** ${
           message.author.bot
-            ? "<:kabulet:822545421628342312>"
-            : "<:reddet:822546675221397584>"
-        }\n**Roller <:okmavi:822558132600963103> ** ${message.guild.members.cache
+            ? "✅"
+            : "❌"
+        }\n**Roller 🌀 ** ${message.guild.members.cache
           .get(message.author.id)
           .roles.cache.filter(r => r.name !== "@everyone")
           .map(r => r)
           .join(" **|** ")}`
       )
       .setTimestamp()
-      .setFooter(`ShadowRise Network | Discord Profil`);
+      .setFooter(`QualitySel  | Discord Profil`);
     message.channel.send(embed);
   }
 };

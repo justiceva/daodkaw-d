@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
     )
     .setTitle(message.guild.name)
     .addField(
-      "<a:guard:822552681863315516> **__Toplam Üye Sayısı__**",
+      " 👱‍♀️ 👱  **__Toplam Üye Sayısı__**",
       `\`\`\`${message.guild.memberCount}\`\`\``
     )
     .addField(
@@ -42,16 +42,16 @@ exports.run = async (client, message, args) => {
       `» ${message.guild.members.cache.filter(m => m.user.bot).size}`
     )
     .addField(
-      ` **__Emoji Sayısı__**`,
+      `😃 **__Emoji Sayısı__**`,
       `» **${message.guild.emojis.cache.size}**`
     )
     .addField(
-      `<a:rol:823605264854548481> **__Rol Sayısı__**`,
+      `👾 **__Rol Sayısı__**`,
       `» **${message.guild.roles.cache.size}**`
     )
-    .addField(`<:stats:824276405381759016> **__Boost Seviyesi__**`,`**${message.guild.premiumTier}/3**`)
+    .addField(`👾 **__Boost Seviyesi__**`,`**${message.guild.premiumTier}/3**`)
     .addField(
-      `<a:boost:823605267769065542> **__Boost Sayısı__**`,
+      `👾 **__Boost Sayısı__**`,
       `» **${message.guild.premiumSubscriptionCount}**`
     )
 

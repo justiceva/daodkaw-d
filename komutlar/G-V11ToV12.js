@@ -94,11 +94,11 @@ module.exports.run = async (client, message, args) => {
   const embed = new Discord.MessageEmbed()
      .setColor("#00ff00")
     .addField(
-      `<a:giris:823164272728211458> V11 Kod:`,
+      `🕑 V11 Kod:`,
       `\`\`\`${v11}\`\`\` `
     )
     .addField(
-      `<a:cikis:823164274842140683> V12 Kod:`,
+      `🕑 V12 Kod:`,
       `  \`\`\`${v12}\`\`\` `
     );
 

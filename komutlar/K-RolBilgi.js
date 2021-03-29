@@ -12,7 +12,7 @@ exports.run = async (client, msg, args) => {
   var hata = new emran.MessageEmbed()
     .setColor("#00ff00")
     .setDescription(
-      `<a:unlem:822546045706698763> **Yanlış Kullanım** \n Lütfen Bir Rol Etiketleyin Örnek: \`${prefix}rolbilgi @Üye\``
+      `🌐QualitySel  **Yanlış Kullanım** \n Lütfen Bir Rol Etiketleyin Örnek: \`${prefix}rolbilgi @Üye\``
     );
   if (!role) return msg.channel.send(hata);
 
