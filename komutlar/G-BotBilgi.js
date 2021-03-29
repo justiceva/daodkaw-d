@@ -4,13 +4,13 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const botbilgi = new Discord.MessageEmbed()
-    .setAuthor(`SelmanEmin | Discord Bot Bilgi Tablosu`)
+    .setAuthor(`QualitySel | Discord Bot Bilgi Tablosu`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"    )
     .setDescription(
-      `📯 SelmanEmin Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `📯 QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       "__**Bot Verileri**__",
@@ -37,8 +37,9 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `🎓  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎓 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎓 \`${prefix}iletişim\` | SelmanEmin İletişim Bilgileri.`
-    );
+      `🎓  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎓 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎓 \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+    ); 
+  
   return message.channel.send(botbilgi);
 };
 

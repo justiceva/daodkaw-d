@@ -5,16 +5,16 @@ exports.run = async (client, message) => {
 
   const fynxcode = new Discord.MessageEmbed()
     .setColor("#00ff00")
-    .setAuthor(`Shadow Davet Menü`)
+    .setAuthor(`QualitySel Davet Menü`)
     .setDescription(
-      `**<:sag:822547800481988628> Botun Davet Linki [TIKLA](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)**\n\n**__Web Sitemiz Çok Yakında Sizlerle__**`
+      `**💼 Botun Davet Linki [TIKLA](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)**\n\n**__Web Sitemiz Çok Yakında Sizlerle__**`
     )
     .addField(
       `__Bilgilendirme__`,
-      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | ShadowRise İletişim Bilgileri.`
+      `🔰  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🔰 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🔰 \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
     )
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
+      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     );
 
   return message.channel.send(fynxcode);

@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
   const say = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setImage(
-      "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
+      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setTitle(message.guild.name)
     .addField(
@@ -18,11 +18,11 @@ exports.run = async (client, message, args) => {
       `\`\`\`${message.guild.memberCount}\`\`\``
     )
     .addField(
-      `<:rules:822553517226590271> **__Toplam Kanal Sayısı__**`,
+      `🌐 **__Toplam Kanal Sayısı__**`,
       `  \`\`\`${message.guild.channels.cache.size}\`\`\``
     )
     .addField(
-      "<:okey:822549962532847676> **__Çevrimiçi üye sayısı__**",
+      "💠 **__Çevrimiçi üye sayısı__**",
       `» ${
         message.guild.members.cache.filter(
           m => m.user.presence.status !== "offline"
@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
       }`
     )
     .addField(
-      "<:kapat:823608707807969371> **__Çevrimdışı üye sayısı__**",
+      "💠 **__Çevrimdışı üye sayısı__**",
       `» ${
         message.guild.members.cache.filter(
           m => m.user.presence.status == "offline"
@@ -38,11 +38,11 @@ exports.run = async (client, message, args) => {
       }`
     )
     .addField(
-      "<a:sinyal:822553082889633794> **__Bot Sayısı__**",
+      "⚜️ **__Bot Sayısı__**",
       `» ${message.guild.members.cache.filter(m => m.user.bot).size}`
     )
     .addField(
-      `<a:emoji:823606451922665543> **__Emoji Sayısı__**`,
+      ` **__Emoji Sayısı__**`,
       `» **${message.guild.emojis.cache.size}**`
     )
     .addField(
