@@ -25,11 +25,11 @@ let prefix = ayarlar.prefix;
     )
     .addField(
       "__**Yetkili Bilgi**__",
-      "👑 **Sunucu Sahipleri**  \n @SelmanEmin#9503  | <@786226634466000906> \n **SelmanEmin#9503** |  **Kurucular** \n < \n **SelmanEmin#9503* \n\n"
+      "👑 **Sunucu Sahipleri**  <@586822327568695317> \n\n"
     )
     .addField(
       "__**Sürümler**__",
-      `@SelmanEmin#9503🥽 **Discord.js Sürümü** **|**  \`v${Discord.version}\` \n 🦺  **Node.js Sürümü** **|**  \`${process.version}\``
+      `🥽 **Discord.js Sürümü** **|**  \`v${Discord.version}\` \n 🦺  **Node.js Sürümü** **|**  \`${process.version}\``
     )
     .addField(
       "__**Gecikmeler**__",
@@ -38,7 +38,7 @@ let prefix = ayarlar.prefix;
     )
     .addField(
       `__Bilgilendirme__`,
-      `🎓  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎓 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎓 \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+      `🎓  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎓 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎓 \`${prefix}iletişim\` | Gweep Creative İletişim Bilgileri.`
     ); 
   
   return message.channel.send(botbilgi);

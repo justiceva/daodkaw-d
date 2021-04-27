@@ -5,9 +5,9 @@
   "name": "hello-express",
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "shadowrise.js",
+  "main": "gweepcreative.js",
   "scripts": {
-    "start": "node shadowrise.js"
+    "start": "node gweepcreative.js"
   },
   "dependencies": {
     "express": "^4.17.1",
