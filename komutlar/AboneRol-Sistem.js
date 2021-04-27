@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-const prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+const prefix = ayarlar.prefix;
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
     .setAuthor(`Gweep Creative  | AboneRol Sistem`)

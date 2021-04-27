@@ -1,8 +1,5 @@
-# SelmanEminTurhan Youtube Kanalıma Abone Olmayı Unutma
+# Gweep Creative Youtube Kanalıma Abone Olmayı Unutma
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-# Youtube Kanalım:
-# https://www.youtube.com/channel/UCCDaa0auwahbxpagetXrjdQ
-# Discord Adresim:
-# https://discord.gg/jspCbGZMCs
+# [Youtube Kanalım](https://www.youtube.com/GweepCreativeOfficial)  |  [Twitch Kanalım](https://www.twitch.tv/gweepcreative)  |  [Discord Adresim](https://discord.gg/8vP9FCj3sh)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-# 🤖 Güvenin Adresi SelmanEmin  Duyuru Bu Botu Telif Hakkı Vardır İzinsiz Video Çekmiyin.
+# 🤖 Bu Botun Telif Hakkı Vardır İzinsiz Video Çekmiyin.
