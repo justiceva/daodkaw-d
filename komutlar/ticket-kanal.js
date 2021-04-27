@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const data = require("quick.db");
-
+const ayarlar = require("../ayarlar");
 exports.run = async (client, message, args) => {
   const prefix =
-    (await data.fetch(`prefix.${message.guild.id}`)) || process.env.prefix;
+    (await data.fetch(`prefix.${message.guild.id}`)) || ayarlar.prefix;
   if (!message.member.hasPermission("ADMINISTRATOR"))
     return message.channel.send("Bu komutu kullanmak için yetkin yok.");
 
