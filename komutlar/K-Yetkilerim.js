@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 const { stripIndents } = require("common-tags");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = (client, msg, args) => {
-  let prefix = process.env.prefix;
+
 
   let x;
   let x2;

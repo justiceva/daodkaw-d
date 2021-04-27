@@ -1,7 +1,8 @@
 const db = require("quick.db");
 const Discord = require("discord.js");
-let prefix = process.env.prefix;
- 
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 exports.run = function(client, message, args) {
 
   var USER = message.author;

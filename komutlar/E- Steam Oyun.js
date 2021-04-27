@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 var steam = require("steam-provider");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 var provider = new steam.SteamProvider();
 
-let prefix = process.env.prefix;
 
 exports.run = (client, message, args) => {
   let user = message.mentions.users.first() || message.author;

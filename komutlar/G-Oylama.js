@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
-let prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 module.exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("ADMINISTRATOR"))

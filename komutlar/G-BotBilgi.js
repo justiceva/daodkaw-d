@@ -1,16 +1,17 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message) => {
-  let prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
   const botbilgi = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel | Discord Bot Bilgi Tablosu`)
+    .setAuthor(`Gweep Creative | Discord Bot Bilgi Tablosu`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"    )
     .setDescription(
-      `📯 QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `📯 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       "__**Bot Verileri**__",

@@ -1,10 +1,12 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = async (client, message) => {
-  let prefix = process.env.prefix;
+
 
   const sunucu = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel  | Eklenti`)
+    .setAuthor(`Gweep Creative  | Eklenti`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(

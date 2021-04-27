@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const data = require("quick.db");
 
-let botadi = process.env.botadi;
 
 exports.run = async (client, message, args) => {
   const prefix =
@@ -17,8 +16,8 @@ exports.run = async (client, message, args) => {
       .get(kanalbelirle)
       .send(
         new Discord.MessageEmbed()
-          .setTitle(`**QualitySel / Destek Sistemi**`)
-          .setFooter(`QualitySel`, client.user.avatarURL())
+          .setTitle(`**Gweep Creative / Destek Sistemi**`)
+          .setFooter(`Gweep Creative`, client.user.avatarURL())
           .setColor(`#ee7621`)
           .setDescription(
             `**▸ Destek Talebi açarken lütfen Doğru ve Düzgün bir şekilde açınız, aksi taktirde açılan destek taleblerine Cevap verilmeyecektir ve kapatılcaktır.
@@ -77,7 +76,7 @@ exports.run = async (client, message, args) => {
                   `Çok yakın zaman da seninle ilgileneceğiz.
 Bileti kapatmak istersen: 🔒`
                 )
-                .setFooter(`${botadi} | Destek Sistem`, client.user.avatarURL)
+                .setFooter(`Destek Sistem`, client.user.avatarURL)
             ).then(m => {
               m.react(`🔒`);
               let si = (reaction, user) =>

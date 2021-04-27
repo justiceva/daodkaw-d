@@ -1,11 +1,13 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = async (client, message) => {
-  let prefix = process.env.prefix;
+
 
   const fynxcode = new Discord.MessageEmbed()
     .setColor("#00ff00")
-    .setAuthor(`QualitySel Davet Menü`)
+    .setAuthor(`Gweep Creative Davet Menü`)
     .setDescription(
       `**💼 Botun Davet Linki [TIKLA](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)**\n\n**__Web Sitemiz Çok Yakında Sizlerle__**`
     )

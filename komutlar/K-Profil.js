@@ -2,8 +2,9 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 const moment = require("moment");
 require("moment-duration-format");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
-const prefix = process.env.prefix;
 exports.run = function(client, message, args) {
   var aylar = {
     "01": "Ocak",

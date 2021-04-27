@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 
- let botadi = process.env.botadi;
 
 exports.run = (client, message) => {
     let csgopng = "https://cdn.discordapp.com/attachments/814946376894513163/816359385198362696/csgo.png"
@@ -70,7 +69,7 @@ exports.run = (client, message) => {
     var kasadancikanlar = kasadancikanlar[Math.floor(Math.random(1) * kasadancikanlar.length)]
     const embed  = new Discord.MessageEmbed()
     .setImage("https://cdn.wallpapersafari.com/40/16/8rTMh6.jpg")
-    .setAuthor(`${botadi}`, client.user.avatarURL())
+    .setAuthor(client.user.avatarURL())
     .setDescription(`${kasadancikanlar}`)
     .setFooter(`Kasayı açan (${message.author.username}) | Kasa Fiyatı: 80$ | Kasadan çıkan bütün ürünler sizde kalmaz sadece eğlence için yapılmış bir komutdur`)
     .setColor("BLACK")

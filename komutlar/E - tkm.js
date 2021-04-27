@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
-  let prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 const rps = ["makas", "taş", "kağıt"],
   rpsF = (userAns, botAns) => {
     let choice = userAns,

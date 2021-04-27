@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
-const prefix = process.env.prefix;
+
 exports.run = async (bot, msg, args) => {
   const çekiliş = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel  | Ticket Sistem`)
+    .setAuthor(`Gweep Creative  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
       "https://cdn.discordapp.com/attachments/823190721862959134/826104795839332402/standard_4.gif"
@@ -13,7 +15,7 @@ exports.run = async (bot, msg, args) => {
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🎫 QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎫 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ticket__** `,

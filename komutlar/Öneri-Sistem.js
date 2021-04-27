@@ -1,15 +1,17 @@
 const Discord = require("discord.js");
-const prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel | Öneri Sistem`)
+    .setAuthor(`Gweep Creative | Öneri Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `Ⓜ️ QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `Ⓜ️ Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__ÖneriLog Ayarla__**`,

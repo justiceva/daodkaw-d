@@ -1,15 +1,17 @@
 const Discord = require("discord.js");
-const prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel  | Profil Sistem`)
+    .setAuthor(`Gweep Creative  | Profil Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/824633401096011862/824662081882161214/standard_3.gif"
     )
     .setDescription(
-      `⌚️ QualitySel Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `⌚️ Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Profilim__**`,

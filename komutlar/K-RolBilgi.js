@@ -1,7 +1,9 @@
 const emran = require("discord.js");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = async (client, msg, args) => {
-  let prefix = process.env.prefix;
+
 
   let role =
     msg.mentions.roles.first() ||
@@ -12,7 +14,7 @@ exports.run = async (client, msg, args) => {
   var hata = new emran.MessageEmbed()
     .setColor("#00ff00")
     .setDescription(
-      `🌐QualitySel  **Yanlış Kullanım** \n Lütfen Bir Rol Etiketleyin Örnek: \`${prefix}rolbilgi @Üye\``
+      `🌐Gweep Creative  **Yanlış Kullanım** \n Lütfen Bir Rol Etiketleyin Örnek: \`${prefix}rolbilgi @Üye\``
     );
   if (!role) return msg.channel.send(hata);
 

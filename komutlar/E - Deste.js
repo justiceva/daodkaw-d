@@ -83,7 +83,7 @@ exports.run = (client, message) => {
     var destedencikanlar = destedencikanlar[Math.floor(Math.random(1) * destedencikanlar.length)]
     const embed  = new Discord.MessageEmbed()
     .setImage("https://s3.eu-central-1.amazonaws.com/images.gamesatis.com/products/images/000/024/678/big/platin-deste.jpg")
-    .setAuthor(`${botadi}`, client.user.avatarURL())
+    .setAuthor(client.user.avatarURL())
     .setDescription(`${destedencikanlar}`)
     .setFooter(`Desteyi açan (${message.author.username}) Unutma Bunlar Sadece Bir Simülatör Gerçek hesabına Gelmez`)
     .setColor("BLACK")

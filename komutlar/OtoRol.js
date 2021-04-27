@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
-let prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 exports.run = (client, message, args) => {
   const embed = new Discord.MessageEmbed()
-    .setAuthor("QualitySel | OtoRol", client.user.avatarURL())
+    .setAuthor("Gweep Creative | OtoRol", client.user.avatarURL())
     .setColor("#00ff00")
     .addField(
       "__OTOROL Ayarlamak__",
