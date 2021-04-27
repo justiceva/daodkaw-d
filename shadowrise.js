@@ -13,8 +13,9 @@ const { Canvas } = require("canvas-constructor");
 const YouTube = require("simple-youtube-api");
 const superagent = require("superagent");
 const ytdl = require("ytdl-core");
+const ayarlar = require("./ayarlar.json");
 
-var prefix = process.env.prefix;
+var prefix = ayarlar.prefix;
 
 const log = message => {
   console.log(`${message}`);
@@ -110,7 +111,7 @@ client.on("error", e => {
   console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
 
-client.login(process.env.TOKEN);
+client.login(ayarlar.token);
 
 ////-----------------------------\\\\\\\\\
 
@@ -1371,7 +1372,7 @@ client.on('ready', () => {
       console.log (`Kullanıcı İsmi     : ${client.user.username}`);
       console.log (`Sunucular          : ${client.guilds.cache.size}`);
       console.log (`Kullanıcılar       : ${client.users.cache.size}`);
-      console.log (`Prefix             : ${process.env.prefix}`);
+      console.log (`Prefix             : ${ayarlar.prefix}`);
       console.log (`Durum              : Bot Çevrimiçi!`);
       console.log ('_________________________________________');
     

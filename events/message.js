@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
+const ayarlar = require("../ayarlar.json");
 let talkedRecently = new Set();
 
-let commands = process.env.message;
+//let commands = process.env.message;
 
 module.exports = message => {
   if (talkedRecently.has(message.author.id)) {
@@ -21,7 +22,7 @@ module.exports = message => {
   let cmd;
 
   // Komut Bulunamadı Baş
-
+<!--
   if (!client.commands.has(command)) {
     if (client.aliases.has(command)) {
       cmd = client.commands.get(client.aliases.get(command));

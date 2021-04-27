@@ -1,8 +1,9 @@
 const chalk = require("chalk");
 const moment = require("moment");
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
 
-let prefix = process.env.prefix;
+let prefix = ayarlar.prefix;
 
 module.exports = client => {
   console.log(
