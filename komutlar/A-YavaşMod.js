@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 const client = new Discord.Client();
 
-var prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = async (client, message, args) => {
   if (message.channel.type !== "text") return;

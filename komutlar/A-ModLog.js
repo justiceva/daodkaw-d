@@ -1,8 +1,11 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 let prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
 
 exports.run = async (client, message, args) => {
+  
+  let prefix = ayarlar.prefix;
   if (!message.member.hasPermission("ADMINISTRATOR"))
     return message.channel.send(
       ` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`

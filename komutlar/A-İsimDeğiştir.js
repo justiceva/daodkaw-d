@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_NICKNAMES"))

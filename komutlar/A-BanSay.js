@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
 
-exports.run = (client, message, args) => {
-
+exports.run = async (client, message) => {
+  let prefix = ayarlar.prefix;
   let asreaper = message.guild;
   asreaper
     .fetchBans()

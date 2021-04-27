@@ -1,17 +1,18 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = async (client, message) => {
-  let prefix = process.env.prefix;
 
   const embedayarlar = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel | Ayarlar`)
+    .setAuthor(`Gweep Creative | Ayarlar`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🔰 QualitySel  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🔰 Gweep Creative  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__ModLog__`,

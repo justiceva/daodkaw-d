@@ -1,17 +1,18 @@
 const Discord = require("discord.js");
+const ayarlar = require("../ayarlar.json");
 
 exports.run = async (client, message) => {
-  let prefix = process.env.prefix;
+  let prefix = ayarlar.prefix;
 
   const embed = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel The |Bot©`)
+    .setAuthor(`Gweep Creative`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🎧 QualitySel The |Bot© Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎧 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Genel Komutlar__`,
@@ -60,7 +61,7 @@ exports.run = async (client, message) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `🔱  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🔱 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🔱 \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      `🔱  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🔱 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🔱 \`${prefix}iletişim\` | Gweep Creative  İletişim Bilgileri.`
     );
   return message.channel.send(embed);
 };

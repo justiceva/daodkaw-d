@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
-let prefix = process.env.prefix;
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
+
 exports.run = async (client, message, args) => {
   let CEChannel = message.mentions.channels.first();
   let CELog = db.fetch("ce-banlog." + message.guild.id) || "Var olmayan";

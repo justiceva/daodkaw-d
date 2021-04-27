@@ -15,14 +15,13 @@ module.exports = message => {
   }, 2500);
   let client = message.client;
   if (message.author.bot) return;
-  if (!message.content.startsWith(process.env.prefix)) return;
-  let command = message.content.split(" ")[0].slice(process.env.prefix.length);
+  if (!message.content.startsWith(ayarlar.prefix)) return;
+  let command = message.content.split(" ")[0].slice(ayarlar.prefix.length);
   let params = message.content.split(" ").slice(1);
   let perms = client.elevation(message);
   let cmd;
-
-  // Komut Bulunamadı Baş
-<!--
+  
+<!--Komut Bulunamadı Baş
   if (!client.commands.has(command)) {
     if (client.aliases.has(command)) {
       cmd = client.commands.get(client.aliases.get(command));
@@ -34,9 +33,8 @@ module.exports = message => {
       return message.channel.send(embed);
     }
   }
-
-  // Komut Bulunamadı Son
-
+  // Komut Bulunamadı Son-->
+  
   if (client.commands.has(command)) {
     cmd = client.commands.get(command);
   } else if (client.aliases.has(command)) {

@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const CodEmingHerDaim = require('quick.db');
+const ayarlar = require("../ayarlar.json");
+let prefix = ayarlar.prefix;
 
 exports.run = async(client, message, args) => {
   
-let sahipID = process.env.sahip
+let sahipID = ayarlar.sahip
 
 let CodEming = args.slice(0).join(' ') || ' Belirtilmemiş.'
 
-if(message.author.id !== 767377324474630174) return message.channel.send(' Sadece **sahibim** bakım modu ayarlayabilir.')
+if(message.author.id !== sahipID) return message.channel.send(' Sadece **sahibim** bakım modu ayarlayabilir.')
 
 let meteyasin = CodEmingHerDaim.fetch("!methesu7washere")
 

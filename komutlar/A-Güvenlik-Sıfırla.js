@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
+const ayarlar = require("../ayarlar.json");
 
 exports.run = (client, message, args) => {
   if (!message.member.hasPermission("ADMINISTRATOR"))

@@ -2,14 +2,14 @@ const Discord = require("discord.js");
 const prefix = process.env.prefix;
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`QualitySel  | AboneRol Sistem`)
+    .setAuthor(`Gweep Creative  | AboneRol Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `💠 QualitySel  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `💠 Gweep Creative  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Abone__**`,
@@ -33,7 +33,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `🌀  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🌀 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🌀 \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      `🌀  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🌀 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🌀 \`${prefix}iletişim\` | Gweep Creative  İletişim Bilgileri.`
     );
   msg.channel.send(seviye);
 };
