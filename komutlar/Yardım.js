@@ -45,12 +45,12 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Çekiliş Komutlar__`,
-      `🎉 \`${prefix}çekiliş\` `,
+      `__Ticket__`,
+      `🎉 \`${prefix}setup\` `,
       true
     )
     .addField(
-      `__Eklenti Komutlar__`,
+      `__Sistemler__`,
       `🎏 \`${prefix}eklenti\``,
       true
     )
