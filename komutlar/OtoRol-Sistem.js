@@ -4,14 +4,14 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const seviye = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative | OtoRol Sistem`)
+    .setAuthor(`Windes | OtoRol Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🟣 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🟣 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__OtoRol__**`,

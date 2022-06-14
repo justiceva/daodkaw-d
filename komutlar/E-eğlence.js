@@ -6,14 +6,14 @@ exports.run = async (client, message) => {
 
 
   const embedeğlence = new Discord.MessageEmbed()
-    .setAuthor(`©Gweep Creative  | Eğlence`)
+    .setAuthor(`©Windes  | Eğlence`)
     .setTitle(``)
     .setColor(`BLACK`)
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🔔 Gweep Creative  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🔔 Windes  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Steam Oyun__`,

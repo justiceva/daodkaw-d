@@ -3,15 +3,15 @@ exports.run = async (client, message, args, level) => {
   const toplamkomut = new Discord.MessageEmbed()
 
     .setTitle(``)
-    .setAuthor(`Gweep Creative  | Discord Bot Toplam Komut Sayısı`)
+    .setAuthor(`Windes  | Discord Bot Toplam Komut Sayısı`)
     .setDescription(
-      `✅ **Gweep Creative  Toplam**  \`` +
+      `✅ **Windes  Toplam**  \`` +
         client.commands.size +
         `\` **Komut Vardır!**`
     )
     .setColor("#00ff00")
     .setTimestamp()
-    .setFooter(`Play.Gweep Creative .Com`, client.user.avatarURL());
+    .setFooter(`Windes`, client.user.avatarURL());
 
   return message.channel.send(toplamkomut);
 };

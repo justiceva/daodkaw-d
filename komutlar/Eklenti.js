@@ -6,7 +6,7 @@ exports.run = async (client, message) => {
 
 
   const sunucu = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative  | Eklenti`)
+    .setAuthor(`Windes  | Eklenti`)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(

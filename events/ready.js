@@ -18,7 +18,7 @@ module.exports = client => {
   );
   client.user.setStatus("idle");
 
-  client.user.setActivity(`QualitySel  Bot`, { type: "WATCHING" });
+  client.user.setActivity(`.yardım | Windes`, { type: "WATCHING" });
 
   console.log(
     ` [${moment().format("YYYY-MM-DD HH:mm:ss")}] Oyun ismi ayarlandı!`

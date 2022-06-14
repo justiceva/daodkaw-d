@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
 
   const fynxcode = new Discord.MessageEmbed()
     .setColor("#00ff00")
-    .setAuthor(`Gweep Creative Davet Menü`)
+    .setAuthor(`Windes Davet Menü`)
     .setDescription(
       `**💼 Botun Davet Linki [TIKLA](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)**\n\n**__Web Sitemiz Çok Yakında Sizlerle__**`
     )

@@ -16,8 +16,8 @@ exports.run = async (client, message, args) => {
       .get(kanalbelirle)
       .send(
         new Discord.MessageEmbed()
-          .setTitle(`**Gweep Creative / Destek Sistemi**`)
-          .setFooter(`Gweep Creative`, client.user.avatarURL())
+          .setTitle(`**Windes / Destek Sistemi**`)
+          .setFooter(`Windes`, client.user.avatarURL())
           .setColor(`#ee7621`)
           .setDescription(
             `**▸ Destek Talebi açarken lütfen Doğru ve Düzgün bir şekilde açınız, aksi taktirde açılan destek taleblerine Cevap verilmeyecektir ve kapatılcaktır.

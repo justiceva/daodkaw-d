@@ -5,7 +5,7 @@ let prefix = ayarlar.prefix;
 
 exports.run = async (bot, msg, args) => {
   const çekiliş = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative  | Ticket Sistem`)
+    .setAuthor(`Windes  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
       "https://cdn.discordapp.com/attachments/823190721862959134/826104795839332402/standard_4.gif"
@@ -15,7 +15,7 @@ exports.run = async (bot, msg, args) => {
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🎫 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎫 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ticket__** `,

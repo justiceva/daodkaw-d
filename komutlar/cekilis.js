@@ -4,14 +4,14 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedgenel = new Discord.MessageEmbed()
-    .setAuthor(`Gweep Creative | Çekiliş `)
+    .setAuthor(`Windes | Çekiliş `)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(
       "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
     )
     .setDescription(
-      `🎁 Gweep Creative Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎁 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Başlat__`,
