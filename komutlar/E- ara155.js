@@ -22,7 +22,7 @@ exports.run = (client, message, params) => {
         userinfo.avatar
       )
       .setImage(
-        `http://www.hareketligifler.net/data/media/114/polis-hareketli-resim-0023.gif`
+        `https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg`
       );
     return message.channel.send(sunucubilgi);
   }

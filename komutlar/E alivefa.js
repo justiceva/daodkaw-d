@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
       userinfo.avatar
     )
       .setImage(
-        "https://66.media.tumblr.com/549f3b58605bf618e2808921b32d54ad/tumblr_pz5uuk53Fg1y4slboo1_250.gifv"
+        "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"
       )
   );
 };

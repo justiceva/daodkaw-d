@@ -9,14 +9,14 @@ exports.run = async (client, message) => {
     .setColor("#00ff00")
     .setAuthor(`Windes Davet Menü`)
     .setDescription(
-      `**💼 Botun Davet Linki [TIKLA](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)**\n\n**__Web Sitemiz Çok Yakında Sizlerle__**`
+      `**💼 Botun Davet Linki [TIKLA](https://discord.com/api/oauth2/authorize?client_id=970742376538726400&permissions=8&scope=bot)**\n`
     )
     .addField(
       `__Bilgilendirme__`,
       `🔰  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🔰 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🔰 \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
     )
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"
     );
 
   return message.channel.send(fynxcode);

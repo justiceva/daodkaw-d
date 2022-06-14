@@ -8,11 +8,11 @@ exports.run = async (bot, msg, args) => {
     .setAuthor(`Windes  | Ticket Sistem`)
     .setTitle(``)
    .setImage(
-      "https://cdn.discordapp.com/attachments/823190721862959134/826104795839332402/standard_4.gif"
+      "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"
     )
     .setColor(`#ee7621`)
      .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"
     )
     .setDescription(
       `🎫 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
