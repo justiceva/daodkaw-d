@@ -40,8 +40,8 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Oyun Komutlar(Bakımda)__`,
-      ` 🎮 \`${prefix}oyunlar\` `,
+      `__Sunucu koruma__`,
+      ` 🎮 \`${prefix}koruma\` `,
       true
     )
     .addField(
