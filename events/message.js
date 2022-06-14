@@ -21,14 +21,14 @@ module.exports = message => {
   let perms = client.elevation(message);
   let cmd;
   
-<!--Komut Bulunamadı Baş
+//!--Komut Bulunamadı Baş
   if (!client.commands.has(command)) {
     if (client.aliases.has(command)) {
       cmd = client.commands.get(client.aliases.get(command));
     } else {
       if (command == "") return;
       const embed = new Discord.MessageEmbed()
-        .setDescription("Botta `" + command + "` Adında Bir Komut Bulunamadı.")
+        .setDescription("")
         .setColor("#00ff00");
       return message.channel.send(embed);
     }
