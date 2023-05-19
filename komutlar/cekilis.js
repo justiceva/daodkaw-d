@@ -7,9 +7,7 @@ exports.run = async (client, message) => {
     .setAuthor(`Windes | Çekiliş `)
     .setTitle(``)
     .setColor("#00ff00")
-    .setThumbnail(
-      "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"
-    )
+    .setThumbnail(client.user.avatarURL())
     .setDescription(
       `🎁 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
@@ -31,7 +29,7 @@ exports.run = async (client, message) => {
    
     .addField(
       `__Bilgilendirme__`,
-      `<a:yesil:822529538663514173>  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n <a:yesil:822529538663514173> \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n <a:yesil:822529538663514173> \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+      `🎊 \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎊 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz.`
     );
   return message.channel.send(embedgenel);
 };
