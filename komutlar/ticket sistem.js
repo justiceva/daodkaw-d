@@ -46,7 +46,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `🎯  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎯 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🎯 \`${prefix}iletişim\` | QualitySel İletişim Bilgileri.`
+      `🎯  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🎯 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz.`
     );
   msg.channel.send(çekiliş);
 };

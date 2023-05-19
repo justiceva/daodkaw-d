@@ -8,8 +8,8 @@ let prefix = ayarlar.prefix;
     .setAuthor(`Windes | Discord Bot Bilgi Tablosu`)
     .setTitle(``)
     .setColor("#00ff00")
-    .setThumbnail(
-      "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"    )
+    .setImage('https://cdn.discordapp.com/attachments/1108819464524415097/1109034877774483466/standard_7.gif')
+    .setThumbnail(client.user.avatarURL())
     .setDescription(
       `📯 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
