@@ -25,13 +25,13 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Sunucu Koruma(Bakımda)__`,
-      `🔰 \`${prefix}koruma\`  `,
+      `__Öneri__`,
+      `🔰 \`${prefix}öneri-sistem\`  `,
       true
     )
     .addField(
-      `__kayıt__`,
-      `⚙️ \`${prefix}yardım-kayıt\` `,
+      `__seviye__`,
+      `⚙️ \`${prefix}seviye-sistem\` `,
       true
     )
     .addField(
@@ -40,13 +40,13 @@ exports.run = async (client, message) => {
       true
     )
     .addField(
-      `__Sunucu koruma__`,
-      ` 🎮 \`${prefix}koruma\` `,
+      `__Oto rol__`,
+      ` 🎮 \`${prefix}otorol-sistem\` `,
       true
     )
     .addField(
       `__Ticket__`,
-      `🎉 \`${prefix}setup\` `,
+      `🎉 \`${prefix}ticket-sistem\` `,
       true
     )
     .addField(
