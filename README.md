@@ -1,5 +1,5 @@
-# Gweep Creative Youtube Kanalıma Abone Olmayı Unutma
+# Parsher Youtube Kanalıma Abone Olmayı Unutma
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-# [Youtube Kanalım](https://www.youtube.com/GweepCreativeOfficial)  |  [Twitch Kanalım](https://www.twitch.tv/gweepcreative)  |  [Discord Adresim](https://discord.gg/8vP9FCj3sh)
+# [Youtube Kanalım](https://www.youtube.com/channel/UCKpRtKCWoZMNeiIRviOtd1w)  |  [Discord Adresim](https://discord.gg/FATqHBJ97W)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 # 🤖 Bu Botun Telif Hakkı Vardır İzinsiz Video Çekmiyin.
