@@ -64,11 +64,6 @@ exports.run = async (client, message) => {
       `📯 \`${prefix}ara155 \` Polisi Ararsınız.`,
       true
     )
-  .addField(
-      `__Ali Vefa__`,
-      `📯 \`${prefix}alivefa \` Sunucuda AliVefa Sen Olursun.`,
-      true
-    )
     .addField(
       `__Bilgilendirme__`,
       `📙 \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📙 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 📙 \`${prefix}siteler\` | QualitySel  Sitelerini Görürsün`

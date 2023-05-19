@@ -7,9 +7,7 @@ exports.run = async (bot, msg, args) => {
     .setAuthor(`Windes   | Ban Sistem`)
     .setTitle(``)
     .setColor("#00ff00")
-    .setThumbnail(
-      "https://i.pinimg.com/originals/5a/28/de/5a28def9428afff43e86e21ffe382dc9.jpg"
-    )
+    .setImage('https://cdn.discordapp.com/attachments/1108819464524415097/1109034877774483466/standard_7.gif')
     .setDescription(
       `📛 Windes  Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
@@ -30,7 +28,7 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `__Bilgilendirme__`,
-      `📌  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📌 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 📌 \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      `📌  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 📌 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz.`
     );
   msg.channel.send(seviye);
 };
