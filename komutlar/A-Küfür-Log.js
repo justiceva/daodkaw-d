@@ -47,6 +47,6 @@ exports.conf = {
 
 exports.help = {
   name: "küfürlog",
-  description: "",
-  usage: ""
+  description: "parsher",
+  usage: "parsher"
 };

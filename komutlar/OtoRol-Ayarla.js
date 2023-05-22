@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
       new Discord.MessageEmbed().setColor("#00ff00").setDescription(`
 Ayarlamam İçin Bir Rol Etiketlemeilisin. 
 Rolü Etiketleyemiyorsan **Rolün Etiketleme Seçeneğini Aktif Etmeyi Unutma**
-Örnek Kullanım : sn!otorol @rol #kanal 
+Örnek Kullanım : .otorol @rol #kanal 
 
  Önemli Not!!: Oto Rol Vermem İçin Verilecek Rolün Üstünde Bir Rolüm Olmalı Yoksa Rolü Veremem :)
  `)

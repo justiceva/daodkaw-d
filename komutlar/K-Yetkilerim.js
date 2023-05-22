@@ -87,13 +87,13 @@ exports.run = (client, msg, args) => {
   msg.channel.send(
     new Discord.MessageEmbed()
       .setColor("#00ff00")
-      .setAuthor(`QualitySel  | Yetkilerim Tablo`)
+      .setAuthor(`Parsher  | Yetkilerim Tablo`)
        .addField(
       `__Bilgilendirme__`,
-      `🌐  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🌐 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz \n 🌐 \`${prefix}iletişim\` | QualitySel  İletişim Bilgileri.`
+      `🌐  \`${prefix}davet\` | Botu Sununuya Davet Edersiniz\n 🌐 \`${prefix}botbilgi\` | Botun İstatistiklerini Görürsünüz.`
     )
       .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/826048182990667806/standard_2.gif"
+      "https://cdn.discordapp.com/attachments/1108819464524415097/1109034877774483466/standard_7.gif"
        )
       .setDescription(stripIndents`
 

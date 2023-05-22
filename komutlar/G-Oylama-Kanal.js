@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
   let oylamakanali = message.mentions.channels.first();
   if (!oylamakanali)
     return message.channel.send(
-      ":no_entry: Oylama kanalı ayarlamak için bir kanal etiketlemeniz gerekli. `sh!oylama-kanal #kanal`"
+      ":no_entry: Oylama kanalı ayarlamak için bir kanal etiketlemeniz gerekli. `.oylama-kanal #kanal`"
     );
   db.set(`okanal_${message.guild.id}`, oylamakanali.id);
   message.channel.send(`Kanal ${oylamakanali} olarak ayarlandı!`);

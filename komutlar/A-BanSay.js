@@ -3,11 +3,11 @@ const ayarlar = require("../ayarlar.json");
 
 exports.run = async (client, message) => {
   let prefix = ayarlar.prefix;
-  let asreaper = message.guild;
-  asreaper
+  let parsher = message.guild;
+  parsher
     .fetchBans()
-    .then(asreaper =>
-    message.channel.send(` Sunucunuzda ${asreaper.size} banlanmış üye bulunmaktadır.`)
+    .then(parsher =>
+    message.channel.send(` Sunucunuzda ${parsher.size} banlanmış üye bulunmaktadır.`)
   )
     .catch(console.error);
 };

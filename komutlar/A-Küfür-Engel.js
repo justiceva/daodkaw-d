@@ -44,6 +44,6 @@ exports.conf = {
 
 exports.help = {
   name: "küfürengel",
-  description: "asreaper",
-  usage: "asreaper"
+  description: "parsher",
+  usage: "parsher"
 };
