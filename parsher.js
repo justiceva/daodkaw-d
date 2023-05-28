@@ -1261,15 +1261,15 @@ client.on("guildMemberAdd", member => {
 client.on("guildMemberAdd", member => {
   const hosgeldin = new Discord.MessageEmbed()
     .setThumbnail(
-      "https://cdn.discordapp.com/attachments/823592301796392960/824619745192968263/a3935a550c559f47bb1e870681a4384f-removebg-preview.png"
+      "https://media.discordapp.net/attachments/1108819464524415097/1109034877774483466/standard_7.gif"
     )
      .setAuthor(`Merhaba Sende Aramıza Hoşgeldin`)
-    .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz.")
+    .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz, Parsher Code.")
    .setColor("#00ff00")
-    .addField("**Sunucu Adresimiz**", "_Play.ShadowRise.Com_")
+    .addField("**Sunucu Adresimiz**", "[Tıkla ](https://discord.gg/vqV5TRaMCa)")
     .addField(
-      "**WebSitemiz**",
-      "[Shadow ](https://discord.gg/vqV5TRaMCa)"
+      "**YouTube kanalımız**",
+      "[Tıkla ](https://www.youtube.com/channel/UCKpRtKCWoZMNeiIRviOtd1w)"
     )
   member.send(hosgeldin);
 });
@@ -1287,7 +1287,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
 });
 
 
-
+//Parsher YouTube
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -1374,6 +1374,7 @@ client.on('ready', () => {
       console.log (`Kullanıcılar       : ${client.users.cache.size}`);
       console.log (`Prefix             : ${ayarlar.prefix}`);
       console.log (`Durum              : Bot Çevrimiçi!`);
+      console.log (`Parsher Youtube    : Gelişmiş bot alt yapı!`);
       console.log ('_________________________________________');
     
     });
