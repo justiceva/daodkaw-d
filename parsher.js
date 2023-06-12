@@ -930,16 +930,16 @@ client.on("message", async message => {
 //StarBoard Baş
 
 function extension(attachment) {
-  // can#0002
+  //parsher code 
   let imageLink = attachment.split(".");
   let typeOfImage = imageLink[imageLink.length - 1];
   let image = /(jpg|jpeg|png|gif)/gi.test(typeOfImage);
   if (!image) return "";
   return attachment;
-} // codare ♥
+}   //parsher code 
 
 client.on("messageReactionAdd", async (messageReaction, user) => {
-  // can#0002
+  //parsher code 
   if (user.bot) return;
   const database = require("quick.db");
 
@@ -1014,10 +1014,10 @@ client.on("messageReactionAdd", async (messageReaction, user) => {
         });
     }
   }
-}); // codare ♥
+});   //parsher code 
 
 client.on("messageReactionRemove", async (messageReaction, user) => {
-  // can#0002
+   //parsher code 
   if (user.bot) return;
   const database = require("quick.db");
 
@@ -1213,7 +1213,7 @@ client.on("guildMemberAdd", member => {
     .replace("10", "Ekim")
     .replace("11", "Kasım")
     .replace("12", "Aralık")
-    .replace("13", "CodAre");
+    .replace("13", "ParsherYT");
   let yılı = moment(new Date(bitiş).toISOString()).format("YYYY");
   let saati = moment(new Date(bitiş).toISOString()).format("HH:mm");
 
@@ -1237,7 +1237,7 @@ client.on("guildMemberAdd", member => {
   if (süre > 1296000000)
     kontrol = "`Bu hesap güvenli!` <:okey:822549962532847676>";
 
-  let codare = new Discord.MessageEmbed()
+  let parsher = new Discord.MessageEmbed()
     .setColor("#00ff00")
     .setTitle(`${member.user.username} Katıldı`)
     .setDescription(
@@ -1251,7 +1251,7 @@ client.on("guildMemberAdd", member => {
         kontrol +
         "**"
     );
-  client.channels.cache.get(kanal).send(codare);
+  client.channels.cache.get(kanal).send(parsher);
 });
 
 //Güvenlik Son
