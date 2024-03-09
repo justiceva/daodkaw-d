@@ -7,9 +7,9 @@ exports.run = async (client, message) => {
 
   const fynxcode = new Discord.MessageEmbed()
     .setColor("#00ff00")
-    .setAuthor(`Windes Davet Menü`)
+    .setAuthor(`Justiceva Davet Menü`)
     .setDescription(
-      `**💼 Botun Davet Linki [TIKLA](https://discord.com/api/oauth2/authorize?client_id=1086392092294660176&permissions=8&scope=bot)**\n`
+      `**💼 Botun Davet Linki [TIKLA](https://discord.com/oauth2/authorize?client_id=1213816290683256832&permissions=8&scope=bot+applications.commands)**\n`
     )
     .addField(
       `__Bilgilendirme__`,

@@ -5,13 +5,13 @@ const ayarlar = require("../ayarlar.json");
 let prefix = ayarlar.prefix;
 
   const botbilgi = new Discord.MessageEmbed()
-    .setAuthor(`Windes | Discord Bot Bilgi Tablosu`)
+    .setAuthor(`Justiceva | Discord Bot Bilgi Tablosu`)
     .setTitle(``)
     .setColor("#00ff00")
     .setImage('https://cdn.discordapp.com/attachments/1108819464524415097/1109034877774483466/standard_7.gif')
     .setThumbnail(client.user.avatarURL())
     .setDescription(
-      `📯 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `📯 Justiceva Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       "__**Bot Verileri**__",
@@ -25,7 +25,7 @@ let prefix = ayarlar.prefix;
     )
     .addField(
       "__**Yetkili Bilgi**__",
-      "👑 **Bot Sahipleri**  <@689447667465453599> \n\n"
+      "👑 **Bot Sahipleri**  <@428580755225182218> \n\n"
     )
     .addField(
       "__**Sürümler**__",
