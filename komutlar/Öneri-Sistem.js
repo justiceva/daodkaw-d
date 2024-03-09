@@ -14,12 +14,12 @@ exports.run = async (bot, msg, args) => {
     )
     .addField(
       `**__ÖneriLog Ayarla__**`,
-      `🔸 \`${prefix}önerilog ayarla\` \n Discord Sunucuza Öneri Log Kanal Ayarlarsınız.`,
+      `🔸 \`${prefix}önerilog-ayarla\` \n Discord Sunucuza Öneri Log Kanal Ayarlarsınız.`,
       true
     )
     .addField(
       `**__ÖneriLog Sıfırla__**`,
-      `🔸 \`${prefix}önerilog sıfırla\` \n Discord Sunucuza Öneri Log Kanalı Sıfırlarsınız.`,
+      `🔸 \`${prefix}önerilog-sıfırla\` \n Discord Sunucuza Öneri Log Kanalı Sıfırlarsınız.`,
       true
     )
     .addField(
