@@ -1264,13 +1264,13 @@ client.on("guildMemberAdd", member => {
       "https://media.discordapp.net/attachments/1108819464524415097/1109034877774483466/standard_7.gif"
     )
      .setAuthor(`Merhaba Sende Aramıza Hoşgeldin`)
-    .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz, Parsher Code.")
+    .setDescription("Seni aramız da görmekten onur ve şeref duyuyoruz,Justice.")
    .setColor("#00ff00")
-    .addField("**Sunucu Adresimiz**", "[Tıkla ](https://discord.gg/vqV5TRaMCa)")
-    .addField(
-      "**YouTube kanalımız**",
-      "[Tıkla ](https://www.youtube.com/channel/UCKpRtKCWoZMNeiIRviOtd1w)"
-    )
+    .addField("**Sunucu Adresimiz**", "[Tıkla ](https://discord.gg/Zx5DrYurKz)")
+    
+      
+      
+    
   member.send(hosgeldin);
 });
 
