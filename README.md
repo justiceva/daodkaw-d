@@ -1,5 +1,5 @@
-# Parsher Youtube Kanalıma Abone Olmayı Unutma
+# Justiceva Youtube Kanalıma Abone Olmayı Unutma
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-# [Youtube Kanalım](https://www.youtube.com/channel/UCKpRtKCWoZMNeiIRviOtd1w)  |  [Discord Adresim](https://discord.gg/FATqHBJ97W)
+# [Youtube Kanalım](https://www.youtube.com/channel/UCma1htm2_82qvQQhVCQsUzg)  |  [Discord Adresim](https://discord.gg/gY8eCHsgyJ)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 # 🤖 İzinsiz Video Çekmiyin.
