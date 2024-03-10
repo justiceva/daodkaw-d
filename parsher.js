@@ -1287,7 +1287,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
 });
 
 
-//Parsher YouTube
+//Justiceva YouTube
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();

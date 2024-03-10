@@ -18,7 +18,7 @@ module.exports = client => {
   );
   client.user.setStatus("idle");
 
-  client.user.setActivity(`.yardım | Windes`, { type: "WATCHING" });
+  client.user.setActivity(`.yardım | Justiceva`, { type: "WATCHING" });
 
   console.log(
     ` [${moment().format("YYYY-MM-DD HH:mm:ss")}] Oyun ismi ayarlandı!`

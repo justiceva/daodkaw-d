@@ -11,7 +11,7 @@ exports.run = async (bot, msg, args) => {
     .setColor(`#ee7621`)
      
     .setDescription(
-      `🎫 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎫 Justiceva Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `**__Ticket__** `,

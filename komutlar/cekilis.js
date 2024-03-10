@@ -4,12 +4,12 @@ exports.run = async (client, message) => {
   let prefix = process.env.prefix;
 
   const embedgenel = new Discord.MessageEmbed()
-    .setAuthor(`Windes | Çekiliş `)
+    .setAuthor(`Justiceva | Çekiliş `)
     .setTitle(``)
     .setColor("#00ff00")
     .setThumbnail(client.user.avatarURL())
     .setDescription(
-      `🎁 Windes Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
+      `🎁 Justiceva Botumuzu Eklemek İçin \`${prefix}davet\` yazabilirsiniz.`
     )
     .addField(
       `__Başlat__`,
